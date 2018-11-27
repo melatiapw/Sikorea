@@ -1112,8 +1112,9 @@ h6.h1 {
   display: none;
 }
 .header .top-navbar .navbar-header .navbar-brand .logo {
-  max-height: 50px;
-  display: block;
+  padding-left: 0.75rem;
+  max-height: 40px;
+  display: inline-block;
 }
 .header .top-navbar .navbar-header .navbar-brand b {
   line-height: 60px;
@@ -1124,6 +1125,8 @@ h6.h1 {
   padding-right: 0.75rem;
   font-size: 15px;
   line-height: 40px;
+  display: inline-block;
+  position: relative;
 }
 .header .top-navbar .navbar-nav > .nav-item.show {
   background: rgba(0, 0, 0, 0.05);
@@ -2044,14 +2047,13 @@ textarea {
   background: #ffffff none repeat scroll 0 0;
   border-top: 1px solid rgba(120, 130, 140, 0.13);
   color: #67757c;
-  left: 0;
+  right: auto;
+  left: auto;
   padding: 17px 15px;
-  position: absolute;
-  right: 0;
+  position:absolute;
+  text-align: center;
 }
-.footer {
-  left: 240px;
-}
+
 #chartdiv3 {
   height: 450px;
   width: 100%;
