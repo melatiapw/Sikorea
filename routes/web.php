@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//route untuk home
+Route::get('/', 'ControllerHome@index');
+Route::get('/contact', 'ControllerContact@index');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//route untuk order
+Route::get('/order', 'ControllerOrder@index');
