@@ -11,9 +11,14 @@
 |
 */
 
+
 //route untuk home
 Route::get('/', 'ControllerHome@index');
 Route::get('/contact', 'ControllerContact@index');
 
 //route untuk order
 Route::get('/order', 'ControllerOrder@index');
+
+//route untuk admin
+Route::get('/homeAdmin', 'ControllerAdmin@indexAdmin');
+
