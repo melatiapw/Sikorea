@@ -76,31 +76,55 @@
             </div>
 
             <div class="form-group row">
-              <div class="col-md-6">
-                <label for="c_fname" class="text-black">Sablon</label>
-                <input type="text" class="form-control" id="c_fname" name="c_fname">
+            <label for="c_fname" class="text-black">Sablon</label>
+              <div class="col-md-12">
+                <label for="c_fname" class="text-black">Jenis Sablon</label>
+                <select name="warna_bahan" id="warna_bahan" class="form-control-sm form-control">
+                      <option value="0">Please select</option>
+                      <option value="1">Option #1</option>
+                      <option value="2">Option #2</option>
+                      <option value="3">Option #3</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <label for="c_fname" class="text-black">Jumlah Warna Sablon</label>
+                <select name="warna_bahan" id="warna_bahan" class="form-control-sm form-control">
+                      <option value="0">Please select</option>
+                      <option value="1">Option #1</option>
+                      <option value="2">Option #2</option>
+                      <option value="3">Option #3</option>
+                  </select>
+              </div>
+              <div class="col-md-12">
+                <label for="c_fname" class="text-black">Pilihan Warna Sablon</label>
+                <textarea name="pilihan_warna_bahan" id="pilihan_warna_bahan" cols="30" rows="7" class="form-control"></textarea>
               </div>
             </div>
 
             <div class="form-group row">
-              <div class="col-md-6">
-                <label for="c_fname" class="text-black">Bordir</label>
-                <input type="text" class="form-control" id="c_fname" name="c_fname">
-              </div>
+                <label for="c_fname" class="text-black">Jumlah Bordir</label>
+                <select name="warna_bahan" id="warna_bahan" class="form-control-sm form-control">
+                      <option value="0">Please select</option>
+                      <option value="1">Option #1</option>
+                      <option value="2">Option #2</option>
+                      <option value="3">Option #3</option>
+                  </select>
+              
             </div>
 
             <div class="form-group row">
-              <div class="col-md-6">
                 <label for="c_fname" class="text-black">Ukuran</label>
-                <input type="text" class="form-control" id="c_fname" name="c_fname">
-              </div>
+                <select name="warna_bahan" id="warna_bahan" class="form-control-sm form-control">
+                      <option value="0">Please select</option>
+                      <option value="1">Option #1</option>
+                      <option value="2">Option #2</option>
+                      <option value="3">Option #3</option>
+                  </select>
             </div>
 
             <div class="form-group row">
-              <div class="col-md-6">
                 <label for="c_fname" class="text-black">Unggah Desain</label>
-                <input type="text" class="form-control" id="c_fname" name="c_fname">
-              </div>
+                <input type="file" class="form-control" id="c_fname" name="c_fname">
             </div>
 
 
