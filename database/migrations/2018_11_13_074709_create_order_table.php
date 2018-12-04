@@ -27,6 +27,7 @@ class CreateOrderTable extends Migration
             $table->integer('warna_bahan')->unsigned();
             $table->string('pilihan_warna_bahan');            
             $table->integer('manset');
+            $table->integer('lengan');
 
             $table->integer('sablon')->unsigned();
             $table->integer('warna_sablon')->unsigned();
