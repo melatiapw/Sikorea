@@ -20,3 +20,6 @@ Route::get('/order', 'ControllerOrder@index');
 
 //route untuk cart
 Route::get('/cart', 'ControllerCart@index');
+
+//route untuk checkout
+Route::get('/checkout', 'ControllerCheckout@index');
