@@ -10,8 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// User
 Route::get('/', 'ControllerHome@index');
 Route::get('/contact', 'ControllerContact@index');
 
+//Admin
 Route::get('/homeAdmin', 'ControllerAdmin@indexAdmin');
+Route::get('/pesanan', 'ControllerAdmin@pesanan');
+Route::get('/katalog', 'ControllerAdmin@katalog');
