@@ -33,7 +33,6 @@
     </div>
     <!-- End Wrapper -->
     <!-- All Jquery -->
-    <script src="{{ asset('assets/ElaAdmin/js/lib/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('assets/ElaAdmin/js/lib/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/ElaAdmin/js/lib/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -68,6 +67,8 @@
     <!-- scripit init-->
 
     <script src="{{ asset('assets/ElaAdmin/js/custom.min.js') }}"></script>
+
+
 
 </body>
 

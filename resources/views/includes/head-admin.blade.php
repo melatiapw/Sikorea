@@ -17,6 +17,22 @@
 <link href="{{ asset('assets/ElaAdmin/css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('assets/ElaAdmin/css/helper.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/ElaAdmin/css/style.css') }}" rel="stylesheet">
+<style>
+.card-modal {
+  display: inline-flex;
+  flex-wrap: nowrap;
+}
+</style>
+<script src="{{ asset('assets/ElaAdmin/js/lib/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('assets/ElaAdmin/js/lib/datatables/datatables-init.js') }}"></script>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
 <!--[if lt IE 9]>
