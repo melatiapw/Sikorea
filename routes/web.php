@@ -13,6 +13,10 @@
 // User
 Route::get('/', 'ControllerHome@index');
 Route::get('/contact', 'ControllerContact@index');
+Route::get('/order', 'ControllerOrder@index');
+Route::get('/cart', 'ControllerCart@index');
+Route::get('/checkout-alamat', 'ControllerCheckout@alamat');
+Route::get('/checkout-bank', 'ControllerCheckout@bank');
 
 //Admin
 Route::get('/homeAdmin', 'ControllerAdmin@indexAdmin');
