@@ -10,16 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//route untuk home
+// User
 Route::get('/', 'ControllerHome@index');
 Route::get('/contact', 'ControllerContact@index');
-
-//route untuk order
 Route::get('/order', 'ControllerOrder@index');
-
-//route untuk cart
 Route::get('/cart', 'ControllerCart@index');
+Route::get('/checkout-alamat', 'ControllerCheckout@alamat');
+Route::get('/checkout-bank', 'ControllerCheckout@bank');
+Route::get('/statustransaksi', 'ControllerCheckout@statustransaksi');
 
-//route untuk checkout
-Route::get('/checkout', 'ControllerCheckout@index');
+//Admin
+Route::get('/homeAdmin', 'ControllerAdmin@indexAdmin');
+Route::get('/pesanan', 'ControllerAdmin@pesanan');
+Route::get('/katalog', 'ControllerAdmin@katalog');
