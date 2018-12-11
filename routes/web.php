@@ -1,5 +1,5 @@
 <?php
-
+use Spatie\Permission\Models\Role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
+Route::get('/admin', 'ControllerAdmin@indexAdmin')->middleware('role:admin');
 Auth::routes();
 // Route::get('/admin', 'AdminController@admin')
 //     ->middleware('is_admin')
 //     ->name('admin');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/homeAdmin', 'ControllerAdmin@indexAdmin');
+// Route::get('/', 'ControllerHome@index');
+Route::get('/contact', 'ControllerContact@index');
