@@ -15,29 +15,27 @@ class CreateOrderTable extends Migration
     {
         Schema::create('order', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('harga');
-            $table->integer('cart_id')->unsigned();
-            $table->integer('product_id')->unsigned();
+            $table->integer('harga')->nullable();
+            $table->integer('cart_id')->unsigned()->nullable();
+            $table->integer('product_id')->unsigned()->nullable();
             //dibawah ini buat form kaos
-            $table->integer('jenis_pakaian')->unsigned
-            ();
-            $table->integer('model')->unsigned();
-            $table->integer('bahan')->unsigned();
+            $table->integer('jenis_pakaian')->unsigned()->nullable();
+            $table->integer('model')->unsigned()->nullable();
+            $table->integer('bahan')->unsigned()->nullable();
 
-            $table->integer('warna_bahan')->unsigned();
-            $table->string('pilihan_warna_bahan');            
-            $table->integer('manset');
-            $table->integer('lengan');
+            $table->integer('warna_bahan')->unsigned()->nullable();
+            $table->string('pilihan_warna_bahan')->nullable();            
+            $table->integer('manset')->nullable();
+            $table->integer('lengan')->nullable();
 
-            $table->integer('sablon')->unsigned();
-            $table->integer('warna_sablon')->unsigned();
-            $table->string('pilihan_warna_sablon');
-
-            $table->integer('lokasi_sablon')->unsigned();
-            $table->integer('bordir')->unisgned();
-            $table->integer('jumlah_bordir')->unsigned();
-            $table->integer('jumlah_produk')->unsigned();
-            $table->integer('jenis_ukuran')->unsigned();
+            $table->integer('sablon')->unsigned()->nullable();
+            $table->integer('warna_sablon')->unsigned()->nullable();
+            $table->string('pilihan_warna_sablon')->nullable();
+            $table->integer('lokasi_sablon')->unsigned()->nullable();
+            $table->integer('jumlah_bordir')->unsigned()->nullable();
+            $table->integer('lokasi_bordir')->unsigned()->nullable();
+            $table->integer('jumlah_produk')->unsigned()->nullable();
+            $table->integer('jenis_ukuran')->unsigned()->nullable();
             $table->timestamps();
         });
     }
