@@ -5,7 +5,7 @@
       <!-- logo -->
       <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-left">
         <div class="site-logo">
-          <a href="{{ url('/home')}}" class="js-logo-clone">Konveksi Area</a>
+          <a href="{{ url('/')}}" class="js-logo-clone">Konveksi Area</a>
         </div>
       </div>
 
@@ -16,17 +16,71 @@
             <li><a href="#">Login</a></li>
             <li><a href="#">Register</a></li>
             <!-- Notifikasi -->
-            <li><a href="#"><span class="icon icon-bell-o"></span></a></li>
-            <!-- Keranjang Belanja -->
+            <li class="nav-item dropdown">
+              <a class="site-cart" data-toggle="dropdown">
+                <span class="icon icon-bell"></span>
+                <span class="count">2</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                    <ul>
+                        <li>
+                            <div class="drop-title">Notifications</div>
+                        </li>
+                        <li>
+                            <div class="message-center">
+                                <!-- Message -->
+                                <a href="#">
+                                    <div class="mail-contnet">
+                                        <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                        </li>
+                    </ul>
+              </div>
+            </li>
+            <!-- End Notification -->
+            <!-- Cart -->
             <li>
-              <a href="cart.html" class="site-cart">
+              <a href="{{ url('/cart')}}" class="site-cart">
                 <span class="icon icon-shopping_cart"></span>
                 <span class="count">2</span>
               </a>
             </li>
+            <!-- End Cart -->
             <!-- Profil -->
-            <li><a href="#"><span class="icon icon-person"></span></a></li>
-            <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+            <li class="nav-item dropdown">
+              <a class="site-menu" data-toggle="dropdown">
+                <span class="icon icon-person"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                    <ul>
+                      <li>
+                          <div class="profile-center">
+                              <!-- Message -->
+                              <a class="nav-link text-right">
+                                <span class="text-left"><i class="fa fa-hourglass-end"></i></span>
+                                Pesanan Saya
+                              </a>
+                              <a class="nav-link text-right">
+                                <span class="icon icon-pencil text-left"></span>
+                                Edit profil saya
+                              </a>
+                              <a class="nav-link text-right">
+                                <span class="icon icon-switch text-left"></span>
+                                Log Out
+                              </a>
+                          </div>
+                      </li>
+
+                    </ul>
+              </div>
+            </li>
+            <!-- End Profil -->
           </ul>
         </div>
       </div>
@@ -41,7 +95,7 @@
       <li class="has-children active">
         <a href="#katalog">Katalog</a>
         <ul class="dropdown">
-          <li><a href="#">Kaos</a></li>
+          <li><a href="{{ url('/order')}}">Kaos</a></li>
         </ul>
       </li>
       <!-- Kontak -->

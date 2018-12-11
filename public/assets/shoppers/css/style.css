@@ -253,8 +253,8 @@ a {
         position: absolute;
         text-align: left;
         border-top: 2px solid #7971ea;
-        -webkit-box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
-        box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
+        -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
         border-left: 1px solid #edf0f5;
         border-right: 1px solid #edf0f5;
         border-bottom: 1px solid #edf0f5;
@@ -264,7 +264,10 @@ a {
         background: #fff;
         -webkit-transition: 0.2s 0s;
         -o-transition: 0.2s 0s;
-        transition: 0.2s 0s; }
+        transition: 0.2s 0s;
+        -moz-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        border-color: rgba(120, 130, 140, 0.13);
+       }
         .site-navbar .site-navigation .site-menu .has-children .dropdown a {
           font-size: 16px;
           text-transform: none;
@@ -763,6 +766,7 @@ a {
   border-right: 1px solid rgba(0, 0, 0, 0.03);
 }
 .card {
+  position: inherit;
   margin-bottom: 30px;
 }
 .card .card-subtitle {
@@ -782,34 +786,6 @@ a {
 .card-inverse .card-text {
   color: rgba(255, 255, 255, 0.65);
 }
-.card-success {
-  background: #26dad2 none repeat scroll 0 0;
-  border-color: #26dad2;
-}
-.card-danger {
-  background: #ef5350 none repeat scroll 0 0;
-  border-color: #ef5350;
-}
-.card-warning {
-  background: #ffb22b none repeat scroll 0 0;
-  border-color: #ffb22b;
-}
-.card-info {
-  background: #1976d2 none repeat scroll 0 0;
-  border-color: #1976d2;
-}
-.card-primary {
-  background: #5c4ac7 none repeat scroll 0 0;
-  border-color: #5c4ac7;
-}
-.card-dark {
-  background: #2f3d4a none repeat scroll 0 0;
-  border-color: #2f3d4a;
-}
-.card-megna {
-  background: #00897b none repeat scroll 0 0;
-  border-color: #00897b;
-}
 .card-actions {
   float: right;
 }
@@ -828,48 +804,6 @@ a {
 }
 .collapsing {
   transition: height 0.08s ease 0s;
-}
-.card-outline-info {
-  border-color: #1976d2;
-}
-.card-outline-info .card-header {
-  background: #1976d2 none repeat scroll 0 0;
-  border-color: #1976d2;
-}
-.card-outline-inverse {
-  border-color: #2f3d4a;
-}
-.card-outline-inverse .card-header {
-  background: #2f3d4a none repeat scroll 0 0;
-  border-color: #2f3d4a;
-}
-.card-outline-warning {
-  border-color: #ffb22b;
-}
-.card-outline-warning .card-header {
-  background: #ffb22b none repeat scroll 0 0;
-  border-color: #ffb22b;
-}
-.card-outline-success {
-  border-color: #26dad2;
-}
-.card-outline-success .card-header {
-  background: #26dad2 none repeat scroll 0 0;
-  border-color: #26dad2;
-}
-.card-outline-danger {
-  border-color: #ef5350;
-}
-.card-outline-danger .card-header {
-  background: #ef5350 none repeat scroll 0 0;
-  border-color: #ef5350;
-}
-.card-outline-primary {
-  border-color: #5c4ac7;
-}
-.card-outline-primary .card-header {
-  background: #5c4ac7 none repeat scroll 0 0;
-  border-color: #5c4ac7;
 }
 .card-body {
   padding: 0;
@@ -1002,4 +936,87 @@ a {
 }
 .card-two .contacts a:last-of-type .fa {
   line-height: 36px;
+}
+/*Mailbox*/
+.mailbox ul li .drop-title {
+  font-weight: 500;
+  padding: 11px 20px 15px;
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+}
+.mailbox ul li .nav-link {
+  padding-top: 15px;
+}
+.mailbox .message-center {
+  height: 200px;
+  width: 300px;
+  overflow: auto;
+  position: relative;
+}
+.mailbox .profile-center {
+  overflow: auto;
+  position: relative;
+}
+.mailbox .message-center a {
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+  display: block;
+  text-decoration: none;
+  padding: 9px 15px;
+}
+.mailbox .message-center a:hover {
+  background: #f2f4f8;
+}
+.mailbox .profile-center a:hover {
+  background: #f2f4f8;
+}
+.mailbox .message-center a div {
+  white-space: normal;
+}
+.mailbox .profile-center a div {
+  white-space: normal;
+}
+.mailbox .message-center a .mail-contnet {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+.mailbox .profile-center a .mail-contnet {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+.mailbox .message-center a .mail-contnet h5 {
+  margin: 5px 0 0;
+}
+.mailbox .profile-center a .mail-contnet h5 {
+  margin: 5px 0 0;
+}
+.mailbox .message-center a .mail-contnet .mail-desc {
+  font-size: 12px;
+  display: block;
+  margin: 1px 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #67757c;
+  white-space: nowrap;
+}
+.mailbox .profile-center a .mail-contnet .mail-desc {
+  font-size: 12px;
+  display: block;
+  margin: 1px 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #67757c;
+  white-space: nowrap;
+}
+.mailbox .message-center a .mail-contnet .time {
+  font-size: 12px;
+  display: block;
+  margin: 1px 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #67757c;
+  white-space: nowrap;
 }

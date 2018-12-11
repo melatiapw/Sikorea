@@ -12,9 +12,15 @@
     <div class="navbar-collapse">
         <!-- toggle and nav items -->
         <ul class="navbar-nav mr-auto mt-md-0 text-center">
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-shopping-basket"></i> Request</a></li>
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-hourglass-end"></i> Pesanan</a></li>
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-book"></i> Katalog</a></li>
+          <li @if(request()->is('homeAdmin')) class="active" @endif>
+            <a href="{{ url('/homeAdmin')}}"><i class="fa fa-shopping-basket"></i> Request</a>
+          </li>
+          <li @if(request()->is('pesanan')) class="active" @endif>
+            <a href="{{ url('/pesanan')}}"><i class="fa fa-hourglass-end"></i> Pesanan</a>
+          </li>
+          <li @if(request()->is('katalog')) class="active" @endif>
+            <a href="{{ url('/katalog')}}"><i class="fa fa-book"></i> Katalog</a>
+          </li>
         </ul>
         <!-- User profile and notification -->
         <ul class="navbar-nav my-lg-0">

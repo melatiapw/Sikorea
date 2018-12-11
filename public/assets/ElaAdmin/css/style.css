@@ -1120,13 +1120,16 @@ h6.h1 {
   line-height: 60px;
   display: inline-block;
 }
-.header .top-navbar .navbar-nav > .nav-item > .nav-link {
+.header .top-navbar .navbar-nav > li > a {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   font-size: 15px;
   line-height: 40px;
   display: inline-block;
   position: relative;
+}
+.navbar-nav > li > a:active {
+  color: #ffffff;
 }
 .header .top-navbar .navbar-nav > .nav-item.show {
   background: rgba(0, 0, 0, 0.05);
@@ -2365,7 +2368,7 @@ textarea {
   margin: 30px auto;
   position: relative;
   top: 50%;
-  transform: translateY(-50%) translateX(-40%) !important;
+  transform: translateY(-50%) !important;
   width: 100%;
 }
 .modal-header .close {
@@ -2375,7 +2378,7 @@ textarea {
 }
 .modal-content {
   border-radius: 3px;
-  width: 900px;
+  width: auto;
 }
 .timeline {
   list-style: none;

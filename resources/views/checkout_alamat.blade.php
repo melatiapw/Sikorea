@@ -5,7 +5,11 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <a href="index.html">Cart</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Checkout</strong></div>
+          <div class="col-md-12 mb-0">
+            <a href="index.html">Home</a>
+            <span class="mx-2 mb-0">/</span> <a href="{{ url('/cart')}}">Cart</a>
+            <span class="mx-2 mb-0">/</span> <strong class="text-black">Checkout</strong>
+          </div>
         </div>
       </div>
     </div>
@@ -65,7 +69,7 @@
               <div class="col-md-12 text-right">
                     <strong class="text-black">$230.00</strong>
               </div>
-                <button class="btn btn-outline-primary btn-sm btn-block">Pembayaran</button>
+                <button class="btn btn-outline-primary btn-sm btn-block" onclick="window.location.href='/checkout-bank'">Pembayaran</button>
             </div>
           </div>
 

@@ -20,7 +20,7 @@
           <div class="col-12">
               <div class="card">
                   <div class="card-body">
-                      <h4 class="card-title">Tabel Permintaan Pesanan</h4>
+                      <h4 class="card-title">Tabel Progress Pesanan</h4>
                       <div class="table-responsive m-t-40">
                           <table id="myTable" class="table table-bordered table-basic">
                               <thead>
@@ -53,8 +53,12 @@
                                         <button type="button" class="btn btn-warning m-b-10 m-l-5" data-toggle="modal" data-target="#buktiBayar">Lihat</button>
                                       </td>
                                       <td>
-                                        <button type="button" class="btn btn-success m-b-10 m-l-5">Terima</button>
-                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Tolak</button>
+                                        <select class="form-control form-control-line">
+                                          <option>Belum Bayar</option>
+                                          <option>Ongoing</option>
+                                          <option>Selesai</option>
+                                        </select>
+
                                       </td>
                                   </tr>
 
