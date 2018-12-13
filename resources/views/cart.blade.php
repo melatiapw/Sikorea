@@ -5,14 +5,10 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-<<<<<<< HEAD
           <div class="col-md-12 mb-0">
             <a href="{{ url('/')}}">Home</a>
             <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong>
           </div>
-=======
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Cart</strong></div>
->>>>>>> pipitbaru
         </div>
       </div>
     </div>
@@ -27,11 +23,7 @@
                   <tr>
                     <th class="product-thumbnail">Gambar</th>
                     <th class="product-name">Produk</th>
-<<<<<<< HEAD
                     <th class="product-spec">Spesifikasi</th>
-=======
-                    <th class="product-spec">Spesifikasi</th> 
->>>>>>> pipitbaru
                     <th class="product-price">Harga</th>
                     <th class="product-remove">Hapus</th>
                   </tr>
@@ -67,11 +59,7 @@
 
         <div class="row">
           <div class="col-md-6">
-<<<<<<< HEAD
                 <button class="btn btn-outline-primary btn-sm btn-block" onclick="window.location='{{ url("/") }}'">Continue Shopping</button>
-=======
-                <button class="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
->>>>>>> pipitbaru
             </div>
           <div class="col-md-6 pl-5">
             <div class="row justify-content-end">
@@ -100,11 +88,7 @@
 
                 <div class="row">
                   <div class="col-md-12">
-<<<<<<< HEAD
                     <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='/checkout-alamat'">Proceed To Checkout</button>
-=======
-                    <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
->>>>>>> pipitbaru
                   </div>
                 </div>
               </div>

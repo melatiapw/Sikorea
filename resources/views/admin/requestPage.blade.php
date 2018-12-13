@@ -75,9 +75,6 @@
                       </button>
                       </div>
                       <div class="modal-body">
-<<<<<<< HEAD:resources/views/admin/requestPage.blade.php
-                        <h1>test</h1>
-=======
                         <div class="card">
                           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
@@ -131,7 +128,6 @@
 
                             </div>
                           </div>
->>>>>>> pipitbaru:resources/views/admin/homeAdmin.blade.php
                       </div>
                   </form>
             </div>

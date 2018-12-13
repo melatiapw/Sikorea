@@ -50,7 +50,6 @@
                 <span class="count">2</span>
               </a>
             </li>
-<<<<<<< HEAD
             <!-- End Cart -->
             <!-- Profil -->
             <li class="nav-item dropdown">
@@ -81,13 +80,6 @@
               </div>
             </li>
             <!-- End Profil -->
-=======
-
-            <!-- Profil -->
-
-            <li><a href="#"><span class="icon icon-person"></span></a></li>
-            <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
->>>>>>> pipitbaru
           </ul>
         </div>
       </div>
