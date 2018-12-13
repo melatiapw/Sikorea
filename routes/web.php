@@ -14,14 +14,14 @@ use Spatie\Permission\Models\Role;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', 'ControllerAdmin@indexAdmin')->middleware('role:admin');
 Auth::routes();
-// Route::get('/admin', 'AdminController@admin')
-//     ->middleware('is_admin')
-//     ->name('admin');
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/homeAdmin', 'ControllerAdmin@indexAdmin');
-// Route::get('/', 'ControllerHome@index');
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index'])->name('home');
 Route::get('/contact', 'ControllerContact@index');
+
+
+//Admin
+Route::get('/pesanan', 'ControllerAdmin@pesanan');
+Route::get('/katalog', 'ControllerAdmin@katalog');
+
+Route::get('cart_terima/{id}', ['as' => 'cart_terima', 'uses' => 'ControllerAdmin@terima']);
+Route::get('cart_tolak/{id}', ['as' => 'cart_tolak', 'uses' => 'ControllerAdmin@tolak']);

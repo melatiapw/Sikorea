@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Tue, 11 Dec 2018 09:49:12 +0000.
+ * Date: Tue, 11 Dec 2018 09:51:18 +0000.
  */
 
 namespace App\Models;
@@ -10,22 +10,20 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class LokasiBordir
+ * Class Product
  * 
  * @property int $id
- * @property string $nama_lokasi_bordir
- * @property string $harga
+ * @property string $nama_product
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
  * @package App\Models
  */
-class LokasiBordir extends Eloquent
+class Product extends Eloquent
 {
-	protected $table = 'lokasi_bordir';
+	protected $table = 'product';
 
 	protected $fillable = [
-		'nama_lokasi_bordir',
-		'harga'
+		'nama_product'
 	];
 }

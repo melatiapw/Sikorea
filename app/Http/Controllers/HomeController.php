@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\User;
+use\App\Models\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,21 @@ class HomeController extends Controller
      */
      public function index()
      {
+       if (Auth::user()->hasRole('admin')) {
+         $cart = DB::table('cart')->get();
+         $order = DB::table('order')->get();
+         return view('admin.requestPage')->withKeranjang($cart)->withPesanan($order);
+       }
+       elseif (Auth::user()->hasRole('user')) {
+         // code...
+         return view('home');
+       }
+       else {
+         Auth::user()->assignRole('user');
+         return view('home');
+       }
 
-          return view('home');
      }
+
+
 }

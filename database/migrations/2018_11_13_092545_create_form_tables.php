@@ -16,6 +16,7 @@ class CreateFormTables extends Migration
         Schema::create('jenis_pakaian', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_jenis_pakaian');
+            $table->string('harga');
             $table->timestamps();
         });
         Schema::create('model', function (Blueprint $table) {
@@ -92,6 +93,7 @@ class CreateFormTables extends Migration
             $table->string('harga');
             $table->timestamps();
         });
+
     }
 
     /**
