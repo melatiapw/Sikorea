@@ -14,32 +14,34 @@
                                     <!-- Nav tabs -->
 
                                         <ul class="nav nav-tabs customtab2" role="tablist">
-                                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#jenis_pakaian" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Jenis Pakaian</span> </a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#model" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Model</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#bahan" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Bahan</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#warna_bahan" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Warna Bahan</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#manset" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Manset Tangan</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Sablon</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#warna_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Warna Sablon</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#lokasi_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Sablon</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Bordir</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#lokasi_bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Bordir</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#jenis_ukuran" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Ukuran</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#jumlah_kaos" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jumlah Kaos</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Jenis_pakaian" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Jenis Pakaian</span> </a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Model" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Model</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Bahan" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Bahan</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Warna_bahan" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Warna Bahan</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Manset" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Manset Tangan</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Sablon</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Warna_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Warna Sablon</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Lokasi_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Sablon</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Bordir</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Lokasi_bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Bordir</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jenis_ukuran" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Ukuran</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jumlah_kaos" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jumlah Kaos</span></a> </li>
                                         </ul>
                                         <!-- Tab panes -->
                                         <div class="tab-content">
 
-                                            <div class="tab-pane active p-20" id="jenis_pakaian" role="tabpanel">
-                                              <h5> Jenis Pakaian </h5>
+                                            <div class="tab-pane active p-20" id="Jenis_pakaian" role="tabpanel">
+                                              <h3> Jenis Pakaian </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('jenis_pakaian.store')}}">
+                                                                  {{ csrf_field() }}
+
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Jenis Pakaian</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -52,12 +54,12 @@
                                                                               <label for="jenispakaian">
                                                                                   Jenis Pakaian
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="jenispakaian" id="jenispakaian"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jenis_pakaian" id="jenispakaian"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -73,15 +75,49 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+
+                                                              <?php foreach ($details as $jenis_pakaian): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
+                                                                    <td>{{ $jenis_pakaian->nama_jenis_pakaian }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5"> Edit</button>
+                                                                         <!-- data-toggle="modal" data-target="#Modal1" -->
+                                                                          <!-- <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="Modal1">
+                                                                            <div class="modal-dialog" role="document">
+                                                                              <div class="modal-content">
+                                                                                    <form method="post">
+
+
+                                                                                        <div class="modal-header">
+                                                                                        <h5 class="modal-title">Edit Jenis Pakaian</h5>
+                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                        </button>
+                                                                                        </div>
+                                                                                        <div class="modal-body">
+                                                                                            <div class="">
+                                                                                                <div class="form-group">
+                                                                                                    <label for="jenispakaian">
+                                                                                                        Jenis Pakaian
+                                                                                                    </label>
+                                                                                                    <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jenis_pakaian" id="jenispakaian" required/>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="modal-footer">
+                                                                                        <button type="submit" class="btn btn-success">Save</button>
+                                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                                        </div>
+                                                                                    </form>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div> -->
+                                                                        <a href = 'deleteJP/{{ $jenis_pakaian->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -90,16 +126,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="model" role="tabpanel">
-                                              <h5> Model </h5>
+                                            <div class="tab-pane p-20" id="Model" role="tabpanel">
+                                              <h3> Model </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal1"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal1">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('Model.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Model</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -112,17 +149,17 @@
                                                                               <label for="nama-model">
                                                                                   Model
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-model" id="nama-model"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_model" id="nama-model"/>
 
                                                                               <label for="harga-model">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-model" id="harga-model"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-model"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary"  onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -139,16 +176,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($models as $model): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td class="color-primary">$21.56</td>
+                                                                    <td>{{ $model->nama_model }}</td>
+                                                                    <td class="color-primary">{{ $model->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteMO/{{ $model->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -157,16 +196,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="bahan" role="tabpanel">
-                                              <h5> Bahan </h5>
+                                            <div class="tab-pane p-20" id="Bahan" role="tabpanel">
+                                              <h3> Bahan </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal2">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('Bahan.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Bahan</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -179,17 +219,17 @@
                                                                               <label for="nama-bahan">
                                                                                   Nama Bahan
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-bahan" id="nama-bahan"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_bahan" id="nama-bahan"/>
 
                                                                               <label for="harga-bahan">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number" data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-bahan" id="harga-bahan"/>
+                                                                              <input type="number" data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-bahan"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -206,16 +246,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($bahans as $bahan): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $bahan->nama_bahan }}</td>
+                                                                    <td class="color-primary">{{ $bahan->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteBA/{{ $bahan->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -224,16 +266,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane  p-20" id="warna_bahan" role="tabpanel">
-                                              <h5> Warna Bahan </h5>
+                                            <div class="tab-pane  p-20" id="Warna_bahan" role="tabpanel">
+                                              <h3> Warna Bahan </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal3"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal3"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal3">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('WarnaBahan.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Warna Bahan</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -246,17 +289,17 @@
                                                                               <label for="nama-warnaBahan">
                                                                                   Warna Bahan
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-warnaBahan" id="nama-warnaBahan"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_warna_bahan" id="nama-warnaBahan"/>
 
                                                                               <label for="harga-warnaBahan">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-warnaBahan" id="harga-warnaBahan"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-warnaBahan"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -273,16 +316,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($warnaBahans as $warna_bahan): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $warna_bahan->nama_warna_bahan }}</td>
+                                                                    <td class="color-primary">{{ $warna_bahan->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteWBA/{{ $warna_bahan->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -291,16 +336,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="manset" role="tabpanel">
-                                              <h5> Manset </h5>
+                                            <div class="tab-pane p-20" id="Manset" role="tabpanel">
+                                              <h3> Manset </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal4"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal4"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal4">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('Manset.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                     <h5 class="modal-title">Tambah Manset</h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -313,17 +359,17 @@
                                                                               <label for="nama-manset">
                                                                                   Manset
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-manset" id="nama-manset"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_manset" id="nama-manset"/>
 
                                                                               <label for="harga-manset">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-manset" id="harga-manset"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-manset"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                                    <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -340,16 +386,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($mansets as $manset): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $manset->nama_manset }}</td>
+                                                                    <td class="color-primary">{{ $manset->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteMA/{{ $manset->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -358,16 +406,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane  p-20" id="sablon" role="tabpanel">
-                                              <h5> Sablon </h5>
+                                            <div class="tab-pane  p-20" id="Sablon" role="tabpanel">
+                                              <h3> Sablon </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal5"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal5"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal5">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('Sablon.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Jenis Sablon</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -380,17 +429,17 @@
                                                                               <label for="nama-sablon">
                                                                                   Nama Sablon
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-sablon" id="nama-sablon"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_sablon" id="nama-sablon"/>
 
                                                                               <label for="harga-sablon">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-sablon" id="harga-sablon"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-sablon"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -407,16 +456,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($sablons as $sablon): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $sablon->nama_sablon }}</td>
+                                                                    <td class="color-primary">{{ $sablon->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteSA/{{ $sablon->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -425,16 +476,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="warna_sablon" role="tabpanel">
-                                              <h5> Warna Sablon </h5>
+                                            <div class="tab-pane p-20" id="Warna_sablon" role="tabpanel">
+                                              <h3> Warna Sablon </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal6"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal6"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal6">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('WarnaSablon.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Warna Sablon</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -447,17 +499,17 @@
                                                                               <label for="nama-warnaSablon">
                                                                                   Warna Sablon
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-warnaSablon" id="nama-warnaSablon"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_warna_sablon" id="nama-warnaSablon"/>
 
                                                                               <label for="harga-warnaSablon">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-warnaSablon" id="harga-warnaSablon"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-warnaSablon"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -474,16 +526,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($warnaSablons as $warna_sablon): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $warna_sablon->nama_warna_sablon }}</td>
+                                                                    <td class="color-primary">{{ $warna_sablon->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteWSA/{{ $warna_sablon->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -492,16 +546,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane  p-20" id="lokasi_sablon" role="tabpanel">
-                                              <h5> Lokasi Sablon </h5>
+                                            <div class="tab-pane  p-20" id="Lokasi_sablon" role="tabpanel">
+                                              <h3> Lokasi Sablon </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal7"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal7"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal7">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('LokasiSablon.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Lokasi Sablon</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -514,17 +569,17 @@
                                                                               <label for="nama-lokasiSablon">
                                                                                   Lokasi Sablon
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-lokasiSablon" id="nama-lokasiSablon"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_lokasi_sablon" id="nama-lokasiSablon"/>
 
                                                                               <label for="harga-lokasiSablon">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-lokasiSablon" id="harga-lokasiSablon"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-lokasiSablon"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -541,16 +596,18 @@
                                                               </tr>
                                                           </thead>
                                                           <tbody>
+                                                            <?php foreach ($lokasiSablons as $lokasi_sablon): ?>
                                                               <tr>
-                                                                  <td>Tea Shirt For Man</td>
-                                                                  <td>5000</td>
+                                                                  <td>{{ $lokasi_sablon->nama_lokasi_sablon }}</td>
+                                                                  <td class="color-primary">{{ $lokasi_sablon->harga }}</td>
                                                                   <td>
                                                                     <div class="btn-group">
                                                                       <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                      <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                      <a href = 'deleteLSA/{{ $lokasi_sablon->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                     </div>
                                                                   </td>
                                                               </tr>
+                                                            <?php endforeach; ?>
                                                           </tbody>
                                                       </table>
                                                     </div>
@@ -559,16 +616,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="bordir" role="tabpanel">
-                                              <h5> Bordir </h5>
+                                            <div class="tab-pane p-20" id="Bordir" role="tabpanel">
+                                              <h3> Bordir </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal8"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal8"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal8">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('Bordir.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Bordir</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -581,17 +639,17 @@
                                                                               <label for="nama-bordir">
                                                                                   Bordir
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-bordir" id="nama-bordir"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_bordir" id="nama-bordir"/>
 
                                                                               <label for="harga-bordir">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-bordir" id="harga-bordir"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-bordir"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -608,16 +666,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($bordirs as $bordir): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $bordir->nama_bordir }}</td>
+                                                                    <td class="color-primary">{{ $bordir->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteBOR/{{ $bordir->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -626,16 +686,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="lokasi_bordir" role="tabpanel">
-                                              <h5> Lokasi Bordir </h5>
+                                            <div class="tab-pane p-20" id="Lokasi_bordir" role="tabpanel">
+                                              <h3> Lokasi Bordir </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal9"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal9"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal9">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('LokasiBordir.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Lokasi Bordir</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -648,17 +709,17 @@
                                                                               <label for="nama-lokasiBordir">
                                                                                   Lokasi Bordir
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-lokasiBordir" id="nama-lokasiBordir"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_lokasi_bordir" id="nama-lokasiBordir"/>
 
                                                                               <label for="harga-lokasiBordir">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-lokasiBordir" id="harga-lokasiBordir"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-lokasiBordir"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -675,16 +736,18 @@
                                                               </tr>
                                                           </thead>
                                                           <tbody>
+                                                            <?php foreach ($lokasiBordirs as $lokasi_bordir): ?>
                                                               <tr>
-                                                                  <td>Tea Shirt For Man</td>
-                                                                  <td>5000</td>
+                                                                  <td>{{ $lokasi_bordir->nama_lokasi_bordir }}</td>
+                                                                  <td class="color-primary">{{ $lokasi_bordir->harga }}</td>
                                                                   <td>
                                                                     <div class="btn-group">
                                                                       <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                      <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                      <a href = 'deleteLBOR/{{ $lokasi_bordir->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                     </div>
                                                                   </td>
                                                               </tr>
+                                                            <?php endforeach; ?>
                                                           </tbody>
                                                       </table>
                                                     </div>
@@ -693,16 +756,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane  p-20" id="jenis_ukuran" role="tabpanel">
-                                              <h5> Jenis Ukuran </h5>
+                                            <div class="tab-pane  p-20" id="Jenis_ukuran" role="tabpanel">
+                                              <h3> Jenis Ukuran </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal10"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal10"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal10">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('JenisUkuran.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                   <h5 class="modal-title">Tambah Jenis Ukuran</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -715,17 +779,17 @@
                                                                               <label for="nama-jenisUkuran">
                                                                                   Jenis Ukuran
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama-jenisUkuran" id="nama-jenisUkuran"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jenis_ukuran" id="nama-jenisUkuran"/>
 
                                                                               <label for="harga-manset">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-jenisUkuran" id="harga-jenisUkuran"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-jenisUkuran"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary">Save</button>
+                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -742,16 +806,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($jenisUkurans as $jenis_ukuran): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $jenis_ukuran->nama_jenis_ukuran }}</td>
+                                                                    <td class="color-primary">{{ $jenis_ukuran->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteJU/{{ $jenis_ukuran->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -760,16 +826,17 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="jumlah_kaos" role="tabpanel">
-                                              <h5> Jumlah Kaos </h5>
+                                            <div class="tab-pane p-20" id="Jumlah_kaos" role="tabpanel">
+                                              <h3> Jumlah Kaos </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal11"> Tambah Data</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal11"><i class="ti-plus"></i> Tambah Data</button>
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal11">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form action="javascript:;" novalidate="novalidate">
+                                                              <form method="post" action="{{route('JumlahKaos.store')}}">
+                                                                  {{ csrf_field() }}
                                                                   <div class="modal-header">
                                                                     <h5 class="modal-title">Tambah Jumlah Kaos</h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -782,17 +849,17 @@
                                                                               <label for="jumlahProduk">
                                                                                   Jumlah Produk
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="jumlahProduk" id="jumlahProduk"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jumlah_produk" id="jumlahProduk"/>
 
                                                                               <label for="harga-jumlahProduk">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga-jumlahProduk" id="harga-jumlahProduk"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-jumlahProduk"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
                                                                   <div class="modal-footer">
-                                                                    <button type="submit" class="btn btn-primary">Save</button>
+                                                                    <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                   </div>
                                                               </form>
@@ -809,16 +876,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                              <?php foreach ($jumlahKaoss as $jumlah_kaos): ?>
                                                                 <tr>
-                                                                    <td>Tea Shirt For Man</td>
-                                                                    <td>5000</td>
+                                                                    <td>{{ $jumlah_kaos->nama_jumlah_produk }}</td>
+                                                                    <td class="color-primary">{{ $jumlah_kaos->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <button type="button" class="btn btn-danger m-b-10 m-l-5">Delete</button>
+                                                                        <a href = 'deleteJK/{{ $jumlah_kaos->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
+                                                              <?php endforeach; ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -836,6 +905,5 @@
                 <!-- End PAge Content -->
             </div>
             <!-- End Container fluid  -->
-
 
 @endsection
