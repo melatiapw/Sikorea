@@ -1,3 +1,27 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @extends('layouts.layout-admin')
 
 @section('content')
@@ -22,10 +46,11 @@
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Sablon</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Warna_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Warna Sablon</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Lokasi_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Sablon</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Bordir</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jumlah_bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">JumlahBordir</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Lokasi_bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Bordir</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jenis_ukuran" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Ukuran</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jumlah_kaos" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jumlah Kaos</span></a> </li>
+                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Lengan" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lengan</span></a> </li>
                                         </ul>
                                         <!-- Tab panes -->
                                         <div class="tab-content">
@@ -55,6 +80,11 @@
                                                                                   Jenis Pakaian
                                                                               </label>
                                                                               <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jenis_pakaian" id="jenispakaian"/>
+
+                                                                              <label for="harga_jenispakaian">
+                                                                                  Harga
+                                                                              </label>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga_jenispakaian"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
@@ -616,8 +646,8 @@
                                               </div>
                                             </div>
 
-                                            <div class="tab-pane p-20" id="Bordir" role="tabpanel">
-                                              <h3> Bordir </h3>
+                                            <div class="tab-pane p-20" id="Jumlah_bordir" role="tabpanel">
+                                              <h3> Jumlah Bordir </h3>
                                               <div class="col-lg-12">
                                                 <div class="card">
                                                   <div class="card-body">
@@ -625,10 +655,10 @@
                                                     <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal8">
                                                       <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
-                                                              <form method="post" action="{{route('Bordir.store')}}">
+                                                              <form method="post" action="{{route('JumlahBordir.store')}}">
                                                                   {{ csrf_field() }}
                                                                   <div class="modal-header">
-                                                                  <h5 class="modal-title">Tambah Bordir</h5>
+                                                                  <h5 class="modal-title">Tambah Jumlah Bordir</h5>
                                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                       <span aria-hidden="true">&times;</span>
                                                                   </button>
@@ -636,15 +666,15 @@
                                                                   <div class="modal-body">
                                                                       <div class="">
                                                                           <div class="form-group">
-                                                                              <label for="nama-bordir">
-                                                                                  Bordir
+                                                                              <label for="nama-jumlahbordir">
+                                                                                  Jumlah Bordir
                                                                               </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_bordir" id="nama-bordir"/>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jumlah_bordir" id="nama-jumlahbordir"/>
 
-                                                                              <label for="harga-bordir">
+                                                                              <label for="harga-jumlahbordir">
                                                                                   Harga
                                                                               </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-bordir"/>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-jumlahbordir"/>
                                                                           </div>
                                                                       </div>
                                                                   </div>
@@ -666,14 +696,14 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                              <?php foreach ($bordirs as $bordir): ?>
+                                                              <?php foreach ($jumlahBordirs as $jumlah_bordir): ?>
                                                                 <tr>
-                                                                    <td>{{ $bordir->nama_bordir }}</td>
-                                                                    <td class="color-primary">{{ $bordir->harga }}</td>
+                                                                    <td>{{ $jumlah_bordir->nama_jumlah_bordir }}</td>
+                                                                    <td class="color-primary">{{ $jumlah_bordir->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <a href = 'deleteBOR/{{ $bordir->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
+                                                                        <a href = 'deleteJBOR/{{ $jumlah_bordir->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>
@@ -884,6 +914,76 @@
                                                                       <div class="btn-group">
                                                                         <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteJK/{{ $jumlah_kaos->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
+                                                                      </div>
+                                                                    </td>
+                                                                </tr>
+                                                              <?php endforeach; ?>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="tab-pane p-20" id="Lengan" role="tabpanel">
+                                              <h3> Lengan </h3>
+                                              <div class="col-lg-12">
+                                                <div class="card">
+                                                  <div class="card-body">
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal12"><i class="ti-plus"></i> Tambah Data</button>
+                                                    <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal12">
+                                                      <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                              <form method="post" action="{{route('Lengan.store')}}">
+                                                                  {{ csrf_field() }}
+                                                                  <div class="modal-header">
+                                                                    <h5 class="modal-title">Tambah Lengan</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                  </div>
+                                                                  <div class="modal-body">
+                                                                      <div class="">
+                                                                          <div class="form-group">
+                                                                              <label for="nama-lengan">
+                                                                                  Nama Lengan
+                                                                              </label>
+                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_lengan" id="nama-lengan"/>
+
+                                                                              <label for="harga-lengan">
+                                                                                  Harga
+                                                                              </label>
+                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-lengan"/>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="modal-footer">
+                                                                    <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                  </div>
+                                                              </form>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <div class="table-responsive m-b-20 m-t-25">
+                                                        <table class="table table-hover table-bordered" cellspacing="0" width="100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Nama Lengan</th>
+                                                                    <th>Harga</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                              <?php foreach ($lengans as $lengan): ?>
+                                                                <tr>
+                                                                    <td>{{ $lengan->nama_lengan }}</td>
+                                                                    <td class="color-primary">{{ $lengan->harga }}</td>
+                                                                    <td>
+                                                                      <div class="btn-group">
+                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <a href = 'deleteLE/{{ $lengan->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
                                                                 </tr>

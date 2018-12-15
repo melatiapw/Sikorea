@@ -10,10 +10,11 @@ use App\Models\Manset;
 use App\Models\Sablon;
 use App\Models\WarnaSablon;
 use App\Models\LokasiSablon;
-use App\Models\Bordir;
+use App\Models\JumlahBordir;
 use App\Models\LokasiBordir;
 use App\Models\JenisUkuran;
 use App\Models\JumlahKaos;
+use App\Models\Lengan;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 use Auth;
@@ -33,10 +34,11 @@ class ControllerCatalog extends Controller
         $sablon = DB::table('sablon')->get();
         $warna_sablon = DB::table('warna_sablon')->get();
         $lokasi_sablon = DB::table('lokasi_sablon')->get();
-        $bordir = DB::table('bordir')->get();
+        $jumlah_bordir = DB::table('jumlah_bordir')->get();
         $lokasi_bordir = DB::table('lokasi_bordir')->get();
         $jenis_ukuran = DB::table('jenis_ukuran')->get();
         $jumlah_kaos = DB::table('jumlah_kaos')->get();
+        $lengan = DB::table('lengan')->get();
         return view('katalog')  ->withDetails($jenis_pakaian)
                                 ->withModels($model)
                                 ->withBahans($bahan)
@@ -45,10 +47,11 @@ class ControllerCatalog extends Controller
                                 ->withSablons($sablon)
                                 ->withWarnaSablons($warna_sablon)
                                 ->withLokasiSablons($lokasi_sablon)
-                                ->withBordirs($bordir)
+                                ->withJumlahBordirs($jumlah_bordir)
                                 ->withLokasiBordirs($lokasi_bordir)
                                 ->withJenisUkurans($jenis_ukuran)
-                                ->withJumlahKaoss($jumlah_kaos);
+                                ->withJumlahKaoss($jumlah_kaos)
+                                ->withLengans($lengan);
     }
 
 
@@ -57,6 +60,7 @@ class ControllerCatalog extends Controller
           {
             request()->validate([
               'nama_jenis_pakaian' => 'required',
+              'harga' => 'required',
             ]);
 
             JenisPakaian::create($request->all());
@@ -140,14 +144,14 @@ class ControllerCatalog extends Controller
             return redirect('/katalog');
           }
 
-      public function bordir_store(Request $request)
+      public function jumlah_bordir_store(Request $request)
           {
             request()->validate([
-              'nama_bordir' => 'required',
+              'nama_jumlah_bordir' => 'required',
               'harga' => 'required',
             ]);
 
-            Bordir::create($request->all());
+            JumlahBordir::create($request->all());
             return redirect('/katalog');
           }
 
@@ -183,6 +187,17 @@ class ControllerCatalog extends Controller
             JumlahKaos::create($request->all());
             return redirect('/katalog');
           }
+
+          public function lengan_store(Request $request)
+              {
+                request()->validate([
+                  'nama_lengan' => 'required',
+                  'harga' => 'required',
+                ]);
+
+                Lengan::create($request->all());
+                return redirect('/katalog');
+              }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             public function jenis_pakaian_destroy($id) {
                DB::delete('delete from jenis_pakaian where id = ?',[$id]);
@@ -240,8 +255,8 @@ class ControllerCatalog extends Controller
                return redirect()->back();
             }
 
-            public function bordir_destroy($id) {
-               DB::delete('delete from bordir where id = ?',[$id]);
+            public function jumlah_bordir_destroy($id) {
+               DB::delete('delete from jumlah_bordir where id = ?',[$id]);
                echo "Record deleted successfully.<br/>";
                // echo '<a href = "/Monitoring-KapalSampah/public/home">Click Here</a> to go back.';
                return redirect()->back();
@@ -268,23 +283,30 @@ class ControllerCatalog extends Controller
                return redirect()->back();
             }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public function jenis_pakaian_edit($id)
-        {
-          $jenis_pakaian = JenisPakaian::whereId($id)->first();
-          return view('editJenisPakaian') ->withDetails($jenis_pakaian);
-        }
+            public function lengan_destroy($id) {
+               DB::delete('delete from lengan where id = ?',[$id]);
+               echo "Record deleted successfully.<br/>";
+               // echo '<a href = "/Monitoring-KapalSampah/public/home">Click Here</a> to go back.';
+               return redirect()->back();
+            }
 
-        public function jenis_pakaian_update(Request $request, $id)
-        {
-             $jenis_pakaians = JenisPakaian::findOrFail($id);
-             $this->validate($request, [
-               'nama_jenis_pakaian' => 'required',
-             ]);
-             $input = $request->all();
-             $jenis_pakaians->fill($input)->save();
-             $jenis_pakaian = DB::table('jenis_pakaian')->get();
-             return view('katalog')  ->withDetails($jenis_pakaian);
-        }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // public function jenis_pakaian_edit($id)
+        // {
+        //   $jenis_pakaian = JenisPakaian::whereId($id)->first();
+        //   return view('editJenisPakaian') ->withDetails($jenis_pakaian);
+        // }
+        //
+        // public function jenis_pakaian_update(Request $request, $id)
+        // {
+        //      $jenis_pakaians = JenisPakaian::findOrFail($id);
+        //      $this->validate($request, [
+        //        'nama_jenis_pakaian' => 'required',
+        //      ]);
+        //      $input = $request->all();
+        //      $jenis_pakaians->fill($input)->save();
+        //      $jenis_pakaian = DB::table('jenis_pakaian')->get();
+        //      return view('katalog')  ->withDetails($jenis_pakaian);
+        // }
 
 }

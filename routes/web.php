@@ -33,10 +33,11 @@ Route::post('/katalog/storeMA',  ['as' => 'Manset.store', 'uses' => 'ControllerC
 Route::post('/katalog/storeSA',  ['as' => 'Sablon.store', 'uses' => 'ControllerCatalog@sablon_store']);
 Route::post('/katalog/storeWSA',  ['as' => 'WarnaSablon.store', 'uses' => 'ControllerCatalog@warna_sablon_store']);
 Route::post('/katalog/storeLSA',  ['as' => 'LokasiSablon.store', 'uses' => 'ControllerCatalog@lokasi_sablon_store']);
-Route::post('/katalog/storeBOR',  ['as' => 'Bordir.store', 'uses' => 'ControllerCatalog@bordir_store']);
+Route::post('/katalog/storeJBOR',  ['as' => 'JumlahBordir.store', 'uses' => 'ControllerCatalog@jumlah_bordir_store']);
 Route::post('/katalog/storeLBOR',  ['as' => 'LokasiBordir.store', 'uses' => 'ControllerCatalog@lokasi_bordir_store']);
 Route::post('/katalog/storeJU',  ['as' => 'JenisUkuran.store', 'uses' => 'ControllerCatalog@jenis_ukuran_store']);
 Route::post('/katalog/storeJK',  ['as' => 'JumlahKaos.store', 'uses' => 'ControllerCatalog@jumlah_kaos_store']);
+Route::post('/katalog/storeLE',  ['as' => 'Lengan.store', 'uses' => 'ControllerCatalog@lengan_store']);
 
 
 Route::get('deleteJP/{id}','ControllerCatalog@jenis_pakaian_destroy');
@@ -47,11 +48,11 @@ Route::get('deleteMA/{id}','ControllerCatalog@manset_destroy');
 Route::get('deleteSA/{id}','ControllerCatalog@sablon_destroy');
 Route::get('deleteWSA/{id}','ControllerCatalog@warna_sablon_destroy');
 Route::get('deleteLSA/{id}','ControllerCatalog@lokasi_sablon_destroy');
-Route::get('deleteBOR/{id}','ControllerCatalog@bordir_destroy');
+Route::get('deleteJBOR/{id}','ControllerCatalog@jumlah_bordir_destroy');
 Route::get('deleteLBOR/{id}','ControllerCatalog@lokasi_bordir_destroy');
 Route::get('deleteJU/{id}','ControllerCatalog@jenis_ukuran_destroy');
 Route::get('deleteJK/{id}','ControllerCatalog@jumlah_kaos_destroy');
+Route::get('deleteLE/{id}','ControllerCatalog@lengan_destroy');
 
-
-Route::get('jenisPakaian_edit/{id}', ['as' => 'jenis_pakaian.edit', 'uses' => 'ControllerCatalog@jenis_pakaian_edit']);
-Route::post('updateJP/{id}', ['as' => 'jenis_pakaian.update', 'uses' => 'ControllerCatalog@jenis_pakaian_update']);
+// Route::get('jenisPakaian_edit/{id}', ['as' => 'jenis_pakaian.edit', 'uses' => 'ControllerCatalog@jenis_pakaian_edit']);
+// Route::post('updateJP/{id}', ['as' => 'jenis_pakaian.update', 'uses' => 'ControllerCatalog@jenis_pakaian_update']);

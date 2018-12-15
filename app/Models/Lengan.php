@@ -10,21 +10,22 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class JenisPakaian
+ * Class Lengan
  *
  * @property int $id
- * @property string $nama_jenis_pakaian
+ * @property string $nama_lengan
+ * @property string $harga
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
  * @package App\Models
  */
-class JenisPakaian extends Eloquent
+class Lengan extends Eloquent
 {
-	protected $table = 'jenis_pakaian';
+	protected $table = 'lengan';
 
 	protected $fillable = [
-		'nama_jenis_pakaian',
+		'nama_lengan',
 		'harga'
 	];
 }
