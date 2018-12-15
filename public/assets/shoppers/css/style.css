@@ -253,8 +253,8 @@ a {
         position: absolute;
         text-align: left;
         border-top: 2px solid #7971ea;
-        -webkit-box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
-        box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
+        -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
         border-left: 1px solid #edf0f5;
         border-right: 1px solid #edf0f5;
         border-bottom: 1px solid #edf0f5;
@@ -264,7 +264,10 @@ a {
         background: #fff;
         -webkit-transition: 0.2s 0s;
         -o-transition: 0.2s 0s;
-        transition: 0.2s 0s; }
+        transition: 0.2s 0s;
+        -moz-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        border-color: rgba(120, 130, 140, 0.13);
+       }
         .site-navbar .site-navigation .site-menu .has-children .dropdown a {
           font-size: 16px;
           text-transform: none;
@@ -751,3 +754,269 @@ a {
   width: 120px;
   border-radius: 50%;
   margin-bottom: 20px; }
+
+/* Card */
+.bg-white .card {
+  box-shadow: none;
+}
+.card-group .card:first-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.03);
+}
+.card-group .card:not(:first-child):not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.03);
+}
+.card {
+  position: inherit;
+  margin-bottom: 30px;
+}
+.card .card-subtitle {
+  color: #99abb4;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+.card-inverse .card-bodyquote .blockquote-footer {
+  color: rgba(255, 255, 255, 0.65);
+}
+.card-inverse .card-link {
+  color: rgba(255, 255, 255, 0.65);
+}
+.card-inverse .card-subtitle {
+  color: rgba(255, 255, 255, 0.65);
+}
+.card-inverse .card-text {
+  color: rgba(255, 255, 255, 0.65);
+}
+.card-actions {
+  float: right;
+}
+.card-actions a {
+  color: #67757c;
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 0.7;
+  padding-left: 7px;
+}
+.card-actions a:hover {
+  opacity: 1;
+}
+.card-columns .card {
+  margin-bottom: 20px;
+}
+.collapsing {
+  transition: height 0.08s ease 0s;
+}
+.card-body {
+  padding: 0;
+}
+.card {
+  background: #ffffff none repeat scroll 0 0;
+  margin: 15px 0;
+  padding: 20px;
+  border: 0 solid #e7e7e7;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+.card-subtitle {
+  font-size: 12px;
+  margin: 10px 0;
+}
+.card-title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+.card-title h4 {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+.card-title p {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 12px;
+}
+.card-two {
+  position: relative;
+  margin: 0 !important;
+  border: 0;
+}
+.card-two header {
+  position: relative;
+  width: 100%;
+  height: 60px;
+}
+.card-two header .avatar {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  margin-left: -50px;
+  z-index: 5;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ccc;
+  border: 3px solid #fff;
+}
+.card-two header .avatar img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: auto;
+}
+.card-two h3 {
+  position: relative;
+  margin: 80px 0 30px;
+  text-align: center;
+}
+.card-two h3::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  margin-left: -15px;
+  width: 30px;
+  height: 1px;
+  background: #000;
+}
+.card-two .desc {
+  padding: 0 1rem 2rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #777;
+}
+.card-two .contacts {
+  width: 200px;
+  max-width: 100%;
+  margin: 0 auto 3.5rem;
+}
+.card-two .contacts a {
+  display: block;
+  width: 33.333333%;
+  float: left;
+  text-align: center;
+  color: #1976d2;
+}
+.card-two .contacts a:hover {
+  color: #333;
+}
+.card-two .contacts a:hover .fa::before {
+  color: #fff;
+}
+.card-two .contacts a:hover .fa::after {
+  top: 0;
+}
+.card-two .contacts a .fa {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  line-height: 39px;
+  overflow: hidden;
+  text-align: center;
+  border: 2px solid #1976d2;
+  border-radius: 50%;
+}
+.card-two .contacts a .fa:before {
+  position: relative;
+  z-index: 1;
+}
+.card-two .contacts a .fa::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  background: #1976d2;
+}
+.card-two .contacts a:last-of-type .fa {
+  line-height: 36px;
+}
+/*Mailbox*/
+.mailbox ul li .drop-title {
+  font-weight: 500;
+  padding: 11px 20px 15px;
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+}
+.mailbox ul li .nav-link {
+  padding-top: 15px;
+}
+.mailbox .message-center {
+  height: 200px;
+  width: 300px;
+  overflow: auto;
+  position: relative;
+}
+.mailbox .profile-center {
+  overflow: auto;
+  position: relative;
+}
+.mailbox .message-center a {
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+  display: block;
+  text-decoration: none;
+  padding: 9px 15px;
+}
+.mailbox .message-center a:hover {
+  background: #f2f4f8;
+}
+.mailbox .profile-center a:hover {
+  background: #f2f4f8;
+}
+.mailbox .message-center a div {
+  white-space: normal;
+}
+.mailbox .profile-center a div {
+  white-space: normal;
+}
+.mailbox .message-center a .mail-contnet {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+.mailbox .profile-center a .mail-contnet {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+.mailbox .message-center a .mail-contnet h5 {
+  margin: 5px 0 0;
+}
+.mailbox .profile-center a .mail-contnet h5 {
+  margin: 5px 0 0;
+}
+.mailbox .message-center a .mail-contnet .mail-desc {
+  font-size: 12px;
+  display: block;
+  margin: 1px 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #67757c;
+  white-space: nowrap;
+}
+.mailbox .profile-center a .mail-contnet .mail-desc {
+  font-size: 12px;
+  display: block;
+  margin: 1px 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #67757c;
+  white-space: nowrap;
+}
+.mailbox .message-center a .mail-contnet .time {
+  font-size: 12px;
+  display: block;
+  margin: 1px 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #67757c;
+  white-space: nowrap;
+}

@@ -26,6 +26,7 @@
                   </tr>
                 </thead>
                 <tbody>
+                @foreach ($detail as $d)
                   <tr>
                     <td class="product-thumbnail">
                       <img src="{{ asset('assets/shoppers/images/cloth_1.jpg') }}" alt="Image placeholder" class="img-fluid">
@@ -35,19 +36,20 @@
                       <h2 class="h5 text-black">Kaos</h2>
                     </td>
                     <td>
-                      Bahan : bahan1
+                      Bahan : {{ $d->jenis_bahan }}
                       <br>
-                      Warna : 1-2 warna/Putih
+                      Warna : {{ $d->warna_bahan }}/{{ $d->detail_warna_bahan }}
                       <br>
-                      Lengan/Manset: Panjang/Ya
+                      Lengan/Manset: {{ $d->Lengan }}/{{ $d->Manset }}
                       <br>
-                      Ukuran: M
+                      Ukuran: {{ $d->jenis_pakaian }}/{{ $d->jenis_ukuran }}
                       <br>
-                      Jumlah : 100
+                      Jumlah : {{ $d->jumlah_pakaian }}
                     </td>
-                    <td>$49.00</td>
+                    <td>{{ $d->total_harga }}</td>
                     <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

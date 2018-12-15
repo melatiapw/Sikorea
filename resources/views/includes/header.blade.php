@@ -2,32 +2,85 @@
   <div class="container">
     <div class="row align-items-center">
 
-      <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-        <form action="" class="site-block-top-search">
-          <span class="icon icon-search2"></span>
-          <input type="text" class="form-control border-0" placeholder="Search">
-        </form>
-      </div>
-
-      <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+      <!-- logo -->
+      <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-left">
         <div class="site-logo">
-          <a href="index.html" class="js-logo-clone">Konveksi Area</a>
+          <a href="{{ url('/')}}" class="js-logo-clone">Konveksi Area</a>
         </div>
       </div>
 
-      <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+      <div class="col-12 col-md-8 order-3 order-md-3 text-right">
         <div class="site-top-icons">
           <ul>
+            <!-- Login -->
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+            <!-- Notifikasi -->
+            <li class="nav-item dropdown">
+              <a class="site-cart" data-toggle="dropdown">
+                <span class="icon icon-bell"></span>
+                <span class="count">2</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                    <ul>
+                        <li>
+                            <div class="drop-title">Notifications</div>
+                        </li>
+                        <li>
+                            <div class="message-center">
+                                <!-- Message -->
+                                <a href="#">
+                                    <div class="mail-contnet">
+                                        <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                    </div>
+                                </a>
 
-            <li><a href="#"><span class="icon icon-bell-o"></span></a></li>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                        </li>
+                    </ul>
+              </div>
+            </li>
+            <!-- End Notification -->
+            <!-- Cart -->
             <li>
-              <a href="cart.html" class="site-cart">
+              <a href="{{ url('/cart')}}" class="site-cart">
                 <span class="icon icon-shopping_cart"></span>
                 <span class="count">2</span>
               </a>
             </li>
-            <li><a href="#"><span class="icon icon-person"></span></a></li>
-            <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+            <!-- End Cart -->
+            <!-- Profil -->
+            <li class="nav-item dropdown">
+              <a class="site-menu" data-toggle="dropdown">
+                <span class="icon icon-person"></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                    <ul>
+                      <li>
+                          <div class="profile-center">
+                              <!-- Message -->
+                              <a class="nav-link text-right">
+                                <span class="text-left"><i class="fa fa-hourglass-end"></i></span>
+                                Pesanan Saya
+                              </a>
+                              <a class="nav-link text-right">
+                                <span class="icon icon-pencil text-left"></span>
+                                Edit profil saya
+                              </a>
+                              <a class="nav-link text-right">
+                                <span class="icon icon-switch text-left"></span>
+                                Log Out
+                              </a>
+                          </div>
+                      </li>
+
+                    </ul>
+              </div>
+            </li>
+            <!-- End Profil -->
           </ul>
         </div>
       </div>
@@ -35,15 +88,17 @@
     </div>
   </div>
 </div>
-<nav class="site-navigation text-right text-md-center" role="navigation">
+<nav class="site-navigation text-center text-md-center" role="navigation">
   <div class="container">
     <ul class="site-menu js-clone-nav d-none d-md-block">
+      <!-- Katalog -->
       <li class="has-children active">
         <a href="#katalog">Katalog</a>
         <ul class="dropdown">
-          <li><a href="#">Kaos</a></li>
+          <li><a href="{{ url('/order')}}">Kaos</a></li>
         </ul>
       </li>
+      <!-- Kontak -->
       <li><a href="{{ url('/contact')}}">Contact</a></li>
     </ul>
   </div>

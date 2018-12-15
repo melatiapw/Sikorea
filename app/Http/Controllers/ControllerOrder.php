@@ -17,16 +17,19 @@ class ControllerOrder extends Controller
     //Menampilkan halaman form pembelian
     public function index()
     {
-    	$mod = DB::table('model')->pluck("nama_model", 'id');
-    	$bah = DB::table('bahan')->pluck("nama_bahan", 'id');
-    	$pak = DB::table('jenis_pakaian')->pluck("nama_jenis_pakaian", 'id');
-    	$uk = DB::table('jenis_ukuran')->pluck("nama_jenis_ukuran", 'id');
-    	$jb = DB::table('jumlah_bordir')->pluck("nama_jumlah_bordir", 'id');
-    	$sab = DB::table('sablon')->pluck("nama_sablon", 'id');
-    	$wb = DB::table('warna_bahan')->pluck("nama_warna_bahan", 'id');
-    	$ws = DB::table('warna_sablon')->pluck("nama_warna_sablon", 'id');
+    	$mod = DB::table('model')->get();
+    	$bah = DB::table('bahan')->get();
+    	$pak = DB::table('jenis_pakaian')->select('id', 'nama_jenis_pakaian', 'harga')->get();
+    	$uk = DB::table('jenis_ukuran')->get();
+    	$lb = DB::table('lokasi_bordir')->get();
+        $ls = DB::table('lokasi_sablon')->get();
+    	$sab = DB::table('sablon')->get();
+    	$wb = DB::table('warna_bahan')->get();
+    	$ws = DB::table('warna_sablon')->get();
+        $len = DB::table('lengan')->get();
+        $man = DB::table('manset')->get();
 
-        return view('order', compact('pak', 'mod', 'bah', 'uk', 'jb', 'sab', 'wb', 'ws'));
+        return view('order', compact('pak', 'mod', 'bah', 'uk', 'lb', 'sab', 'wb', 'ws', 'ls', 'len', 'man'));
     }
 
     public function store(Request $request)
@@ -49,16 +52,20 @@ class ControllerOrder extends Controller
     	$order->jenis_ukuran = $request->jenis_ukuran;
     	
 
-    	// $cartExist = Cart::find(1);
+    	$cartExist = Cart::orderBy('created_at', 'desc')->first();
 
-    	// if($cartExist==True){
-    	// 	$order->cart_id = $cartExist->id;
-    	// }else{
+
+    	if($cartExist){
+    		$order->cart_id = $cartExist->id;
+    	}else{
     		$cart = new Cart;
     		// $cart->users = Input::get('user_id');
-    		$cart->save();
+            $cart->save();
+            $order->cart_id = $cart->id;
+        }
+    		
 
-    		$order->cart_id = $cart->id;
+
     	// }
 
     	$order->save();
@@ -76,57 +83,6 @@ class ControllerOrder extends Controller
         return View::make('order.show')
             ->with('order', $order);
     }
-
-    public function getModel($id)
-    {
-      $mod = DB::table('model')->pluck("nama_model", 'id');
-      return json_encode($mod);
-    }
-
-    public function getBahan($id)
-    {
-      $bah = DB::table('bahan')->pluck("nama_bahan", 'id');
-      return json_encode($bah);
-    }
-
-    public function getPakaian($id)
-    {
-      $pak = DB::table('jenis_pakaian')->pluck("nama_jenis_pakaian", 'id');
-      return json_encode($pak);
-    }
-
-    public function getUkuran($id)
-    {
-      $uk = DB::table('jenis_ukuran')->pluck("nama_jenis_ukuran", 'id');
-      return json_encode($uk);
-    }
-
-    public function getJumBor($id)
-    {
-      $jb = DB::table('jumlah_bordir')->pluck("nama_jumlah_bordir", 'id');
-      return json_encode($jb);
-    }
-
-    public function getSablon($id)
-    {
-      $sab = DB::table('sablon')->pluck("nama_sablon", 'id');
-      return json_encode($sab);
-    }
-
-    public function getWarBahan($id)
-    {
-      $wb = DB::table('warna_bahan')->pluck("nama_warna_bahan", 'id');
-      return json_encode($wb);
-    }
-
-    public function getWarSablon($id)
-    {
-      $ws = DB::table('warna_sablon')->pluck("nama_warna_sablon", 'id');
-      return json_encode($ws);
-    }
-
-
-
 
 
 

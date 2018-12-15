@@ -23,8 +23,11 @@ Route::get('/order', 'ControllerOrder@index');
 Route::get('/cart', 'ControllerCart@index');
 
 //route untuk checkout
-Route::get('/checkout', 'ControllerCheckout@index');
-
+Route::resource('checkout', 'ControllerCheckout');
+Route::get('/checkout_alamat', 'ControllerCheckout@checkout_alamat');
+Route::get('/checkout_bank', 'ControllerCheckout@checkout_bank');
+Route::patch('checkout/{id}/update_cp',  ['as' => 'checkout.update_cp', 'uses' => 'ControllerCheckout@update_cp']);
+Route::patch('checkout/{id}/update_bank',  ['as' => 'checkout.update_bank', 'uses' => 'ControllerCheckout@update_bank']);
 
 //route mengambil data pilihan di pesanan
 Route::get('bahan/get/{id}', 'Controller@getBahan');
@@ -40,3 +43,6 @@ Route::get('model/get/{id}', 'ControllerOrder@getModel');
 Route::get('sablon/get/{id}', 'ControllerOrder@getSablon');
 Route::get('warna_bahan/get/{id}', 'ControllerOrder@getWarBahan');
 Route::get('warna_sablon/get/{id}', 'ControllerOrder@getWarSablon');
+
+//route mengambil harga
+Route::post('jenis_pakaian/get/{id}', 'HomeController@getHargaPakaian');
