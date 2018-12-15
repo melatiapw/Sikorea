@@ -15,10 +15,10 @@ class UserTableSeeder extends Seeder
       User::create([
 
         'id' => "5",
-        'name' => "fanani",
+        'name' => "fanani", 
         'email' => "fanani@gmail.com",
         'password' => Hash::make("fananihehe"),
-        
+
       ]);
     }
 

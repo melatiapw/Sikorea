@@ -31,10 +31,9 @@ class CreateOrderTable extends Migration
             $table->integer('sablon')->unsigned();
             $table->integer('warna_sablon')->unsigned();
             $table->string('pilihan_warna_sablon');
-
             $table->integer('lokasi_sablon')->unsigned();
-            $table->integer('bordir')->unisgned();
-            $table->integer('jumlah_bordir')->unsigned();
+
+            $table->integer('lokasi_bordir')->unsigned();
             $table->integer('jumlah_produk')->unsigned();
             $table->integer('jenis_ukuran')->unsigned();
             $table->timestamps();

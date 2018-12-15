@@ -69,12 +69,6 @@ class CreateFormTables extends Migration
             $table->string('harga');
             $table->timestamps();
         });
-        Schema::create('bordir', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama_bordir');
-            $table->string('harga');
-            $table->timestamps();
-        });
         Schema::create('lokasi_bordir', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_lokasi_bordir');
@@ -112,7 +106,6 @@ class CreateFormTables extends Migration
         Schema::dropIfExists('warna_sablon');
         Schema::dropIfExists('lokasi_sablon');
         Schema::dropIfExists('jenis_pakaian');
-        Schema::dropIfExists('bordir');
         Schema::dropIfExists('lokasi_bordir');
         Schema::dropIfExists('jumlah_kaos');
         Schema::dropIfExists('jenis_ukuran');
