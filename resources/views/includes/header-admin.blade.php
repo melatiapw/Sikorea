@@ -1,7 +1,7 @@
 <nav class="navbar top-navbar navbar-expand-md navbar-light">
     <!-- Logo -->
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/home">
             <!-- Logo icon -->
             <b><img src="{{ asset('assets/ElaAdmin/images/logo.png') }}" alt="homepage" class="logo" /></b>
             <!--End Logo icon -->
@@ -12,9 +12,9 @@
     <div class="navbar-collapse">
         <!-- toggle and nav items -->
         <ul class="navbar-nav mr-auto mt-md-0 text-center">
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-shopping-basket"></i> Request</a></li>
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-hourglass-end"></i> Pesanan</a></li>
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-book"></i> Katalog</a></li>
+          <li class="nav-item nav-link"><a href="/home"><i class="fa fa-shopping-basket"></i> Request</a></li>
+          <li class="nav-item nav-link"><a href="/pesanan"><i class="fa fa-hourglass-end"></i> Pesanan</a></li>
+          <li class="nav-item nav-link"><a href="/katalog"><i class="fa fa-book"></i> Katalog</a></li>
         </ul>
         <!-- User profile and notification -->
         <ul class="navbar-nav my-lg-0">
