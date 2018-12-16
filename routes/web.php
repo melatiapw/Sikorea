@@ -21,6 +21,7 @@ Route::get('/order', 'ControllerOrder@index');
 
 //route untuk cart
 Route::get('/cart', 'ControllerCart@index');
+Route::get('/order/{id}', 'ControllerOrder@destroy');
 
 //route untuk checkout
 Route::resource('checkout', 'ControllerCheckout');
@@ -43,6 +44,3 @@ Route::get('model/get/{id}', 'ControllerOrder@getModel');
 Route::get('sablon/get/{id}', 'ControllerOrder@getSablon');
 Route::get('warna_bahan/get/{id}', 'ControllerOrder@getWarBahan');
 Route::get('warna_sablon/get/{id}', 'ControllerOrder@getWarSablon');
-
-//route mengambil harga
-Route::post('jenis_pakaian/get/{id}', 'HomeController@getHargaPakaian');

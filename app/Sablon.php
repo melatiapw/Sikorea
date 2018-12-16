@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class Sablon extends Model
 {
-    protected $table = 'cart';
+    protected $table = 'sablon';
     protected $primaryKey='id';
 
     public function order()
     {
-        return $this->hasMany('App\Order');
+        return $this->hasOne('App\Order', 'sablon');
     } 
 }

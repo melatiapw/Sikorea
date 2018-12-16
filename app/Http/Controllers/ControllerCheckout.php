@@ -15,16 +15,16 @@ class ControllerCheckout extends Controller
     //Menampilkan halaman checkout
     public function checkout_alamat()
     {
-    	$cart = Cart::orderBy('created_at', 'desc')->first();
+        $cart = Cart::orderBy('created_at', 'desc')->where('status', NULL)->first(); //active cart id
     	$detail = Order::where('cart_id', $cart->id)->get();
-        return view('checkout_alamat', compact('cart'));
+        return view('checkout_alamat', compact('cart', 'detail'));
     }
 
     public function checkout_bank()
     {
-    	$cart = Cart::orderBy('created_at', 'desc')->first();
+        $cart = Cart::orderBy('created_at', 'desc')->where('status', NULL)->first(); //active cart id
     	$detail = Order::where('cart_id', $cart->id)->get();
-        return view('checkout_bank', compact('cart'));
+        return view('checkout_bank', compact('cart', 'detail'));
     }
 
     public function update_cp(Request $request, $id)

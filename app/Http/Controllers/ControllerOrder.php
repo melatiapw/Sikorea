@@ -10,6 +10,18 @@ use Illuminate\Support\Facades\DB;
 use App\Order;
 use App\Cart;
 
+use App\Mmodel;
+use App\Bahan;
+use App\Jenis_pakaian;
+use App\Jenis_ukuran;
+use App\Lokasi_bordir;
+use App\Sablon;
+use App\Lokasi_sablon;
+use App\Warna_bahan;
+use App\Warna_sablon;
+use App\Lengan;
+use App\Manset;
+
 
 
 class ControllerOrder extends Controller
@@ -17,17 +29,17 @@ class ControllerOrder extends Controller
     //Menampilkan halaman form pembelian
     public function index()
     {
-    	$mod = DB::table('model')->get();
-    	$bah = DB::table('bahan')->get();
-    	$pak = DB::table('jenis_pakaian')->select('id', 'nama_jenis_pakaian', 'harga')->get();
-    	$uk = DB::table('jenis_ukuran')->get();
-    	$lb = DB::table('lokasi_bordir')->get();
-        $ls = DB::table('lokasi_sablon')->get();
-    	$sab = DB::table('sablon')->get();
-    	$wb = DB::table('warna_bahan')->get();
-    	$ws = DB::table('warna_sablon')->get();
-        $len = DB::table('lengan')->get();
-        $man = DB::table('manset')->get();
+    	$mod = Mmodel::get();
+    	$bah = Bahan::get();
+    	$pak = Jenis_pakaian::get();
+    	$uk = Jenis_ukuran::get();
+    	$lb = Lokasi_bordir::get();
+        $ls = Lokasi_sablon::get();
+    	$sab = Sablon::get();
+    	$wb = Warna_bahan::get();
+    	$ws = Warna_sablon::get();
+        $len = Lengan::get();
+        $man = Manset::get();
 
         return view('order', compact('pak', 'mod', 'bah', 'uk', 'lb', 'sab', 'wb', 'ws', 'ls', 'len', 'man'));
     }
@@ -35,24 +47,39 @@ class ControllerOrder extends Controller
     public function store(Request $request)
     {
     	$order = new Order;
-    	$order->jenis_pakaian = $request->jenis_pakaian;
-    	$order->model = $request->model;
-    	$order->bahan = $request->bahan;
-    	$order->warna_bahan = $request->warna_bahan;
-    	$order->pilihan_warna_bahan = $request->pilihan_warna_bahan;
-    	$order->manset = $request->manset;
-    	$order->lengan = $request->lengan;
-    	$order->sablon = $request->sablon;
-    	$order->warna_sablon = $request->warna_sablon;
-    	$order->pilihan_warna_sablon = $request->pilihan_warna_sablon;
-    	$order->lokasi_sablon = $request->lokasi_sablon;
-    	$order->jumlah_bordir = $request->jumlah_bordir;
-    	$order->lokasi_bordir = $request->lokasi_bordir;
-    	$order->jumlah_produk = $request->jumlah_produk;
-    	$order->jenis_ukuran = $request->jenis_ukuran;
-    	
+    	$jenis_pakaian = explode(',', $request->jenis_pakaian);
+    	$model = explode(',', $request->model);
+    	$bahan = explode(',', $request->bahan);
+    	$warna_bahan = explode(',', $request->warna_bahan);
+    	$pilihan_warna_bahan = $request->pilihan_warna_bahan;
+    	$manset = explode(',', $request->manset);
+    	$lengan = explode(',', $request->lengan);
+    	$sablon = explode(',', $request->sablon);
+    	$warna_sablon = explode(',', $request->warna_sablon);
+    	$pilihan_warna_sablon = $request->pilihan_warna_sablon;
+    	$lokasi_sablon = explode(',', $request->lokasi_sablon);
+    	$lokasi_bordir = explode(',', $request->lokasi_bordir);
+    	$jenis_ukuran = explode(',', $request->jenis_ukuran);
 
-    	$cartExist = Cart::orderBy('created_at', 'desc')->first();
+        $order->jenis_pakaian = $jenis_pakaian[0];
+        $order->model = $model[0];
+        $order->bahan = $bahan[0];
+        $order->warna_bahan = $warna_bahan[0];
+        $order->manset = $manset[0];
+        $order->lengan = $lengan[0];
+        $order->sablon = $sablon[0];
+        $order->warna_sablon = $warna_sablon[0];
+        $order->lokasi_sablon = $lokasi_sablon[0];
+        $order->lokasi_bordir = $lokasi_bordir[0];
+        $order->jenis_ukuran = $jenis_ukuran[0];
+
+        $order->jumlah_produk = $request->jumlah;
+        $order->harga = $request->harga;
+        $order->pilihan_warna_sablon = $pilihan_warna_sablon;
+        $order->pilihan_warna_bahan = $pilihan_warna_bahan;
+
+
+    	$cartExist = Cart::orderBy('created_at', 'desc')->where('status', NULL)->first();
 
 
     	if($cartExist){
@@ -82,6 +109,13 @@ class ControllerOrder extends Controller
         // show the view and pass the nerd to it
         return View::make('order.show')
             ->with('order', $order);
+    }
+
+    public function destroy($id){
+        $order = Order::findorFail($id);
+        $order->delete();
+        return redirect('/cart');
+
     }
 
 
