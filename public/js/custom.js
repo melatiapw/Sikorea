@@ -80,6 +80,8 @@ $(document).ready(function(){
     	}
     	total = (x1 + x3  + parseFloat(x3 * x4) + x5  + x6 + parseFloat(x5 * x7) + x8 + x9 + x10 + x11 + parseInt(h)) * j * 1.3;
         document.getElementById('estimasi').innerHTML = total;
+        $('#harga').val(parseInt(total));
+
     }
     $("#jenis_pakaian").change(function(){
     	compute();

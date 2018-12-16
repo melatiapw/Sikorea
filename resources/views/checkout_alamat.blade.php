@@ -59,17 +59,35 @@
               <div class="col-md-12 text-right border-bottom mb-5">
                 <h3 class="text-black h4 text-uppercase">Ringkasan Pembayaran</h3>
               </div>
-              <div class="col-md-6">
-                  <span class="text-black">Pesanan 1</span> <span>(100 pcs)</span>
-              </div>
-              <div class="col-md-12 text-right">
-                  <strong class="text-black">$230.00</strong>
-              </div>
+                  @php 
+                  $total=0
+
+                  @endphp
+
+                  @php 
+                  $i=1
+                  
+                  @endphp
+                  @foreach ($detail as $h)
+
+                  <div class="col-md-6">
+                  <span class="text-black">Pesanan {{$i++}}</span> <span>({{$h->jumlah_produk }} pcs)</span>
+                  </div>
+
+                  <div class="col-md-12 text-right">
+                    <strong class="text-black">{{$h->harga}}</strong>
+                  </div>
+                  @php 
+                  $total +=$h->harga
+                  @endphp
+
+                  @endforeach
+              
               <div class="col-md-6">
                     <span class="text-black">Total</span>
               </div>
               <div class="col-md-12 text-right">
-                    <strong class="text-black">$230.00</strong>
+                    <strong class="text-black">{{ $total }}</strong>
               </div>
                 <button class="btn btn-outline-primary btn-sm btn-block" type='submit'>Pembayaran</button>
             </div>

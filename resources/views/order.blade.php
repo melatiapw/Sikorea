@@ -24,7 +24,6 @@
                         <option value="{{ $jenis_pakaian->id }},{{ $jenis_pakaian->harga }}"> {{ $jenis_pakaian->nama_jenis_pakaian }}</option>
                       @endforeach
                 </select>
-                <input type='text' id='harga_jenis_pakaian' disabled="" value=""/>
             </div>
 
             <div class="form-group row">
@@ -147,6 +146,10 @@
                 <input type="file" class="form-control" id="c_fname" name="c_fname">
             </div>
 
+            <div class="form-group row" style="display: none;" >
+                <input type="number" class="form-control" id="harga" name="harga" >
+            </div>
+
 
 
             
@@ -171,7 +174,7 @@
               <div class="input-group-prepend">
                 <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
               </div>
-              <input type="text" class="form-control text-center" value="12" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id = 'jumlah'>
+              <input name="jumlah" type="number" class="form-control text-center" value="12" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" id = 'jumlah'>
               <div class="input-group-append">
                 <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
               </div>

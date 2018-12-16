@@ -102,21 +102,39 @@
             <div class="card">
                 <div class="card-body">
                   <div class="col-md-12 text-right border-bottom mb-5">
-                    <h3 class="text-black h4 text-uppercase">Ringkasan Pembayaran</h3>
+                <h3 class="text-black h4 text-uppercase">Ringkasan Pembayaran</h3>
+              </div>
+                  @php 
+                  $total=0
+
+                  @endphp
+
+                  @php 
+                  $i=1
+                  
+                  @endphp
+                  @foreach ($detail as $h)
+
+                  <div class="col-md-6">
+                  <span class="text-black">Pesanan {{$i++}}</span> <span>({{$h->jumlah_produk }} pcs)</span>
                   </div>
-                    <div class="card-content">
-                      <div class="col-md-6">
-                          <span class="text-black">Pesanan 1</span> <span>(100 pcs)</span>
-                      </div>
-                      <div class="col-md-12 text-right">
-                          <strong class="col-md-12 text-black border-bottom mb-5">$230.00</strong>
-                      </div>
-                      <div class="col-md-6">
-                            <span class="text-black">Total</span>
-                      </div>
-                      <div class="col-md-12 text-right">
-                            <strong class="col-md-12 text-black border-bottom mb-5">$230.00</strong>
-                      </div><br>
+
+                  <div class="col-md-12 text-right">
+                    <strong class="text-black">{{$h->harga}}</strong>
+                  </div>
+                  @php 
+                  $total +=$h->harga
+                  @endphp
+
+                  @endforeach
+              
+              <div class="col-md-6">
+                    <span class="text-black">Total</span>
+              </div>
+              <div class="col-md-12 text-right">
+                    <strong class="text-black">{{ $total }}</strong>
+              </div>
+              <br>
 <!--                         <button class="btn btn-outline-secondary btn-sm btn-block" type='submit'>Bayar Uang Muka</button>
                         <p class="text-black text-center">ATAU</p> -->
                         <button class="btn btn-primary btn-sm btn-block" type='submit'>Bayar Penuh</button>
