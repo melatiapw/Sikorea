@@ -10,7 +10,6 @@ use App\Models\Manset;
 use App\Models\Sablon;
 use App\Models\WarnaSablon;
 use App\Models\LokasiSablon;
-// use App\Models\JumlahBordir;
 use App\Models\LokasiBordir;
 use App\Models\JenisUkuran;
 use App\Models\JumlahKaos;
