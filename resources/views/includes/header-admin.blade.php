@@ -73,18 +73,13 @@
                 <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                     <ul class="dropdown-user">
                         <li><a href="#"><i class="ti-user"></i> Profile</a></li>
-                        <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
-                        <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                        <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
-                        <li><a class="fa fa-power-off" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
+                        <li><a href="#"><i class="ti-wallet"></i> Transaksi</a></li>
+                        <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}> <i> class="fa fa-power-off"</i>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
-                        </form></li>
+                        </form></a></li>
                     </ul>
                 </div>
             </li>
