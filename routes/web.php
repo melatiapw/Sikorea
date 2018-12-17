@@ -1,5 +1,5 @@
 <?php
-
+use Spatie\Permission\Models\Role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,16 +10,39 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// User
-Route::get('/', 'ControllerHome@index');
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Auth::routes();
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index'])->name('home');
 Route::get('/contact', 'ControllerContact@index');
-Route::get('/order', 'ControllerOrder@index');
-Route::get('/cart', 'ControllerCart@index');
-Route::get('/checkout-alamat', 'ControllerCheckout@alamat');
-Route::get('/checkout-bank', 'ControllerCheckout@bank');
-Route::get('/statustransaksi', 'ControllerCheckout@statustransaksi');
+
 
 //Admin
-Route::get('/homeAdmin', 'ControllerAdmin@indexAdmin');
 Route::get('/pesanan', 'ControllerAdmin@pesanan');
 Route::get('/katalog', 'ControllerAdmin@katalog');
+
+Route::get('cart_terima/{id}', ['as' => 'cart_terima', 'uses' => 'ControllerAdmin@terima']);
+Route::get('cart_tolak/{id}', ['as' => 'cart_tolak', 'uses' => 'ControllerAdmin@tolak']);
+
+//route update status ADMIN
+Route::get('updateStatus/{id}',['as' =>'updateStatus', 'uses'=> 'ControllerAdmin@updateStatus']);
+Route::post('updateStatus/{id}',['as' =>'updateStatus', 'uses'=> 'ControllerAdmin@updateStatus']);
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
+//route untuk checkout
+Route::resource('checkout', 'ControllerCheckout');
+Route::get('/checkout_alamat', 'ControllerCheckout@checkout_alamat');
+Route::get('/checkout_bank', 'ControllerCheckout@checkout_bank');
+Route::patch('checkout/{id}/update_cp',  ['as' => 'checkout.update_cp', 'uses' => 'ControllerCheckout@update_cp']);
+Route::patch('checkout/{id}/update_bank',  ['as' => 'checkout.update_bank', 'uses' => 'ControllerCheckout@update_bank']);
+
+//Route: lihat status transaksi USER
+Route::get('/statustransaksi', 'ControllerCheckout@statustransaksi');
+//Route: for image upload view
+Route::post('upload', 'UploadController@view');
+// for image upload
+Route::post('upload', 'UploadController@upload');

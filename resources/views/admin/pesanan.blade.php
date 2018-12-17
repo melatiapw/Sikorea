@@ -25,11 +25,10 @@
                           <table id="myTable" class="table table-bordered table-basic">
                               <thead>
                                   <tr>
-                                    <th>ID Order</th>
-                                    <th>Tanggal</th>
+                                    <th>ID Cart</th>
                                     <th>Nama Pemesan</th>
                                     <th>Nomor HP</th>
-                                    <th>Desain</th>
+                                    <th>Alamat</th>
                                     <th>Harga</th>
                                     <th>Detail Pesanan</th>
                                     <th>Bukti Bayar</th>
@@ -37,6 +36,41 @@
                                   </tr>
                               </thead>
                               <tbody>
+                                <?php foreach ($keranjang as $cart): ?>
+                                  <?php if ($cart->status > 2): ?>
+                                    <tr>
+                                        <td>{{ $cart->id }}</td>
+
+                                        <td>{{ $cart->users }}</td>
+                                        <td>{{ $cart->no_cp }}</td>
+                                        <td>{{ $cart->alamat_cp }}</td>
+                                        <td>{{ $cart->total_harga }}</td>
+                                        <td>
+                                          <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#detailPesananModal">Detail Pesanan</button>
+                                        </td>
+                                        <td>
+                                          <button type="button" class="btn btn-warning m-b-10 m-l-5" data-toggle="modal" data-target="#buktiBayar">Lihat</button>
+                                        </td>
+                                        <td>
+
+                                          <form action="{{ route('updateStatus', $cart->id) }}" method="POST">
+                                            {{ csrf_field() }}
+                                          <select class="form-control form-control-line" name="status">
+                                            <option value="3" @if($cart->status == '3') selected="selected" @endif>Belum Bayar</option>
+                                            <option value="4" @if($cart->status == '4') selected="selected" @endif>Ongoing</option>
+                                            <option value="5"@if($cart->status == '5') selected="selected" @endif>Selesai</option>
+                                          </select>
+                                          <input type="submit" value="submit" class="btn btn-warning m-b-10 m-l-5">
+                                        </td>
+                                    </tr>
+                                  </form>
+                                  <?php endif; ?>
+
+                                <?php endforeach; ?>
+
+
+                              </tbody>
+                              <!-- <tbody>
                                   <tr>
                                       <td>1</td>
                                       <td>23/11/2018</td>
@@ -58,7 +92,7 @@
                                       </td>
                                   </tr>
 
-                              </tbody>
+                              </tbody> -->
                           </table>
                       </div>
                   </div>
@@ -100,6 +134,7 @@
                           <img src="{{ asset('assets/ElaAdmin/images/card/c1.jpg') }}" alt="Image placeholder" class="img-fluid">
                         </div>
                     </form>
+
               </div>
             </div>
           </div>
