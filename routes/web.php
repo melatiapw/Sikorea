@@ -1,5 +1,5 @@
 <?php
-
+use Spatie\Permission\Models\Role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,15 +11,17 @@
 |
 */
 
-//route untuk home
-Route::get('/', 'ControllerHome@index');
+Route::get('/', function () {
+    return view('welcome');
+});
+Auth::routes();
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index'])->name('home');
 Route::get('/contact', 'ControllerContact@index');
 
-//route untuk order
-Route::get('/order', 'ControllerOrder@index');
 
-//route untuk cart
-Route::get('/cart', 'ControllerCart@index');
+//Admin
+Route::get('/pesanan', 'ControllerAdmin@pesanan');
+Route::get('/katalog', 'ControllerAdmin@katalog');
 
-//route untuk checkout
-Route::get('/checkout', 'ControllerCheckout@index');
+Route::get('cart_terima/{id}', ['as' => 'cart_terima', 'uses' => 'ControllerAdmin@terima']);
+Route::get('cart_tolak/{id}', ['as' => 'cart_tolak', 'uses' => 'ControllerAdmin@tolak']);
