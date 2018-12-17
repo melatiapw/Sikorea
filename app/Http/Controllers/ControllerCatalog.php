@@ -10,7 +10,7 @@ use App\Models\Manset;
 use App\Models\Sablon;
 use App\Models\WarnaSablon;
 use App\Models\LokasiSablon;
-use App\Models\JumlahBordir;
+// use App\Models\JumlahBordir;
 use App\Models\LokasiBordir;
 use App\Models\JenisUkuran;
 use App\Models\JumlahKaos;
@@ -34,7 +34,6 @@ class ControllerCatalog extends Controller
         $sablon = DB::table('sablon')->get();
         $warna_sablon = DB::table('warna_sablon')->get();
         $lokasi_sablon = DB::table('lokasi_sablon')->get();
-        $jumlah_bordir = DB::table('jumlah_bordir')->get();
         $lokasi_bordir = DB::table('lokasi_bordir')->get();
         $jenis_ukuran = DB::table('jenis_ukuran')->get();
         $jumlah_kaos = DB::table('jumlah_kaos')->get();
@@ -47,7 +46,6 @@ class ControllerCatalog extends Controller
                                 ->withSablons($sablon)
                                 ->withWarnaSablons($warna_sablon)
                                 ->withLokasiSablons($lokasi_sablon)
-                                ->withJumlahBordirs($jumlah_bordir)
                                 ->withLokasiBordirs($lokasi_bordir)
                                 ->withJenisUkurans($jenis_ukuran)
                                 ->withJumlahKaoss($jumlah_kaos)
@@ -144,17 +142,6 @@ class ControllerCatalog extends Controller
             return redirect('/katalog');
           }
 
-      public function jumlah_bordir_store(Request $request)
-          {
-            request()->validate([
-              'nama_jumlah_bordir' => 'required',
-              'harga' => 'required',
-            ]);
-
-            JumlahBordir::create($request->all());
-            return redirect('/katalog');
-          }
-
       public function lokasi_bordir_store(Request $request)
           {
             request()->validate([
@@ -198,6 +185,7 @@ class ControllerCatalog extends Controller
                 Lengan::create($request->all());
                 return redirect('/katalog');
               }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             public function jenis_pakaian_destroy($id) {
                DB::delete('delete from jenis_pakaian where id = ?',[$id]);
@@ -255,13 +243,6 @@ class ControllerCatalog extends Controller
                return redirect()->back();
             }
 
-            public function jumlah_bordir_destroy($id) {
-               DB::delete('delete from jumlah_bordir where id = ?',[$id]);
-               echo "Record deleted successfully.<br/>";
-               // echo '<a href = "/Monitoring-KapalSampah/public/home">Click Here</a> to go back.';
-               return redirect()->back();
-            }
-
             public function lokasi_bordir_destroy($id) {
                DB::delete('delete from lokasi_bordir where id = ?',[$id]);
                echo "Record deleted successfully.<br/>";
@@ -291,22 +272,253 @@ class ControllerCatalog extends Controller
             }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // public function jenis_pakaian_edit($id)
-        // {
-        //   $jenis_pakaian = JenisPakaian::whereId($id)->first();
-        //   return view('editJenisPakaian') ->withDetails($jenis_pakaian);
-        // }
-        //
-        // public function jenis_pakaian_update(Request $request, $id)
-        // {
-        //      $jenis_pakaians = JenisPakaian::findOrFail($id);
-        //      $this->validate($request, [
-        //        'nama_jenis_pakaian' => 'required',
-        //      ]);
-        //      $input = $request->all();
-        //      $jenis_pakaians->fill($input)->save();
-        //      $jenis_pakaian = DB::table('jenis_pakaian')->get();
-        //      return view('katalog')  ->withDetails($jenis_pakaian);
-        // }
+            public function jenis_pakaian_edit($id)
+              {
+                $jenis_pakaian = JenisPakaian::whereId($id)->first();
+                return view('Edit_Katalog.editJenisPakaian', compact('jenis_pakaian'));
+              }
 
+            public function jenis_pakaian_update(Request $request, $id)
+              {
+                 $jenis_pakaians = JenisPakaian::findOrFail($id);
+                 $this->validate($request, [
+                   'nama_jenis_pakaian' => 'required',
+                   'harga' => 'required',
+                 ]);
+                 $input = $request->all();
+                 $jenis_pakaians->fill($input)->save();
+                 $jenis_pakaian = JenisPakaian::whereId($id)->first();
+
+                 return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function model_edit($id)
+              {
+                    $model = Model::whereId($id)->first();
+                    return view('Edit_Katalog.editModel', compact('model'));
+              }
+
+            public function model_update(Request $request, $id)
+              {
+                     $models = Model::findOrFail($id);
+                     $this->validate($request, [
+                       'nama_model' => 'required',
+                     ]);
+                     $input = $request->all();
+                     $models->fill($input)->save();
+                     $model = Model::whereId($id)->first();
+
+                     return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function bahan_edit($id)
+              {
+                $bahan = Bahan::whereId($id)->first();
+                return view('Edit_Katalog.editBahan', compact('bahan'));
+              }
+
+            public function bahan_update(Request $request, $id)
+               {
+                 $bahans = Bahan::findOrFail($id);
+                 $this->validate($request, [
+                   'nama_bahan' => 'required',
+                   'harga' => 'required',
+                 ]);
+                 $input = $request->all();
+                 $bahans->fill($input)->save();
+                 $bahan = Bahan::whereId($id)->first();
+
+                 return redirect('/katalog');
+            }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function warna_bahan_edit($id)
+              {
+                 $warna_bahan = WarnaBahan::whereId($id)->first();
+                 return view('Edit_Katalog.editWarnaBahan', compact('warna_bahan'));
+              }
+
+            public function warna_bahan_update(Request $request, $id)
+              {
+                 $warna_bahans = WarnaBahan::findOrFail($id);
+                 $this->validate($request, [
+                   'nama_warna_bahan' => 'required',
+                   'harga' => 'required',
+                 ]);
+                 $input = $request->all();
+                 $warna_bahans->fill($input)->save();
+                 $warna_bahan = WarnaBahan::whereId($id)->first();
+
+                 return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function manset_edit($id)
+              {
+                $manset = Manset::whereId($id)->first();
+                return view('Edit_Katalog.editManset', compact('manset'));
+              }
+
+            public function manset_update(Request $request, $id)
+               {
+                 $mansets = Manset::findOrFail($id);
+                 $this->validate($request, [
+                   'nama_manset' => 'required',
+                   'harga' => 'required',
+                 ]);
+                 $input = $request->all();
+                 $mansets->fill($input)->save();
+                 $manset = Manset::whereId($id)->first();
+
+                 return redirect('/katalog');
+            }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function sablon_edit($id)
+              {
+                    $sablon = Sablon::whereId($id)->first();
+                    return view('Edit_Katalog.editSablon', compact('sablon'));
+              }
+
+            public function sablon_update(Request $request, $id)
+              {
+                    $sablons = Sablon::findOrFail($id);
+                    $this->validate($request, [
+                      'nama_sablon' => 'required',
+                      'harga' => 'required',
+                    ]);
+                    $input = $request->all();
+                    $sablons->fill($input)->save();
+                    $sablon = Sablon::whereId($id)->first();
+
+                    return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function warna_sablon_edit($id)
+              {
+                    $warna_sablon = WarnaSablon::whereId($id)->first();
+                    return view('Edit_Katalog.editWarnaSablon', compact('warna_sablon'));
+              }
+
+            public function warna_sablon_update(Request $request, $id)
+              {
+                    $warna_sablons = WarnaSablon::findOrFail($id);
+                    $this->validate($request, [
+                      'nama_warna_sablon' => 'required',
+                      'harga' => 'required',
+                    ]);
+                    $input = $request->all();
+                    $warna_sablons->fill($input)->save();
+                    $warna_sablon = WarnaSablon::whereId($id)->first();
+
+                    return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function lokasi_sablon_edit($id)
+              {
+                    $lokasi_sablon = LokasiSablon::whereId($id)->first();
+                    return view('Edit_Katalog.editLokasiSablon', compact('lokasi_sablon'));
+              }
+
+            public function lokasi_sablon_update(Request $request, $id)
+              {
+                    $lokasi_sablons = LokasiSablon::findOrFail($id);
+                    $this->validate($request, [
+                      'nama_lokasi_sablon' => 'required',
+                      'harga' => 'required',
+                    ]);
+                    $input = $request->all();
+                    $lokasi_sablons->fill($input)->save();
+                    $lokasi_sablon = LokasiSablon::whereId($id)->first();
+
+                    return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function lokasi_bordir_edit($id)
+              {
+                    $lokasi_bordir = LokasiBordir::whereId($id)->first();
+                    return view('Edit_Katalog.editLokasiBordir', compact('lokasi_bordir'));
+              }
+
+            public function lokasi_bordir_update(Request $request, $id)
+              {
+                    $lokasi_bordirs = LokasiBordir::findOrFail($id);
+                    $this->validate($request, [
+                      'nama_lokasi_bordir' => 'required',
+                      'harga' => 'required',
+                    ]);
+                    $input = $request->all();
+                    $lokasi_bordirs->fill($input)->save();
+                    $lokasi_bordir = LokasiBordir::whereId($id)->first();
+
+                    return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function jenis_ukuran_edit($id)
+              {
+                    $jenis_ukuran = JenisUkuran::whereId($id)->first();
+                    return view('Edit_Katalog.editJenisUkuran', compact('jenis_ukuran'));
+              }
+
+            public function jenis_ukuran_update(Request $request, $id)
+              {
+                    $jenis_ukurans = JenisUkuran::findOrFail($id);
+                    $this->validate($request, [
+                      'nama_jenis_ukuran' => 'required',
+                      'harga' => 'required',
+                    ]);
+                    $input = $request->all();
+                    $jenis_ukurans->fill($input)->save();
+                    $jenis_ukuran = JenisUkuran::whereId($id)->first();
+
+                    return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function jumlah_kaos_edit($id)
+              {
+                    $jumlah_kaos = JumlahKaos::whereId($id)->first();
+                    return view('Edit_Katalog.editJumlahKaos', compact('jumlah_kaos'));
+              }
+
+            public function jumlah_kaos_update(Request $request, $id)
+              {
+                    $jumlah_kaoss = JumlahKaos::findOrFail($id);
+                    $this->validate($request, [
+                      'nama_jumlah_produk' => 'required',
+                      'harga' => 'required',
+                    ]);
+                    $input = $request->all();
+                    $jumlah_kaoss->fill($input)->save();
+                    $jumlah_kaos = JumlahKaos::whereId($id)->first();
+
+                    return redirect('/katalog');
+              }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            public function lengan_edit($id)
+              {
+                    $lengan = Lengan::whereId($id)->first();
+                    return view('Edit_Katalog.editLengan', compact('lengan'));
+              }
+
+            public function lengan_update(Request $request, $id)
+              {
+                    $lengans = Lengan::findOrFail($id);
+                    $this->validate($request, [
+                      'nama_lengan' => 'required',
+                      'harga' => 'required',
+                    ]);
+                    $input = $request->all();
+                    $lengans->fill($input)->save();
+                    $lengan = Lengan::whereId($id)->first();
+
+                    return redirect('/katalog');
+              }
 }

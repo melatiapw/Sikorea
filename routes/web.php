@@ -16,8 +16,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index'])->name('home');
+Route::get('/contact', 'ControllerContact@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Admin
+Route::get('/pesanan', 'ControllerAdmin@pesanan');
+Route::get('/katalog', 'ControllerAdmin@katalog');
+Route::get('cart_terima/{id}', ['as' => 'cart_terima', 'uses' => 'ControllerAdmin@terima']);
+Route::get('cart_tolak/{id}', ['as' => 'cart_tolak', 'uses' => 'ControllerAdmin@tolak']);
 
 Route::get('/admin', function () {
    return view('admin.homeAdmin');
@@ -54,5 +60,42 @@ Route::get('deleteJU/{id}','ControllerCatalog@jenis_ukuran_destroy');
 Route::get('deleteJK/{id}','ControllerCatalog@jumlah_kaos_destroy');
 Route::get('deleteLE/{id}','ControllerCatalog@lengan_destroy');
 
-// Route::get('jenisPakaian_edit/{id}', ['as' => 'jenis_pakaian.edit', 'uses' => 'ControllerCatalog@jenis_pakaian_edit']);
-// Route::post('updateJP/{id}', ['as' => 'jenis_pakaian.update', 'uses' => 'ControllerCatalog@jenis_pakaian_update']);
+
+Route::get('jenis_pakaian_edit/{id}', ['as' => 'jenis_pakaian_edit', 'uses' => 'ControllerCatalog@jenis_pakaian_edit']);
+Route::post('jenis_pakaian/{id}', ['as' => 'jenis_pakaian.update', 'uses' => 'ControllerCatalog@jenis_pakaian_update']);
+
+Route::get('model_edit/{id}', ['as' => 'model_edit', 'uses' => 'ControllerCatalog@model_edit']);
+Route::post('model/{id}', ['as' => 'model.update', 'uses' => 'ControllerCatalog@model_update']);
+
+Route::get('bahan_edit/{id}', ['as' => 'bahan_edit', 'uses' => 'ControllerCatalog@bahan_edit']);
+Route::post('bahan/{id}', ['as' => 'bahan.update', 'uses' => 'ControllerCatalog@bahan_update']);
+
+Route::get('warna_bahan_edit/{id}', ['as' => 'warna_bahan_edit', 'uses' => 'ControllerCatalog@warna_bahan_edit']);
+Route::post('warna_bahan/{id}', ['as' => 'warna_bahan.update', 'uses' => 'ControllerCatalog@warna_bahan_update']);
+
+Route::get('manset_edit/{id}', ['as' => 'manset_edit', 'uses' => 'ControllerCatalog@manset_edit']);
+Route::post('manset/{id}', ['as' => 'manset.update', 'uses' => 'ControllerCatalog@manset_update']);
+
+Route::get('sablon_edit/{id}', ['as' => 'sablon_edit', 'uses' => 'ControllerCatalog@sablon_edit']);
+Route::post('sablon/{id}', ['as' => 'sablon.update', 'uses' => 'ControllerCatalog@sablon_update']);
+
+Route::get('warna_sablon_edit/{id}', ['as' => 'warna_sablon_edit', 'uses' => 'ControllerCatalog@warna_sablon_edit']);
+Route::post('warna_sablon/{id}', ['as' => 'warna_sablon.update', 'uses' => 'ControllerCatalog@warna_sablon_update']);
+
+Route::get('lokasi_sablon_edit/{id}', ['as' => 'lokasi_sablon_edit', 'uses' => 'ControllerCatalog@lokasi_sablon_edit']);
+Route::post('lokasi_sablon/{id}', ['as' => 'lokasi_sablon.update', 'uses' => 'ControllerCatalog@lokasi_sablon_update']);
+
+Route::get('jumlah_bordir_edit/{id}', ['as' => 'jumlah_bordir_edit', 'uses' => 'ControllerCatalog@jumlah_bordir_edit']);
+Route::post('jumlah_bordir/{id}', ['as' => 'jumlah_bordir.update', 'uses' => 'ControllerCatalog@jumlah_bordir_update']);
+
+Route::get('lokasi_bordir_edit/{id}', ['as' => 'lokasi_bordir_edit', 'uses' => 'ControllerCatalog@lokasi_bordir_edit']);
+Route::post('lokasi_bordir/{id}', ['as' => 'lokasi_bordir.update', 'uses' => 'ControllerCatalog@lokasi_bordir_update']);
+
+Route::get('jenis_ukuran_edit/{id}', ['as' => 'jenis_ukuran_edit', 'uses' => 'ControllerCatalog@jenis_ukuran_edit']);
+Route::post('jenis_ukuran/{id}', ['as' => 'jenis_ukuran.update', 'uses' => 'ControllerCatalog@jenis_ukuran_update']);
+
+Route::get('jumlah_kaos_edit/{id}', ['as' => 'jumlah_kaos_edit', 'uses' => 'ControllerCatalog@jumlah_kaos_edit']);
+Route::post('jumlah_kaos/{id}', ['as' => 'jumlah_kaos.update', 'uses' => 'ControllerCatalog@jumlah_kaos_update']);
+
+Route::get('lengan_edit/{id}', ['as' => 'lengan_edit', 'uses' => 'ControllerCatalog@lengan_edit']);
+Route::post('lengan/{id}', ['as' => 'lengan.update', 'uses' => 'ControllerCatalog@lengan_update']);

@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Model
- * 
+ *
  * @property int $id
  * @property string $nama_model
  * @property string $harga

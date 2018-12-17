@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use App\Listeners\SendEmailVerificationNotification;
+
 
 class ResetPasswordController extends Controller
 {

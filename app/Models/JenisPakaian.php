@@ -14,6 +14,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @property int $id
  * @property string $nama_jenis_pakaian
+ * @property string $harga
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *

@@ -46,7 +46,7 @@
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Sablon</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Warna_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Warna Sablon</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Lokasi_sablon" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Sablon</span></a> </li>
-                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jumlah_bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">JumlahBordir</span></a> </li>
+                                            <!-- <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jumlah_bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jumlah Bordir</span></a> </li> -->
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Lokasi_bordir" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Lokasi Bordir</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jenis_ukuran" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jenis Ukuran</span></a> </li>
                                             <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#Jumlah_kaos" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Jumlah Kaos</span></a> </li>
@@ -101,48 +101,18 @@
                                                             <thead>
                                                                 <tr>
                                                                     <th>Nama Jenis Pakaian</th>
+                                                                    <th>Harga</th>
                                                                     <th>Aksi</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-
                                                               <?php foreach ($details as $jenis_pakaian): ?>
                                                                 <tr>
                                                                     <td>{{ $jenis_pakaian->nama_jenis_pakaian }}</td>
+                                                                    <td>{{ $jenis_pakaian->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5"> Edit</button>
-                                                                         <!-- data-toggle="modal" data-target="#Modal1" -->
-                                                                          <!-- <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="Modal1">
-                                                                            <div class="modal-dialog" role="document">
-                                                                              <div class="modal-content">
-                                                                                    <form method="post">
-
-
-                                                                                        <div class="modal-header">
-                                                                                        <h5 class="modal-title">Edit Jenis Pakaian</h5>
-                                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                                            <span aria-hidden="true">&times;</span>
-                                                                                        </button>
-                                                                                        </div>
-                                                                                        <div class="modal-body">
-                                                                                            <div class="">
-                                                                                                <div class="form-group">
-                                                                                                    <label for="jenispakaian">
-                                                                                                        Jenis Pakaian
-                                                                                                    </label>
-                                                                                                    <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jenis_pakaian" id="jenispakaian" required/>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="modal-footer">
-                                                                                        <button type="submit" class="btn btn-success">Save</button>
-                                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                                        </div>
-                                                                                    </form>
-                                                                              </div>
-                                                                            </div>
-                                                                          </div> -->
+                                                                        <button type="button" onclick="window.location='{{ route('jenis_pakaian_edit', $jenis_pakaian->id) }}'" class="btn btn-info m-b-10 m-l-5"> Edit</button>
                                                                         <a href = 'deleteJP/{{ $jenis_pakaian->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -212,7 +182,7 @@
                                                                     <td class="color-primary">{{ $model->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('model_edit', $model->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteMO/{{ $model->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -282,7 +252,7 @@
                                                                     <td class="color-primary">{{ $bahan->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('bahan_edit', $bahan->id) }}'"class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteBA/{{ $bahan->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -352,7 +322,7 @@
                                                                     <td class="color-primary">{{ $warna_bahan->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('warna_bahan_edit', $warna_bahan->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteWBA/{{ $warna_bahan->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -410,7 +380,7 @@
                                                         <table class="table table-hover table-bordered" cellspacing="0" width="100%">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>Nama Manset</th>
+                                                                    <th>Manset</th>
                                                                     <th>Harga</th>
                                                                     <th>Aksi</th>
                                                                 </tr>
@@ -422,7 +392,7 @@
                                                                     <td class="color-primary">{{ $manset->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('manset_edit', $manset->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteMA/{{ $manset->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -492,7 +462,7 @@
                                                                     <td class="color-primary">{{ $sablon->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('sablon_edit', $sablon->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteSA/{{ $sablon->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -562,7 +532,7 @@
                                                                     <td class="color-primary">{{ $warna_sablon->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('warna_sablon_edit', $warna_sablon->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteWSA/{{ $warna_sablon->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -632,7 +602,7 @@
                                                                   <td class="color-primary">{{ $lokasi_sablon->harga }}</td>
                                                                   <td>
                                                                     <div class="btn-group">
-                                                                      <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                      <button type="button" onclick="window.location='{{ route('lokasi_sablon_edit', $lokasi_sablon->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                       <a href = 'deleteLSA/{{ $lokasi_sablon->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                     </div>
                                                                   </td>
@@ -640,76 +610,6 @@
                                                             <?php endforeach; ?>
                                                           </tbody>
                                                       </table>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-
-                                            <div class="tab-pane p-20" id="Jumlah_bordir" role="tabpanel">
-                                              <h3> Jumlah Bordir </h3>
-                                              <div class="col-lg-12">
-                                                <div class="card">
-                                                  <div class="card-body">
-                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal8"><i class="ti-plus"></i> Tambah Data</button>
-                                                    <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="myModal8">
-                                                      <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                              <form method="post" action="{{route('JumlahBordir.store')}}">
-                                                                  {{ csrf_field() }}
-                                                                  <div class="modal-header">
-                                                                  <h5 class="modal-title">Tambah Jumlah Bordir</h5>
-                                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                      <span aria-hidden="true">&times;</span>
-                                                                  </button>
-                                                                  </div>
-                                                                  <div class="modal-body">
-                                                                      <div class="">
-                                                                          <div class="form-group">
-                                                                              <label for="nama-jumlahbordir">
-                                                                                  Jumlah Bordir
-                                                                              </label>
-                                                                              <input type="text"  data-val="true" data-val-required="this is Required Field" class="form-control" name="nama_jumlah_bordir" id="nama-jumlahbordir"/>
-
-                                                                              <label for="harga-jumlahbordir">
-                                                                                  Harga
-                                                                              </label>
-                                                                              <input type="number"  data-val="true" data-val-required="this is Required Field" class="form-control" name="harga" id="harga-jumlahbordir"/>
-                                                                          </div>
-                                                                      </div>
-                                                                  </div>
-                                                                  <div class="modal-footer">
-                                                                  <button type="submit" class="btn btn-primary" onclick="window.location='{{ route('katalog') }}'"><i class="fa fa-check"></i> Save</button>
-                                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                  </div>
-                                                              </form>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <div class="table-responsive m-b-20 m-t-25">
-                                                        <table class="table table-hover table-bordered" cellspacing="0" width="100%">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Nama Bordir</th>
-                                                                    <th>Harga</th>
-                                                                    <th>Aksi</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                              <?php foreach ($jumlahBordirs as $jumlah_bordir): ?>
-                                                                <tr>
-                                                                    <td>{{ $jumlah_bordir->nama_jumlah_bordir }}</td>
-                                                                    <td class="color-primary">{{ $jumlah_bordir->harga }}</td>
-                                                                    <td>
-                                                                      <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
-                                                                        <a href = 'deleteJBOR/{{ $jumlah_bordir->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
-                                                                      </div>
-                                                                    </td>
-                                                                </tr>
-                                                              <?php endforeach; ?>
-                                                            </tbody>
-                                                        </table>
                                                     </div>
                                                   </div>
                                                 </div>
@@ -772,7 +672,7 @@
                                                                   <td class="color-primary">{{ $lokasi_bordir->harga }}</td>
                                                                   <td>
                                                                     <div class="btn-group">
-                                                                      <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                      <button type="button" onclick="window.location='{{ route('lokasi_bordir_edit', $lokasi_bordir->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                       <a href = 'deleteLBOR/{{ $lokasi_bordir->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                     </div>
                                                                   </td>
@@ -842,7 +742,7 @@
                                                                     <td class="color-primary">{{ $jenis_ukuran->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('jenis_ukuran_edit', $jenis_ukuran->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteJU/{{ $jenis_ukuran->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -912,7 +812,7 @@
                                                                     <td class="color-primary">{{ $jumlah_kaos->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('jumlah_kaos_edit', $jumlah_kaos->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteJK/{{ $jumlah_kaos->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
@@ -982,7 +882,7 @@
                                                                     <td class="color-primary">{{ $lengan->harga }}</td>
                                                                     <td>
                                                                       <div class="btn-group">
-                                                                        <button type="button" class="btn btn-info m-b-10 m-l-5">Edit</button>
+                                                                        <button type="button" onclick="window.location='{{ route('lengan_edit', $lengan->id) }}'" class="btn btn-info m-b-10 m-l-5">Edit</button>
                                                                         <a href = 'deleteLE/{{ $lengan->id }}' class="btn btn-danger m-b-10 m-l-5">Delete</a>
                                                                       </div>
                                                                     </td>
