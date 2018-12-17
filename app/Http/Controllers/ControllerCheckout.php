@@ -40,7 +40,8 @@ class ControllerCheckout extends Controller
     public function update_bank(Request $request, $id)
     {
     	$cart = Cart::find($id);
-      	$cart->status = 1;
+      	$cart->status = 2;
+        $cart->total_harga = $request->total_harga;
     	// $cart->bank = $request->bank;
     	$cart->save();
       	return redirect("/cart");

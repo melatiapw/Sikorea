@@ -39,15 +39,15 @@
               {{ method_field('patch') }}
               <div class="form-group row">
                 <label for="pelanggan" class="text-black">Nama Pelanggan</label>
-                <input type="text" class="form-control" id="pelanggan" name="pelanggan" disabled="" value="Nama Pelanggan">
+                <input type="text" class="form-control" id="pelanggan" name="pelanggan" disabled="" value="Nama Pelanggan" required="">
               </div>
               <div class="form-group row">
                 <label for="alamat" class="text-black">Alamat Tujuan</label>
-                <textarea class="form-control" id="alamat" name="alamat_cp">{{ $cart->alamat_cp }}</textarea>
+                <textarea class="form-control" id="alamat" name="alamat_cp" required="">{{ $cart->alamat_cp }}</textarea>
               </div>
               <div class="form-group row">
                 <label for="nohp" class="text-black">No Hp</label>
-                <input type="text" class="form-control" id="nohp" name="no_cp" value="{{ $cart->no_cp }}">
+                <input type="number" required="" class="form-control" min="0" max="9999999999999" id="nohp" name="no_cp" value="{{ $cart->no_cp }}">
               </div>
             
             </div>
