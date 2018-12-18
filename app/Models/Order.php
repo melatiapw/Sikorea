@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Order
- * 
+ *
  * @property int $id
  * @property int $harga
  * @property int $cart_id
@@ -79,4 +79,64 @@ class Order extends Eloquent
 		'jumlah_produk',
 		'jenis_ukuran'
 	];
+
+	public function cart()
+    {
+        return $this->belongsTo('App\Models\Cart');
+    }
+
+    public function bahan_join()
+    {
+        return $this->belongsTo('App\Models\Bahan', 'bahan');
+    }
+
+    public function model_join()
+    {
+        return $this->belongsTo('App\Models\Model', 'model');
+    }
+
+    public function jenis_pakaian_join()
+    {
+        return $this->belongsTo('App\Models\JenisPakaian', 'jenis_pakaian');
+    }
+
+    public function jenis_ukuran_join()
+    {
+        return $this->belongsTo('App\Models\JenisUkuran', 'jenis_ukuran');
+    }
+
+    public function sablon_join()
+    {
+        return $this->belongsTo('App\Models\Sablon', 'sablon');
+    }
+
+    public function lengan_join()
+    {
+        return $this->belongsTo('App\Models\Lengan', 'lengan');
+    }
+
+    public function manset_join()
+    {
+        return $this->belongsTo('App\Models\Manset', 'manset');
+    }
+
+    public function lokasi_sablon_join()
+    {
+        return $this->belongsTo('App\Models\LokasiSablon', 'lokasi_sablon');
+    }
+
+    public function lokasi_bordir_join()
+    {
+        return $this->belongsTo('App\Models\LokasiBordir', 'lokasi_bordir');
+    }
+
+    public function warna_bahan_join()
+    {
+        return $this->belongsTo('App\Models\WarnaBahan', 'warna_bahan');
+    }
+
+    public function warna_sablon_join()
+    {
+        return $this->belongsTo('App\Models\WarnaSablon', 'warna_sablon');
+    }
 }

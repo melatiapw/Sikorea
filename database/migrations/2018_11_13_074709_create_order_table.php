@@ -17,7 +17,7 @@ class CreateOrderTable extends Migration
             $table->increments('id');
             $table->integer('harga');
             $table->integer('cart_id')->unsigned();
-            $table->integer('product_id')->unsigned();
+            $table->integer('product_id')->unsigned()->default('1');
             //dibawah ini buat form kaos
             $table->integer('jenis_pakaian')->unsigned();
             $table->integer('model')->unsigned();

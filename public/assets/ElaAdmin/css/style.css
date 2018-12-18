@@ -2365,8 +2365,8 @@ textarea {
   margin: 30px auto;
   position: relative;
   top: 50%;
-  transform: translateY(-50%) translateX(-40%) !important;
-  width: 100%;
+  transform: translateY(-50%) !important;
+  width: 70%;
 }
 .modal-header .close {
   font-size: 25px;
@@ -2375,7 +2375,6 @@ textarea {
 }
 .modal-content {
   border-radius: 3px;
-  width: 900px;
 }
 .timeline {
   list-style: none;
@@ -5409,7 +5408,7 @@ thead tr th {
   font-weight: 500;
 }
 thead tr th:last-child {
-  text-align: center;
+  text-align: right;
 }
 tbody tr th {
   color: #455a64;
@@ -5421,7 +5420,7 @@ tbody tr td {
   color: #99abb4;
 }
 tbody tr td:last-child {
-  text-align: center;
+  text-align: right;
 }
 .table > tbody > tr > td,
 .table > tbody > tr > th,
@@ -5984,8 +5983,7 @@ tbody tr td:last-child {
 }
 #event-modal .modal-dialog,
 #add-category .modal-dialog {
-  max-width: 900px;
-  max-height: 700px;
+  max-width: 600px;
 }
 .flotTip {
   background: #252525;

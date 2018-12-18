@@ -20,12 +20,14 @@
                   <tr>
                     <th class="product-thumbnail">Gambar</th>
                     <th class="product-name">Produk</th>
-                    <th class="product-spec">Spesifikasi</th> 
+                    <th class="product-spec">Spesifikasi</th>
                     <th class="product-price">Harga</th>
                     <th class="product-remove">Hapus</th>
                   </tr>
                 </thead>
                 <tbody>
+                @if($detail)
+                @foreach ($detail as $d)
                   <tr>
                     <td class="product-thumbnail">
                       <img src="{{ asset('assets/shoppers/images/cloth_1.jpg') }}" alt="Image placeholder" class="img-fluid">
@@ -35,19 +37,39 @@
                       <h2 class="h5 text-black">Kaos</h2>
                     </td>
                     <td>
-                      Bahan : bahan1
+                      Bahan : {{ $d->bahan_join->nama_bahan }}
                       <br>
-                      Warna : 1-2 warna/Putih
+                      Warna : {{ $d->warna_bahan_join->nama_warna_bahan }}/{{ $d->pilihan_warna_bahan }}
                       <br>
-                      Lengan/Manset: Panjang/Ya
+                      Sablon : {{ $d->sablon_join->nama_sablon }}/{{ $d->warna_sablon_join->nama_warna_sablon}}/{{ $d->pilihan_warna_sablon }}
                       <br>
-                      Ukuran: M
+                      Lokasi Sablon : {{ $d->lokasi_sablon_join->nama_lokasi_sablon }}
                       <br>
-                      Jumlah : 100
+                      Lengan/Manset: {{ $d->lengan_join->nama_lengan }}/{{ $d->manset_join->nama_manset }}
+                      <br>
+                      Bordir: {{ $d->lokasi_bordir_join->nama_lokasi_bordir }}
+                      <br>
+                      Ukuran: {{ $d->jenis_pakaian_join->nama_jenis_pakaian }}/{{ $d->jenis_ukuran_join->nama_jenis_ukuran }}
+                      <br>
+                      Jumlah : {{ $d->jumlah_produk }}
                     </td>
-                    <td>$49.00</td>
-                    <td><a href="#" class="btn btn-primary btn-sm">X</a></td>
+                    <td>{{ $d->harga }}</td>
+                    <form method="POST" action="{{ route('order.destroy', $d->id)}}">
+                      {{ csrf_field() }}
+                      {{ method_field('DELETE') }}
+
+                      <td><button onclick="return confirm('Apakah anda ingin menghapus pesanan ini?');" class="btn btn-xs btn-primary" type="submit">X</button></td>
+                    </form>
+
+
                   </tr>
+                  @endforeach
+
+                  @else
+                  <tr>
+                  <td colspan="5"> <p> Belum ada pesanan </p> </td>
+                  </tr>
+                  @endif
                 </tbody>
               </table>
             </div>
@@ -66,26 +88,44 @@
                     <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
                   </div>
                 </div>
+                @if($detail)
                 <div class="row mb-3">
                   <div class="col-md-6">
                     <span class="text-black">Subtotal</span>
                   </div>
-                  <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
+                  @php
+                  $total=0
+                  @endphp
+                  @foreach ($detail as $h)
+
+                  <div class="col-md-12 text-right">
+                    <strong class="text-black">{{$h->harga}}</strong>
                   </div>
+                  @php
+                  $total +=$h->harga
+                  @endphp
+
+                  @endforeach
                 </div>
                 <div class="row mb-5">
                   <div class="col-md-6">
+
+
                     <span class="text-black">Total</span>
                   </div>
-                  <div class="col-md-6 text-right">
-                    <strong class="text-black">$230.00</strong>
+                  <div class="col-md-12 text-right">
+                    <strong class="text-black">{{$total}}</strong>
                   </div>
                 </div>
+                @endif
 
                 <div class="row">
                   <div class="col-md-12">
-                    <button class="btn btn-primary btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
+                  @if($detail)
+                    <a href="{{ url('/checkout_alamat')}}" class="btn btn-primary btn-lg py-3 btn-block" >Proceed To Checkout</a>
+                  @else
+                  <button disabled class="btn btn-primary btn-lg py-3 btn-block" >Proceed To Checkout</button>
+                  @endif
                   </div>
                 </div>
               </div>

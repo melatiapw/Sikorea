@@ -10,6 +10,6 @@ class ControllerContact extends Controller
     //Menampilkan halaman contact
     public function index()
     {
-        return view('contact');
+        return view('user.contact');
     }
 }

@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class WarnaSablon
- * 
+ *
  * @property int $id
  * @property string $nama_warna_sablon
  * @property string $harga
@@ -28,4 +28,8 @@ class WarnaSablon extends Eloquent
 		'nama_warna_sablon',
 		'harga'
 	];
+	public function order()
+    {
+        return $this->hasOne('App\Models\Order', 'warna_sablon');
+    }
 }

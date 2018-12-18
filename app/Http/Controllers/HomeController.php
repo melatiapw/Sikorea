@@ -7,6 +7,19 @@ use\App\Models\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\Order;
+use App\Models\Model;
+use App\Models\Bahan;
+use App\Models\JenisPakaian;
+use App\Models\JenisUkuran;
+use App\Models\LokasiBordir;
+use App\Models\Sablon;
+use App\Models\LokasiSablon;
+use App\Models\WarnaBahan;
+use App\Models\WarnaSablon;
+use App\Models\Lengan;
+use App\Models\Manset;
+
 class HomeController extends Controller
 {
     /**
@@ -53,11 +66,9 @@ class HomeController extends Controller
                                         ->with(compact('pemesan'));
        }
        elseif (Auth::user()->hasRole('user')) {
-         // code...
-         return view('home');
+          return view('home');
        }
        else {
-         Auth::user()->assignRole('user');
          return view('home');
        }
 

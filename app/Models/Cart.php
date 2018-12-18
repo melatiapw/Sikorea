@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Cart
- * 
+ *
  * @property int $id
  * @property string $status
  * @property string $total_harga
@@ -38,4 +38,8 @@ class Cart extends Eloquent
 		'alamat_cp',
 		'no_cp'
 	];
+	public function order()
+    {
+        return $this->hasMany('App\Models\Order');
+    }
 }

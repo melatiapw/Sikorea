@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Manset
- * 
+ *
  * @property int $id
  * @property string $nama_manset
  * @property string $harga
@@ -28,4 +28,8 @@ class Manset extends Eloquent
 		'nama_manset',
 		'harga'
 	];
+	public function order()
+    {
+        return $this->hasOne('App\Models\Order', 'manset');
+    }
 }

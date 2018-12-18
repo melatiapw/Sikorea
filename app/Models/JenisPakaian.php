@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class JenisPakaian
- * 
+ *
  * @property int $id
  * @property string $nama_jenis_pakaian
  * @property \Carbon\Carbon $created_at
@@ -26,4 +26,8 @@ class JenisPakaian extends Eloquent
 	protected $fillable = [
 		'nama_jenis_pakaian'
 	];
+	public function order()
+    {
+        return $this->hasOne('App\Models\Order', 'Jenis_pakaian');
+    }
 }

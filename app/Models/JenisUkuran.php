@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class JenisUkuran
- * 
+ *
  * @property int $id
  * @property string $nama_jenis_ukuran
  * @property string $harga
@@ -28,4 +28,8 @@ class JenisUkuran extends Eloquent
 		'nama_jenis_ukuran',
 		'harga'
 	];
+	public function order()
+    {
+        return $this->belongsTo('App\Models\Order', 'jenis_ukuran');
+    }
 }
