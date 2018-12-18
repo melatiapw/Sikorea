@@ -43,7 +43,6 @@ class ControllerOrder extends Controller
     public function store(Request $request)
     {
       $this->validate($request, [
-          'title' => 'nullable|max:100',
           'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
       ]);
     	$order = new Order;
@@ -60,22 +59,24 @@ class ControllerOrder extends Controller
     	$lokasi_sablon = explode(',', $request->lokasi_sablon);
     	$lokasi_bordir = explode(',', $request->lokasi_bordir);
     	$jenis_ukuran = explode(',', $request->jenis_ukuran);
-        $order->jenis_pakaian = $jenis_pakaian[0];
-        $order->model = $model[0];
-        $order->bahan = $bahan[0];
-        $order->warna_bahan = $warna_bahan[0];
-        $order->manset = $manset[0];
-        $order->lengan = $lengan[0];
-        $order->sablon = $sablon[0];
-        $order->warna_sablon = $warna_sablon[0];
-        $order->lokasi_sablon = $lokasi_sablon[0];
-        $order->lokasi_bordir = $lokasi_bordir[0];
-        $order->jenis_ukuran = $jenis_ukuran[0];
-        $order->jumlah_produk = $request->jumlah;
-        $order->harga = $request->harga;
-        $order->pilihan_warna_sablon = $pilihan_warna_sablon;
-        $order->pilihan_warna_bahan = $pilihan_warna_bahan;
-    	  $cartExist = Cart::orderBy('created_at', 'desc')->where('status', NULL)->first();
+
+      $order->jenis_pakaian = $jenis_pakaian[0];
+      $order->model = $model[0];
+      $order->bahan = $bahan[0];
+      $order->warna_bahan = $warna_bahan[0];
+      $order->manset = $manset[0];
+      $order->lengan = $lengan[0];
+      $order->sablon = $sablon[0];
+      $order->warna_sablon = $warna_sablon[0];
+      $order->lokasi_sablon = $lokasi_sablon[0];
+      $order->lokasi_bordir = $lokasi_bordir[0];
+      $order->jenis_ukuran = $jenis_ukuran[0];
+      $order->jumlah_produk = $request->jumlah;
+      $order->harga = $request->harga;
+      $order->pilihan_warna_sablon = $pilihan_warna_sablon;
+      $order->pilihan_warna_bahan = $pilihan_warna_bahan;
+    	$cartExist = Cart::orderBy('created_at', 'desc')->where('status', NULL)->first();
+
     	if($cartExist){
     		$order->cart_id = $cartExist->id;
     	}else{
@@ -94,6 +95,7 @@ class ControllerOrder extends Controller
     	$order->save();
     	return redirect('/cart');
     }
+
     public function show($id)
     {
         // get the nerd
@@ -102,6 +104,7 @@ class ControllerOrder extends Controller
         return View::make('order.show')
             ->with('order', $order);
     }
+    
     public function destroy($id){
         $order = Order::findorFail($id);
         $order->delete();

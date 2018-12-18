@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateFormTables extends Migration
 {
     /**
@@ -16,6 +14,7 @@ class CreateFormTables extends Migration
         Schema::create('jenis_pakaian', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_jenis_pakaian');
+            $table->string('harga');
             $table->timestamps();
         });
         Schema::create('model', function (Blueprint $table) {
@@ -42,6 +41,12 @@ class CreateFormTables extends Migration
             $table->string('harga');
             $table->timestamps();
         });
+        Schema::create('lengan', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_lengan');
+            $table->string('harga');
+            $table->timestamps();
+        });
         Schema::create('sablon', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_sablon');
@@ -57,12 +62,6 @@ class CreateFormTables extends Migration
         Schema::create('lokasi_sablon', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_lokasi_sablon');
-            $table->string('harga');
-            $table->timestamps();
-        });
-        Schema::create('bordir', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama_bordir');
             $table->string('harga');
             $table->timestamps();
         });
@@ -85,7 +84,6 @@ class CreateFormTables extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -102,7 +100,6 @@ class CreateFormTables extends Migration
         Schema::dropIfExists('warna_sablon');
         Schema::dropIfExists('lokasi_sablon');
         Schema::dropIfExists('jenis_pakaian');
-        Schema::dropIfExists('bordir');
         Schema::dropIfExists('lokasi_bordir');
         Schema::dropIfExists('jumlah_kaos');
         Schema::dropIfExists('jenis_ukuran');
