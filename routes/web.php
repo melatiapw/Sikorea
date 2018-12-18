@@ -29,7 +29,7 @@ Route::get('/admin', function () {
    return view('admin.homeAdmin');
 });
 
-
+// STORE KATALOG
 Route::get('/katalog', 'ControllerCatalog@index')->name('katalog');
 Route::post('/katalog/storeJP',  ['as' => 'jenis_pakaian.store', 'uses' => 'ControllerCatalog@jenis_pakaian_store']);
 Route::post('/katalog/storeMO',  ['as' => 'Model.store', 'uses' => 'ControllerCatalog@model_store']);
@@ -45,7 +45,7 @@ Route::post('/katalog/storeJU',  ['as' => 'JenisUkuran.store', 'uses' => 'Contro
 Route::post('/katalog/storeJK',  ['as' => 'JumlahKaos.store', 'uses' => 'ControllerCatalog@jumlah_kaos_store']);
 Route::post('/katalog/storeLE',  ['as' => 'Lengan.store', 'uses' => 'ControllerCatalog@lengan_store']);
 
-
+// HAPUS KATALOG
 Route::get('deleteJP/{id}','ControllerCatalog@jenis_pakaian_destroy');
 Route::get('deleteMO/{id}','ControllerCatalog@model_destroy');
 Route::get('deleteBA/{id}','ControllerCatalog@bahan_destroy');
@@ -60,7 +60,7 @@ Route::get('deleteJU/{id}','ControllerCatalog@jenis_ukuran_destroy');
 Route::get('deleteJK/{id}','ControllerCatalog@jumlah_kaos_destroy');
 Route::get('deleteLE/{id}','ControllerCatalog@lengan_destroy');
 
-
+// EDIT & UPDATE
 Route::get('jenis_pakaian_edit/{id}', ['as' => 'jenis_pakaian_edit', 'uses' => 'ControllerCatalog@jenis_pakaian_edit']);
 Route::post('jenis_pakaian/{id}', ['as' => 'jenis_pakaian.update', 'uses' => 'ControllerCatalog@jenis_pakaian_update']);
 
@@ -99,3 +99,19 @@ Route::post('jumlah_kaos/{id}', ['as' => 'jumlah_kaos.update', 'uses' => 'Contro
 
 Route::get('lengan_edit/{id}', ['as' => 'lengan_edit', 'uses' => 'ControllerCatalog@lengan_edit']);
 Route::post('lengan/{id}', ['as' => 'lengan.update', 'uses' => 'ControllerCatalog@lengan_update']);
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//route untuk order
+Route::resource('order', 'ControllerOrder');
+Route::get('/order', 'ControllerOrder@index');
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

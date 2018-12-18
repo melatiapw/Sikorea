@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Order
- * 
+ *
  * @property int $id
  * @property int $harga
  * @property int $cart_id
@@ -54,7 +54,8 @@ class Order extends Eloquent
 		'bordir' => 'int',
 		'jumlah_bordir' => 'int',
 		'jumlah_produk' => 'int',
-		'jenis_ukuran' => 'int'
+		'jenis_ukuran' => 'int',
+		'filename'	=> 'varchar'
 	];
 
 	protected $fillable = [
@@ -74,6 +75,7 @@ class Order extends Eloquent
 		'bordir',
 		'jumlah_bordir',
 		'jumlah_produk',
-		'jenis_ukuran'
+		'jenis_ukuran',
+		'filename'
 	];
 }
