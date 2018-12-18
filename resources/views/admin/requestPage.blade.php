@@ -102,7 +102,8 @@
                                                   <li><b>Lokasi Sablon :</b> {{$order->nama_lokasi_sablon}}</li>
                                                   <li><b>Lokasi Bordir :</b> {{$order->nama_lokasi_bordir}}</li>
                                                   <li><b>Ukuran Kaos :</b> {{$order->nama_jenis_ukuran}}</li>
-                                                  <li><b>Jumlah Kaos :</b> {{$order->nama_jumlah_produk}}</li>
+                                                  <li><b>Jumlah Kaos :</b> {{$order->jumlah_produk}}</li>
+                                                  <li><b>Harga :</b> {{$order->harga}}</li>
                                                 </table>
                                               </div>
                                           </div>
@@ -122,7 +123,8 @@
                                                   <li><b>Lokasi Sablon :</b> {{$order->nama_lokasi_sablon}}</li>
                                                   <li><b>Lokasi Bordir :</b> {{$order->nama_lokasi_bordir}}</li>
                                                   <li><b>Ukuran Kaos :</b> {{$order->nama_jenis_ukuran}}</li>
-                                                  <li><b>Jumlah Kaos :</b> {{$order->nama_jumlah_produk}}</li>
+                                                  <li><b>Jumlah Kaos :</b> {{$order->jumlah_produk}}</li>
+                                                  <li><b>Harga :</b> {{$order->harga}}</li>
                                                 </table>
                                               </div>
                                           </div>

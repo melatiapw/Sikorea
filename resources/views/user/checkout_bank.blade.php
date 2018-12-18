@@ -69,7 +69,7 @@
                           <h4>BNI</h4>
                           <ul class="list-unstyled">
                             <li>
-                              <input type="radio" name="r1" value='1' class="minimal" checked>
+                              <!-- <input type="radio" name="r1" value='1' class="minimal" checked> -->
                               <a>Nama : Achmad Fanani</a><br>
                               <a>Nomor : 08xxxx</a>
                             </li>
@@ -77,7 +77,7 @@
                           <h4>BCA</h4>
                           <ul class="list-unstyled">
                             <li>
-                              <input type="radio" name="r1" value='2' class="minimal" checked>
+<!--                               <input type="radio" name="r1" value='2' class="minimal" checked> -->
                               <a>Nama : Achmad Fanani</a><br>
                               <a>Nomor : 08xxxx</a>
                             </li>
@@ -85,7 +85,7 @@
                           <h4>Mandiri</h4>
                           <ul class="list-unstyled">
                             <li>
-                              <input type="radio" name="r1" value='3' class="minimal" checked>
+<!--                               <input type="radio" name="r1" value='3' class="minimal" checked> -->
                               <a>Nama : Achmad Fanani</a><br>
                               <a>Nomor : 08xxxx</a>
                             </li>
@@ -95,8 +95,8 @@
                   </div>
               </div>
             </div>
-            
-          </div>          
+
+          </div>
           <div class="col-md-6">
             <br>
             <div class="card">
@@ -104,14 +104,13 @@
                   <div class="col-md-12 text-right border-bottom mb-5">
                 <h3 class="text-black h4 text-uppercase">Ringkasan Pembayaran</h3>
               </div>
-                  @php 
+                  @php
                   $total=0
-
                   @endphp
 
-                  @php 
+                  @php
                   $i=1
-                  
+
                   @endphp
                   @foreach ($detail as $h)
 
@@ -122,18 +121,21 @@
                   <div class="col-md-12 text-right">
                     <strong class="text-black">{{$h->harga}}</strong>
                   </div>
-                  @php 
+                  @php
                   $total +=$h->harga
                   @endphp
 
                   @endforeach
-              
+
               <div class="col-md-6">
                     <span class="text-black">Total</span>
               </div>
               <div class="col-md-12 text-right">
                     <strong class="text-black">{{ $total }}</strong>
               </div>
+              <div class="form-group row" style="display: none;" >
+                <input type="number" class="form-control" id="harga" name="total_harga" value="{{ $total }}">
+            </div>
               <br>
 <!--                         <button class="btn btn-outline-secondary btn-sm btn-block" type='submit'>Bayar Uang Muka</button>
                         <p class="text-black text-center">ATAU</p> -->

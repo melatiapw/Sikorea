@@ -14,6 +14,7 @@ class ControllerCheckout extends Controller
     	$detail = Order::where('cart_id', $cart->id)->get();
         return view('user.checkout_alamat', compact('cart', 'detail'));
     }
+    
     public function checkout_bank()
     {
         $cart = Cart::orderBy('created_at', 'desc')->where('status', NULL)->first(); //active cart id

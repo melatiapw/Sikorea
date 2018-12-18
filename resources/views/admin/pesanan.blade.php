@@ -118,18 +118,19 @@
                                               <div class="card-body">
                                                 <h4 class="card-title">Barang ke-{{$index+1}}</h4>
                                                 <table id="myTable" class="table table-bordered table-basic">
-                                                    <li><b>Jenis Pakaian :</b> {{$order->nama_jenis_pakaian}}</li>
-                                                    <li><b>Model Pakaian :</b> {{$order->nama_model}}</li>
-                                                    <li><b>Bahan Pakaian :</b> {{$order->nama_bahan}}</li>
-                                                    <li><b>Kombinasi Warna :</b> {{$order->nama_warna_bahan}}, {{$order->pilihan_warna_bahan}}</li>
-                                                    <li><b>Manset Tangan :</b> {{$order->nama_manset}}</li>
-                                                    <li><b>Lengan :</b> {{$order->nama_lengan}}</li>
-                                                    <li><b>Sablon :</b> {{$order->nama_sablon}}</li>
-                                                    <li><b>Jumlah Warna Sablon :</b> {{$order->nama_warna_sablon}}, {{$order->pilihan_warna_sablon}}</li>
-                                                    <li><b>Lokasi Sablon :</b> {{$order->nama_lokasi_sablon}}</li>
-                                                    <li><b>Lokasi Bordir :</b> {{$order->nama_lokasi_bordir}}</li>
-                                                    <li><b>Ukuran Kaos :</b> {{$order->nama_jenis_ukuran}}</li>
-                                                    <li><b>Jumlah Kaos :</b> {{$order->nama_jumlah_produk}}</li>
+                                                  <li><b>Jenis Pakaian :</b> {{$order->nama_jenis_pakaian}}</li>
+                                                  <li><b>Model Pakaian :</b> {{$order->nama_model}}</li>
+                                                  <li><b>Bahan Pakaian :</b> {{$order->nama_bahan}}</li>
+                                                  <li><b>Kombinasi Warna :</b> {{$order->nama_warna_bahan}}, {{$order->pilihan_warna_bahan}}</li>
+                                                  <li><b>Manset Tangan :</b> {{$order->nama_manset}}</li>
+                                                  <li><b>Lengan :</b> {{$order->nama_lengan}}</li>
+                                                  <li><b>Sablon :</b> {{$order->nama_sablon}}</li>
+                                                  <li><b>Jumlah Warna Sablon :</b> {{$order->nama_warna_sablon}}, {{$order->pilihan_warna_sablon}}</li>
+                                                  <li><b>Lokasi Sablon :</b> {{$order->nama_lokasi_sablon}}</li>
+                                                  <li><b>Lokasi Bordir :</b> {{$order->nama_lokasi_bordir}}</li>
+                                                  <li><b>Ukuran Kaos :</b> {{$order->nama_jenis_ukuran}}</li>
+                                                  <li><b>Jumlah Kaos :</b> {{$order->jumlah_produk}}</li>
+                                                  <li><b>Harga :</b> {{$order->harga}}</li>
                                                 </table>
                                               </div>
                                           </div>
@@ -149,7 +150,8 @@
                                                   <li><b>Lokasi Sablon :</b> {{$order->nama_lokasi_sablon}}</li>
                                                   <li><b>Lokasi Bordir :</b> {{$order->nama_lokasi_bordir}}</li>
                                                   <li><b>Ukuran Kaos :</b> {{$order->nama_jenis_ukuran}}</li>
-                                                  <li><b>Jumlah Kaos :</b> {{$order->nama_jumlah_produk}}</li>
+                                                  <li><b>Jumlah Kaos :</b> {{$order->jumlah_produk}}</li>
+                                                  <li><b>Harga :</b> {{$order->harga}}</li>
                                                 </table>
                                               </div>
                                           </div>
