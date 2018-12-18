@@ -12,37 +12,72 @@
         <div class="site-top-icons">
           <ul>
             <!-- Login -->
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
-            <!-- Notifikasi -->
-            <li class="nav-item dropdown">
-              <a class="site-cart" data-toggle="dropdown">
-                <span class="icon icon-bell"></span>
-                <span class="count">2</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
-                    <ul>
-                        <li>
-                            <div class="drop-title">Notifications</div>
-                        </li>
-                        <li>
-                            <div class="message-center">
-                                <!-- Message -->
-                                <a href="#">
-                                    <div class="mail-contnet">
-                                        <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
-                                    </div>
-                                </a>
+            @if (Route::has('login'))
+            @Auth
+              <!-- Notifikasi -->
+              <li class="nav-item dropdown">
+                <a class="site-cart" data-toggle="dropdown">
+                  <span class="icon icon-bell"></span>
+                  <span class="count">2</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                      <ul>
+                          <li>
+                              <div class="drop-title">Notifications</div>
+                          </li>
+                          <li>
+                              <div class="message-center">
+                                  <!-- Message -->
+                                  <a href="#">
+                                      <div class="mail-contnet">
+                                          <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                      </div>
+                                  </a>
 
+                              </div>
+                          </li>
+                          <li>
+                              <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                          </li>
+                      </ul>
+                </div>
+              </li>
+              <!-- End Notification -->
+              <!-- Profil -->
+              <li class="nav-item dropdown">
+                <a class="site-menu" data-toggle="dropdown">
+                  <span class="icon icon-person"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
+                      <ul>
+                        <li>
+                            <div class="profile-center">
+                                <!-- Message -->
+                                <a class="nav-link text-right">
+                                  <span class="text-left"><i class="fa fa-hourglass-end"></i></span>
+                                  Pesanan Saya
+                                </a>
+                                <a class="nav-link text-right">
+                                  <span class="icon icon-pencil text-left"></span>
+                                  Edit profil saya
+                                </a>
+                                <a class="nav-link text-right">
+                                  <span class="icon icon-switch text-left"></span>
+                                  Log Out
+                                </a>
                             </div>
                         </li>
-                        <li>
-                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                        </li>
-                    </ul>
-              </div>
-            </li>
-            <!-- End Notification -->
+
+                      </ul>
+                </div>
+              </li>
+              <!-- End Profil -->
+            @else
+              <li><a href="{{ route('login') }}">Login</a></li>
+              @if (Route::has('register'))
+                <li><a href="{{ route('register') }}">Register</a></li>
+              @endif
+            @endauth
             <!-- Cart -->
             <li>
               <a href="{{ url('/cart')}}" class="site-cart">
@@ -52,34 +87,7 @@
             </li>
             <!-- End Cart -->
             <!-- Profil -->
-            <li class="nav-item dropdown">
-              <a class="site-menu" data-toggle="dropdown">
-                <span class="icon icon-person"></span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
-                    <ul>
-                      <li>
-                          <div class="profile-center">
-                              <!-- Message -->
-                              <a class="nav-link text-right">
-                                <span class="text-left"><i class="fa fa-hourglass-end"></i></span>
-                                Pesanan Saya
-                              </a>
-                              <a class="nav-link text-right">
-                                <span class="icon icon-pencil text-left"></span>
-                                Edit profil saya
-                              </a>
-                              <a class="nav-link text-right">
-                                <span class="icon icon-switch text-left"></span>
-                                Log Out
-                              </a>
-                          </div>
-                      </li>
-
-                    </ul>
-              </div>
-            </li>
-            <!-- End Profil -->
+          @endif
           </ul>
         </div>
       </div>

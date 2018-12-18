@@ -9,8 +9,8 @@
         <div class="intro-text text-center text-md-left">
           <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
           <p>
-            <a href="#" class="btn btn-sm btn-primary">Login</a>
-            <a href="#" class="btn btn-sm btn-primary">Register</a>
+            <a href="{{ route('login') }}" class="btn btn-sm btn-primary">Login</a>
+            <a href="{{ route('register') }}" class="btn btn-sm btn-primary">Register</a>
           </p>
         </div>
       </div>
