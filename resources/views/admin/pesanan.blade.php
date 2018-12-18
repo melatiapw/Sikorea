@@ -131,7 +131,7 @@
                         </button>
                         </div>
                         <div class="modal-body">
-                          <img src="{{ asset('assets/ElaAdmin/images/card/c1.jpg') }}" alt="Image placeholder" class="img-fluid">
+                          <img src="{{ Storage::url($cart->file_gambar) }}" alt="" class="img-fluid">
                         </div>
                     </form>
 

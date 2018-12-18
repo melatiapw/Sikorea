@@ -6,9 +6,12 @@ use Auth;
 use App\Cart;
 use App\Order;
 use App\Kategori;
+use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+use Illuminate\Http\RedirectResponse;
+use Storage;
 class ControllerCheckout extends Controller
 {
 
@@ -18,21 +21,26 @@ class ControllerCheckout extends Controller
       return view('statustransaksi')->withKeranjang($cart);
     }
 
-    public function view()
+    public function showBuktiPembayaran()
     {
-		    return view('imageUpload');
-
+      $cart = Cart::all();
+		    return view('showBuktiPembayaran', compact('buktipembayaran'));
     }
 
     public function upload(Request $request)
     {
-		  $this->validate($request, [
-	    	'image' => 'mimes:jpeg,bmp,png', //only allow this type extension file.
-		    ]);
+        $cart = Cart::first();
 
-		   $file = $request->file('image');
-		     // image upload in public/upload folder.
-		   $file->move('uploads', $file->getClientOriginalName());
-		   echo 'Image Uploaded Successfully';
+        $this->validate($request, [
+          'file' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
+        ]);
+        $uploadedFile = $request->file('file');
+        $path = $uploadedFile->store('public/uploadgambar');
+        $cart->file_gambar = $path;
+		    $cart->save();
+        return redirect()
+          ->back()
+          ->with(['sukses' => 'Bukti Pembayaran has been uploaded']);
+
 	}
 }

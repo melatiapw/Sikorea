@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
 
-class cart extends Model
+class Cart extends Model
 {
   use Notifiable;
   protected $table = 'cart';
   protected $primaryKey = 'id';
-  protected $fillable = ['status', 'total_harga', 'users',];
+  protected $fillable = ['status', 'total_harga', 'users','file_gambar'];
 
 }

@@ -1,7 +1,7 @@
 <nav class="navbar top-navbar navbar-expand-md navbar-light">
     <!-- Logo -->
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/sikorea/public/home">
             <!-- Logo icon -->
             <b><img src="{{ asset('assets/ElaAdmin/images/logo.png') }}" alt="homepage" class="logo" /></b>
             <!--End Logo icon -->
@@ -12,8 +12,8 @@
     <div class="navbar-collapse">
         <!-- toggle and nav items -->
         <ul class="navbar-nav mr-auto mt-md-0 text-center">
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-shopping-basket"></i> Request</a></li>
-          <li class="nav-item nav-link"><a href="#"><i class="fa fa-hourglass-end"></i> Pesanan</a></li>
+          <li class="nav-item nav-link"><a href="/sikorea/public/home"><i class="fa fa-shopping-basket"></i> Request</a></li>
+          <li class="nav-item nav-link"><a href="/sikorea/public/pesanan"><i class="fa fa-hourglass-end"></i> Pesanan</a></li>
           <li class="nav-item nav-link"><a href="#"><i class="fa fa-book"></i> Katalog</a></li>
         </ul>
         <!-- User profile and notification -->
@@ -76,7 +76,15 @@
                         <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
                         <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
                         <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
-                        <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a class="fa fa-power-off" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form></li>
                     </ul>
                 </div>
             </li>

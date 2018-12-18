@@ -5,7 +5,11 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <a href="index.html">Cart</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Checkout</strong></div>
+          <div class="col-md-12 mb-0">
+            <a href="index.html">Home</a>
+            <span class="mx-2 mb-0">/</span> <a href="{{ url('/cart')}}">Cart</a>
+            <span class="mx-2 mb-0">/</span> <strong class="text-black">Checkout</strong>
+          </div>
         </div>
       </div>
     </div>
@@ -30,20 +34,22 @@
         <div class="row mb-5">
           <div class="col-md-6">
             <div class="col-md-12">
-            <form action="#" method="post">
+            <form action="{{ route('checkout.update_cp', $cart->id)}}" method="post">
+              {{ csrf_field() }}
+              {{ method_field('patch') }}
               <div class="form-group row">
                 <label for="pelanggan" class="text-black">Nama Pelanggan</label>
-                <input type="text" class="form-control" id="pelanggan" name="c_fname" disabled="">
+                <input type="text" class="form-control" id="pelanggan" name="pelanggan" disabled="" value="Nama Pelanggan">
               </div>
               <div class="form-group row">
                 <label for="alamat" class="text-black">Alamat Tujuan</label>
-                <textarea class="form-control" id="alamat" name="c_fname"></textarea>
+                <textarea class="form-control" id="alamat" name="alamat_cp">{{ $cart->alamat_cp }}</textarea>
               </div>
               <div class="form-group row">
                 <label for="nohp" class="text-black">No Hp</label>
-                <input type="text" class="form-control" id="nohp" name="c_fname">
+                <input type="text" class="form-control" id="nohp" name="no_cp" value="{{ $cart->no_cp }}">
               </div>
-            </form>
+
             </div>
           </div>
 
@@ -65,8 +71,9 @@
               <div class="col-md-12 text-right">
                     <strong class="text-black">$230.00</strong>
               </div>
-                <button class="btn btn-outline-primary btn-sm btn-block">Pembayaran</button>
+                <button class="btn btn-outline-primary btn-sm btn-block" type='submit'>Pembayaran</button>
             </div>
+            </form>
           </div>
 
           </div>

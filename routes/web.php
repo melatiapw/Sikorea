@@ -43,6 +43,18 @@ Route::patch('checkout/{id}/update_bank',  ['as' => 'checkout.update_bank', 'use
 //Route: lihat status transaksi USER
 Route::get('/statustransaksi', 'ControllerCheckout@statustransaksi');
 //Route: for image upload view
-Route::post('upload', 'UploadController@view');
-// for image upload
-Route::post('upload', 'UploadController@upload');
+Route::resource('buktipembayaran', 'ControllerCheckout');
+Route::post('statustransaksi/upload', 'ControllerCheckout@upload')->name('file.upload');
+// Route::get('/uploadgambar/{file}', function ($file)
+// {
+//     $path = storage_path() . '/avatars/' . $file;
+//
+//     if(!File::exists($path)) abort(404);
+//
+//     $file = File::get($path);
+//     $type = File::mimeType($path);
+//
+//     $response = Response::make($file, 200);
+//     $response->header("Content-Type", $type);
+//     return $response;
+// })->name('file');

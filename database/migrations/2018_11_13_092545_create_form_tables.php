@@ -16,6 +16,7 @@ class CreateFormTables extends Migration
         Schema::create('jenis_pakaian', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_jenis_pakaian');
+            $table->string('harga');
             $table->timestamps();
         });
         Schema::create('model', function (Blueprint $table) {
@@ -42,6 +43,14 @@ class CreateFormTables extends Migration
             $table->string('harga');
             $table->timestamps();
         });
+
+        Schema::create('lengan', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_lengan');
+            $table->string('harga');
+            $table->timestamps();
+        });
+
         Schema::create('sablon', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_sablon');
@@ -57,6 +66,12 @@ class CreateFormTables extends Migration
         Schema::create('lokasi_sablon', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_lokasi_sablon');
+            $table->string('harga');
+            $table->timestamps();
+        });
+        Schema::create('bordir', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_bordir');
             $table->string('harga');
             $table->timestamps();
         });
@@ -78,6 +93,7 @@ class CreateFormTables extends Migration
             $table->string('harga');
             $table->timestamps();
         });
+
     }
 
     /**
