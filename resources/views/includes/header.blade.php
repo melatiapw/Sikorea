@@ -13,8 +13,8 @@
         <div class="site-top-icons">
           <ul>
             <!-- Login -->
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="{{ url('/login')}}">Login</a></li>
+            <li><a href="{{ url('/register')}}">Register</a></li>
             <!-- Notifikasi -->
             <li><a href="#"><span class="icon icon-bell-o"></span></a></li>
             <!-- Keranjang Belanja -->
