@@ -1,3 +1,4 @@
+
 <div class="site-navbar-top">
   <div class="container">
     <div class="row align-items-center">
@@ -18,22 +19,33 @@
               <li class="nav-item dropdown">
                 <a class="site-cart" data-toggle="dropdown">
                   <span class="icon icon-bell"></span>
-                  <span class="count">2</span>
+                  @if(count(auth()->user()->unreadNotifications) != 0)
+                  <span class="count">
+                    {{count(auth()->user()->unreadNotifications)}}
+                  </span>
+                  @endif
+
                 </a>
                 <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                       <ul>
                           <li>
-                              <div class="drop-title">Notifications</div>
+                              <div class="drop-title">Anda memiliki {{count(auth()->user()->unreadNotifications)}} notifikasi baru</div>
                           </li>
+
                           <li>
                               <div class="message-center">
                                   <!-- Message -->
-                                  <a href="#">
-                                      <div class="mail-contnet">
-                                          <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
+                                  <!-- Notifikasi -->
+                                  @foreach((Auth::user()->Notifications) as $notif)
+                                    <a href="{{url('notifications/'.$notif->id)}}" class="{{ $notif->read_at == null ? 'unread' : ''}}">
+                                      <div class="{{$notif->read_at == null ? 'fa fa-circle' : ''}}"></div>
+                                      <div class="mail-content">
+                                        <h5 >{!! $notif->data['data'] !!}</h5>
+                                        <span class="mail-desc">{!! $notif->data['isi_notifikasi'] !!}</span>
+                                        <span class="time">{!! $notif->data['waktu'] !!}</span>
                                       </div>
-                                  </a>
-
+                                    </a>
+                                  @endforeach
                               </div>
                           </li>
                           <li>
@@ -43,6 +55,13 @@
                 </div>
               </li>
               <!-- End Notification -->
+              <!-- Cart -->
+              <li>
+                <a href="{{ url('/cart')}}" class="site-cart">
+                  <span class="icon icon-shopping_cart"></span>
+                </a>
+              </li>
+              <!-- End Cart -->
               <!-- Profil -->
               <li class="nav-item dropdown">
                 <a class="site-menu" data-toggle="dropdown">
@@ -53,7 +72,7 @@
                         <li>
                             <div class="profile-center">
                                 <!-- Message -->
-                                <a class="nav-link text-right">
+                                <a class="nav-link text-right" href="{{ url('/statustransaksi') }}">
                                   <span class="text-left"><i class="fa fa-hourglass-end"></i></span>
                                   Pesanan Saya
                                 </a>
@@ -61,9 +80,14 @@
                                   <span class="icon icon-pencil text-left"></span>
                                   Edit profil saya
                                 </a>
-                                <a class="nav-link text-right">
-                                  <span class="icon icon-switch text-left"></span>
-                                  Log Out
+                                <a class="nav-link text-right" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                    <span class="icon icon-switch text-left"></span>
+                                    Log Out
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                      @csrf
+                                    </form>
                                 </a>
                             </div>
                         </li>
@@ -78,15 +102,6 @@
                 <li><a href="{{ route('register') }}">Register</a></li>
               @endif
             @endauth
-            <!-- Cart -->
-            <li>
-              <a href="{{ url('/cart')}}" class="site-cart">
-                <span class="icon icon-shopping_cart"></span>
-                <span class="count">2</span>
-              </a>
-            </li>
-            <!-- End Cart -->
-            <!-- Profil -->
           @endif
           </ul>
         </div>

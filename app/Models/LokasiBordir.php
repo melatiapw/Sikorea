@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 10 Dec 2018 09:27:36 +0000.
+ * Date: Tue, 11 Dec 2018 09:49:12 +0000.
  */
 
 namespace App\Models;
@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class LokasiBordir
- * 
+ *
  * @property int $id
  * @property string $nama_lokasi_bordir
  * @property string $harga
@@ -28,4 +28,8 @@ class LokasiBordir extends Eloquent
 		'nama_lokasi_bordir',
 		'harga'
 	];
+	public function order()
+    {
+        return $this->hasOne('App\Models\Order', 'lokasi_bordir');
+    }
 }

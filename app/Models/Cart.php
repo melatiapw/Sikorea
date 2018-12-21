@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 10 Dec 2018 09:27:36 +0000.
+ * Date: Tue, 11 Dec 2018 09:49:12 +0000.
  */
 
 namespace App\Models;
@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Cart
- * 
+ *
  * @property int $id
  * @property string $status
  * @property string $total_harga
@@ -36,6 +36,11 @@ class Cart extends Eloquent
 		'total_harga',
 		'users',
 		'alamat_cp',
-		'no_cp'
+		'no_cp',
+		'nota'
 	];
+	public function order()
+    {
+        return $this->hasMany('App\Models\Order');
+    }
 }

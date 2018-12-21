@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Mon, 10 Dec 2018 09:27:36 +0000.
+ * Date: Tue, 11 Dec 2018 09:49:13 +0000.
  */
 
 namespace App\Models;
@@ -11,7 +11,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
  * Class Model
- * 
+ *
  * @property int $id
  * @property string $nama_model
  * @property string $harga
@@ -28,4 +28,8 @@ class Model extends Eloquent
 		'nama_model',
 		'harga'
 	];
+	public function order()
+    {
+        return $this->belongsTo('App\Models\Order', 'model');
+    }
 }
