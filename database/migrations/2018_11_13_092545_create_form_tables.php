@@ -69,12 +69,6 @@ class CreateFormTables extends Migration
             $table->string('harga');
             $table->timestamps();
         });
-        Schema::create('bordir', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama_bordir');
-            $table->string('harga');
-            $table->timestamps();
-        });
         Schema::create('lokasi_bordir', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_lokasi_bordir');

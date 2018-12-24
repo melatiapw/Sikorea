@@ -36,7 +36,6 @@
                           <div class="col-md-4 text-center">
                               <h5 class="text-black">Total Tagihan</h5>
                               <span id="harga">{{ $cart->total_harga }}</span>
-
                           </div>
                           <div class="col-md-4 text-right">
                                 <h5 class="text-black">Status Transaksi</h5>
@@ -91,14 +90,10 @@
                   </div>
                 </div>
                 <?php endforeach; ?>
-
           </div>
-
-
         </div>
       </div>
     </div>
-
 <script type="text/javascript">
 $('* span').each(function () {
   var item = $(this).text();
