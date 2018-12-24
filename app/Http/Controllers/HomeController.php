@@ -53,13 +53,12 @@ class HomeController extends Controller
                                                             ->join('warna_sablon', 'warna_sablon.id', '=', 'order.warna_sablon')
                                                             ->join('lokasi_sablon', 'lokasi_sablon.id', '=', 'order.lokasi_sablon')
                                                             ->join('lokasi_bordir', 'lokasi_bordir.id', '=', 'order.lokasi_bordir')
-                                                            ->join('jumlah_kaos', 'jumlah_kaos.id', '=', 'order.jumlah_produk')
                                                             ->join('jenis_ukuran', 'jenis_ukuran.id', '=', 'order.jenis_ukuran')
                                                             ->select('order.*', 'jenis_pakaian.nama_jenis_pakaian', 'model.nama_model',
                                                                       'bahan.nama_bahan', 'warna_bahan.nama_warna_bahan', 'manset.nama_manset', 'lengan.nama_lengan',
                                                                       'sablon.nama_sablon', 'warna_sablon.nama_warna_sablon',
-                                                                      'lokasi_sablon.nama_lokasi_sablon', 'lokasi_bordir.nama_lokasi_bordir',
-                                                                      'jumlah_kaos.nama_jumlah_produk','jenis_ukuran.nama_jenis_ukuran')
+                                                                      'lokasi_sablon.nama_lokasi_sablon', 'lokasi_bordir.nama_lokasi_bordir','jenis_ukuran.nama_jenis_ukuran')
+
                                                             ->get();
          return view('admin.requestPage')->withKeranjang($cart)
                                         ->withPesanan($order)

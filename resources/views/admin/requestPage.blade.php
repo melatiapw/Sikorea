@@ -26,8 +26,7 @@
                             <thead>
                                 <tr>
                                   <th>ID Cart</th>
-                                  <th>Status</th>
-                                  <th>Nama Pemesan</th>
+                                  <th>Pemesan</th>
                                   <th>Nomor HP</th>
                                   <th>Alamat</th>
                                   <th>Desain</th>
@@ -41,36 +40,15 @@
                                 <?php if ($cart->status == 2): ?>
                                   <tr>
                                       <td>{{ $cart->id }}</td>
-                                      <td>{{ $cart->status }}</td>
-                                      <td>{{ $cart->users }}</td>
+                                      <td>{{ $cart->name }}</td>
                                       <td>{{ $cart->no_cp }}</td>
                                       <td>{{ $cart->alamat_cp }}</td>
                                       <td>
-                                        <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#desain">Lihat</button>
-
-                                        <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="desain">
-                                            <div class="modal-dialog" role="document">
-                                              <div class="modal-content">
-                                                    <form action="javascript:;" novalidate="novalidate">
-                                                        <div class="modal-header">
-                                                        <h5 class="modal-title">Desain Pesanan</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                          <img src="{{ Storage::url($pesanan->desain->first()) }}" alt="Image placeholder" class="img-fluid">
-                                                        </div>
-                                                    </form>
-                                              </div>
-                                            </div>
-                                          </div>
-
-
+                                        <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#desain{{$cart->id}}">Lihat</button>
                                       </td>
                                       <td>{{ $cart->total_harga }}</td>
                                       <td>
-                                        <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#detailPesananModal">Detail Pesanan</button>
+                                        <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#detailPesananModal{{$cart->id}}">Detail Pesanan</button>
                                       </td>
                                       <td>
                                         <button type="button" onclick="window.location='{{ route('cart_terima', $cart->id) }}'" class="btn btn-success m-b-10 m-l-5">Terima</button>
@@ -90,13 +68,11 @@
           </div>
 
       </div>
-      <!-- End PAge Content -->
-      <!-- Modal Desain-->
+
+      <!-- Modal Desain -->
       @include('admin.modal-desain')
-      <!-- End Modal Desain-->
       <!-- Modal Detail-->
       @include('admin.modal-detail')
-      <!-- End Modal Detail-->
 
-<!-- End Container fluid  -->
+<!-- End Modal -->
 @endsection

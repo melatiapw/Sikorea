@@ -4,10 +4,13 @@
     <div class="bg-light py-3">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 mb-0"><a href="index.html">Katalog</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Kaos</strong></div>
+          <div class="col-md-12 mb-0">
+            <a>Katalog</a>
+            <span class="mx-2 mb-0">/</span> <strong class="text-black">Kaos</strong>
+          </div>
         </div>
       </div>
-    </div>  
+    </div>
 
     <div class="site-section">
       <div class="container">
@@ -109,7 +112,7 @@
                       <option value="2">Option #2</option>
                       <option value="3">Option #3</option>
                   </select>
-              
+
             </div>
 
             <div class="form-group row">
@@ -129,7 +132,7 @@
 
 
             </form>
-            
+
           </div>
           <div class="col-md-4">
             <h2 class="text-black">Estimasi Harga</h2>
@@ -145,7 +148,7 @@
             <h5>Estimasi Harga</h5>
 
             <p><strong class="text-primary h4">$50.00</strong></p>
-            
+
             <div class="mb-5">
               <div class="input-group mb-3" style="max-width: 120px;">
               <div class="input-group-prepend">
@@ -158,7 +161,7 @@
             </div>
 
             </div>
-            <p><a href="cart.html" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+            <p><a href="{{ url('/cart')}}" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
 
           </div>
         </div>

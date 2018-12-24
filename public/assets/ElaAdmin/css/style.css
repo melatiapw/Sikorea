@@ -761,6 +761,17 @@ h6.h1 {
   right: -10px;
   top: -13px;
 }
+.notify-label {
+  position: absolute;
+  top: 9px;
+  right: 7px;
+  text-align: center;
+  font-size: 9px;
+  padding: 2px 3px;
+  line-height: .9;
+  border-radius: 70px;
+  background-color: #f39c12
+}
 .notify .heartbit {
   animation: 1s ease-out 0s normal none infinite running heartbit;
   border: 5px solid #4680ff;
@@ -7075,4 +7086,18 @@ https://github.com/silviomoreto/bootstrap-select/issues/1135
 /* Make filled out selects be the same size as empty selects */
 .bootstrap-select.btn-group .dropdown-toggle .filter-option {
   display: inline !important;
+}
+
+/*Money*/
+.enMoney::before {
+    content:"Rp ";
+}
+.negMoney {
+    color:red;
+}
+td.negMoney::before {
+    content:'(Rp';
+}
+td.negMoney::after {
+    content:')';
 }

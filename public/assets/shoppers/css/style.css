@@ -1021,3 +1021,17 @@ a {
   color: #67757c;
   white-space: nowrap;
 }
+
+/*Money*/
+.enMoney::before {
+    content:"Rp ";
+}
+.negMoney {
+    color:red;
+}
+span.negMoney::before {
+    content:'(Rp ';
+}
+span.negMoney::after {
+    content:')';
+}

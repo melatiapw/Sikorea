@@ -20,50 +20,39 @@
         <ul class="navbar-nav my-lg-0">
             <!-- Notification -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-muted text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
-                   <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                </a>
+              <a class="nav-link dropdown-toggle " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell-o"></i>
+                  @if(count(auth()->user()->unreadNotifications) != 0)
+                  <div class="notify-label">
+                    {{count(auth()->user()->unreadNotifications)}}
+                  </div>
+                  @endif
+              </a>
                 <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
-                    <ul>
-                        <li>
-                            <div class="drop-title">Notifications</div>
-                        </li>
-                        <li>
-                            <div class="message-center">
-                                <!-- Message -->
-                                <a href="#">
-                                    <div class="btn btn-danger btn-circle m-r-10"><i class="fa fa-link"></i></div>
-                                    <div class="mail-contnet">
-                                        <h5>This is title</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
-                                    </div>
+                  <ul>
+                      <li>
+                          <div class="drop-title">Anda memiliki {{count(auth()->user()->unreadNotifications)}} notifikasi baru</div>
+                      </li>
+
+                      <li>
+                          <div class="message-center">
+                              <!-- Message -->
+                              <!-- Notifikasi -->
+                              @foreach((Auth::user()->Notifications) as $notif)
+                                <a href="{{url('notifications/'.$notif->id)}}" class="{{ $notif->read_at == null ? 'unread' : ''}}">
+                                  <div class="{{$notif->read_at == null ? 'fa fa-circle' : ''}}"></div>
+                                  <div class="mail-content">
+                                    <h5 >{!! $notif->data['data'] !!}</h5>
+                                    <span class="mail-desc">{!! $notif->data['isi_notifikasi'] !!}</span><br>
+                                    <span class="time">{!! $notif->data['waktu'] !!}</span>
+                                  </div>
                                 </a>
-                                <!-- Message -->
-                                <a href="#">
-                                    <div class="btn btn-success btn-circle m-r-10"><i class="ti-calendar"></i></div>
-                                    <div class="mail-contnet">
-                                        <h5>This is another title</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span>
-                                    </div>
-                                </a>
-                                <!-- Message -->
-                                <a href="#">
-                                    <div class="btn btn-info btn-circle m-r-10"><i class="ti-settings"></i></div>
-                                    <div class="mail-contnet">
-                                        <h5>This is title</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span>
-                                    </div>
-                                </a>
-                                <!-- Message -->
-                                <a href="#">
-                                    <div class="btn btn-primary btn-circle m-r-10"><i class="ti-user"></i></div>
-                                    <div class="mail-contnet">
-                                        <h5>This is another title</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                        </li>
-                    </ul>
+                              @endforeach
+                          </div>
+                      </li>
+                      <!-- <li>
+                          <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                      </li> -->
+                  </ul>
                 </div>
             </li>
             <!-- End Notification -->

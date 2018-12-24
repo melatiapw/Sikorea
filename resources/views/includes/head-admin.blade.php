@@ -13,7 +13,6 @@
 
 <link href="{{ asset('assets/ElaAdmin/css/lib/calendar2/semantic.ui.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/ElaAdmin/css/lib/calendar2/pignose.calendar.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/ElaAdmin/css/lib/owl.carousel.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('assets/ElaAdmin/css/lib/owl.theme.default.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('assets/ElaAdmin/css/helper.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/ElaAdmin/css/style.css') }}" rel="stylesheet">

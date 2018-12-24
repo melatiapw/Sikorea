@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use App\Kategori;
+use App\User;
 use App\Models\Cart;
 use App\Models\Order;
+use Notification;
+use App\Notifications\PesananBaru;
+use App\Notifications\BuktiBayar;
+use App\Notifications\StatusPesanan;
 
 class ControllerCheckout extends Controller
 {
@@ -38,6 +43,12 @@ class ControllerCheckout extends Controller
       $cart->status = 2;
       $cart->total_harga = $request->total_harga;
       $cart->save();
+
+      $Admin = User::whereHas('roles', function($q){
+        $q->whereIn('name', ['Admin']);
+        }
+      )->get();
+      Notification::send($Admin, new PesananBaru($cart));
       return redirect("/cart");
   }
   public function statustransaksi()
@@ -48,15 +59,20 @@ class ControllerCheckout extends Controller
   }
   public function upload(Request $request)
   {
-      $cart = Cart::first();
-
       $this->validate($request, [
         'nota' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048'
       ]);
       $uploadedFile = $request->file('nota');
+      $idcart = $request->idcart;
+      $cart = Cart::find($idcart);
       $path = $uploadedFile->store('public/nota');
       $cart->nota = $path;
       $cart->save();
+      $Admin = User::whereHas('roles', function($q){
+        $q->whereIn('name', ['Admin']);
+        }
+      )->get();
+      Notification::send($Admin, new BuktiBayar($cart));
       return redirect()
         ->back()
         ->with(['sukses' => 'Bukti Pembayaran has been uploaded']);

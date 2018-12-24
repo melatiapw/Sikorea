@@ -9,7 +9,7 @@ use Illuminate\Notifications\Messages\MailMessage;
 
 use\App\Models\Cart;
 
-class PesananBaru extends Notification
+class BuktiBayar extends Notification
 {
   use Queueable;
 
@@ -26,11 +26,11 @@ class PesananBaru extends Notification
 
   public function toArray($notifiable)
   {
-        return [
-          'id_pesanan'=> $this->Cart->id,
-          'data' => 'Pesanan Baru: AREA #' .$this->Cart->id,
-          'isi_notifikasi' => 'Pesanan baru: ID' .$this->Cart->id,
-          'waktu' => $this->Cart->updated_at->format('d-m-Y, H:i'),
-        ];
+      return [
+        'id_pesanan'=> $this->Cart->id,
+        'data' => 'Konfirmasi Pembayaran AREA #' .$this->Cart->id,
+        'isi_notifikasi' => 'Pelanggan sudah mengunggah bukti bayar',
+        'waktu' => $this->Cart->updated_at->format('d-m-Y, H:i'),
+      ];
   }
 }

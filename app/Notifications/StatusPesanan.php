@@ -26,18 +26,34 @@ class StatusPesanan extends Notification
 
     public function toArray($notifiable)
     {
-        if ($this->Cart->status == 4) {
+      if ($this->Cart->status == 1) {
+        return [
+          'id_pesanan'=> $this->Cart->id,
+          'data' => 'AREA ' . $this->Cart->id,
+          'isi_notifikasi' => 'Mohon maaf, pesanan Anda ditolak',
+          'waktu' => $this->Cart->updated_at->format('d-m-Y, H:i'),
+        ];
+      }
+      else if ($this->Cart->status == 3) {
           return [
             'id_pesanan'=> $this->Cart->id,
-            'data' => 'Pesanan nomor #' . $this->Cart->id,
+            'data' => 'AREA ' . $this->Cart->id,
+            'isi_notifikasi' => 'Pesanan Anda sudah diterima. Silakan konfirmasi pembayaran',
+            'waktu' => $this->Cart->updated_at->format('d-m-Y, H:i'),
+          ];
+      }
+      else if ($this->Cart->status == 4) {
+          return [
+            'id_pesanan'=> $this->Cart->id,
+            'data' => 'AREA ' . $this->Cart->id,
             'isi_notifikasi' => 'Pesanan Anda sedang diproses',
             'waktu' => $this->Cart->updated_at->format('d-m-Y, H:i'),
           ];
         }
         else if($this->Cart->status == 5){
           return [
-            'id_tiket'=> $this->Cart->id,
-            'data' => 'Pesanan nomor #' .$this->Cart->id,
+            'id_pesanan'=> $this->Cart->id,
+            'data' => 'AREA ' .$this->Cart->id,
             'isi_notifikasi' => 'Pesanan Anda sudah diselesaikan',
             'waktu' => $this->Cart->updated_at->format('d-m-Y, H:i'),
           ];
