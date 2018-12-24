@@ -1,7 +1,7 @@
 <nav class="navbar top-navbar navbar-expand-md navbar-light">
     <!-- Logo -->
     <div class="navbar-header">
-        <a class="navbar-brand" href="/home">
+        <a class="navbar-brand" href="/sikorea/public/home">
             <!-- Logo icon -->
             <b><img src="{{ asset('assets/ElaAdmin/images/logo.png') }}" alt="homepage" class="logo" /></b>
             <!--End Logo icon -->
@@ -12,9 +12,9 @@
     <div class="navbar-collapse">
         <!-- toggle and nav items -->
         <ul class="navbar-nav mr-auto mt-md-0 text-center">
-          <li class="nav-item nav-link"><a href="/home"><i class="fa fa-shopping-basket"></i> Request</a></li>
-          <li class="nav-item nav-link"><a href="/pesanan"><i class="fa fa-hourglass-end"></i> Pesanan</a></li>
-          <li class="nav-item nav-link"><a href="/katalog"><i class="fa fa-book"></i> Katalog</a></li>
+          <li class="nav-item nav-link"><a href="{{ url('/home')}}"><i class="fa fa-shopping-basket"></i> Request</a></li>
+          <li class="nav-item nav-link"><a href="{{ url('/pesanan')}}"><i class="fa fa-hourglass-end"></i> Pesanan</a></li>
+          <li class="nav-item nav-link"><a href="{{ url('/katalog')}}"><i class="fa fa-book"></i> Katalog</a></li>
         </ul>
         <!-- User profile and notification -->
         <ul class="navbar-nav my-lg-0">
@@ -72,11 +72,12 @@
                 <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('assets/ElaAdmin/images/users/5.jpg') }}" alt="user" class="profile-pic" /></a>
                 <div class="dropdown-menu dropdown-menu-right animated zoomIn">
                     <ul class="dropdown-user">
-                        <li><a href="#"><i class="ti-user"></i> Profile</a></li>
-                        <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
-                        <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                        <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
-                        <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li> <a href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          <i class="ti-power-off"> </i>{{ __('Logout') }}
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form></a></li>
                     </ul>
                 </div>
             </li>

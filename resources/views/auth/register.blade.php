@@ -1,77 +1,136 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-                        <input type = "hidden" name = "isAdmin" value = "1">
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/ElaAdmin/images/favicon.png') }}">
+    <title>Register Sikorea</title>
+    <!-- Bootstrap Core CSS -->
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+    <link href="{{ asset('assets/ElaAdmin/css/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{ asset('assets/ElaAdmin/css/helper.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/ElaAdmin/css/style.css') }}" rel="stylesheet">
 
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+    <!-- <link href="css/helper.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet"> -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+    <!--[if lt IE 9]>
+    <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+<body class="fix-header fix-sidebar">
+    <!-- Preloader - style you can find in spinners.css -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- Main wrapper  -->
+    <div id="main-wrapper">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+        <div class="unix-login">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4">
+                        <div class="login-content card">
+                            <div class="login-form">
+                              <h4>Register</h4>
+                              <form method="POST" action="{{ route('register') }}">
+                                @csrf
+                                  <div class="form-group">
+                                    <label for="name" >{{ __('Name') }}</label>
+                                        <input id="name" placeholder="Name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="email" >{{ __('E-Mail Address') }}</label>
+                                        <input id="email" placeholder="Email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="password" >{{ __('Password') }}</label>
+                                        <input id="password" placeholder="Password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                  </div>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
+                                  <div class="form-group">
+                                      <label for="password-confirm" >{{ __('Confirm Password') }}</label>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+
+                                          <input id="password-confirm" placeholder="Confirm Password" type="password" class="form-control" name="password_confirmation" required>
+
+                                  </div>
+                                  <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox"> Agree the terms and policy
+                                      </label>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">
                                     {{ __('Register') }}
-                                </button>
+                                  </button>
+                                  <div class="register-link m-t-15 text-center">
+                                      <p>Already have account ? <a href="{{ route('login') }}">{{ __('Login') }}</a></p>
+                                  </div>
+                              </form>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-</div>
-@endsection
+    <!-- End Wrapper -->
+    <!-- All Jquery -->
+    <script src="{{ asset('assets/ElaAdmin/js/lib/jquery/jquery.min.js' ) }}" rel="stylesheet"></script>
+    <!-- <script src="js/lib/jquery/jquery.min.js"></script> -->
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="{{ asset('assets/ElaAdmin/js/lib/bootstrap/js/popper.min.js' ) }}" rel="stylesheet"></script>
+    <script src="{{ asset('assets/ElaAdmin/js/lib/bootstrap/js/bootstrap.min.js' ) }}" rel="stylesheet"></script>
+
+    <!-- <script src="js/lib/bootstrap/js/popper.min.js"></script>
+    <script src="js/lib/bootstrap/js/bootstrap.min.js"></script> -->
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="{{ asset('assets/ElaAdmin/js/jquery.slimscroll.js' ) }}" rel="stylesheet"></script>
+    <script src="{{ asset('assets/ElaAdmin/js/sidebarmenu.js' ) }}" rel="stylesheet"></script>
+    <script src="{{ asset('assets/ElaAdmin/js/lib/sticky-kit-master/dist/sticky-kit.min.js' ) }}" rel="stylesheet"></script>
+    <script src="{{ asset('assets/ElaAdmin/js/custom.min.js' ) }}" rel="stylesheet"></script>
+
+    <!-- <script src="js/jquery.slimscroll.js"></script> -->
+    <!--Menu sidebar -->
+    <!-- <script src="js/sidebarmenu.js"></script> -->
+    <!--stickey kit -->
+    <!-- <script src="js/lib/sticky-kit-master/dist/sticky-kit.min.js"></script> -->
+    <!--Custom JavaScript -->
+    <!-- <script src="js/custom.min.js"></script> -->
+
+</body>
+
+</html>

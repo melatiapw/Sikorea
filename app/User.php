@@ -5,12 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    // const ADMIN_TYPE = 'admin';
-    // const DEFAULT_TYPE = 'default';
     use Notifiable;
+    use HasRoles;
+
 
     /**
      * The attributes that are mass assignable.
