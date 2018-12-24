@@ -7,12 +7,14 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
+use\App\Models\Cart;
+
 class PesananBaru extends Notification
 {
   use Queueable;
 
   protected $Cart;
-  public function __construct(Tiket $Tiket)
+  public function __construct(Cart $Cart)
   {
       $this->Cart=$Cart;
   }
@@ -24,22 +26,11 @@ class PesananBaru extends Notification
 
   public function toArray($notifiable)
   {
-      if ($this->Cart->Status == 1) {
         return [
-          'id_tiket'=> $this->Tiket->ID,
-          'data' => 'Tiket nomor #' .$this->Tiket->ID,
-          'isi_notifikasi' => 'Keluhan Anda sedang diproses',
-          'waktu' => $this->Tiket->UpdatedAt->format('d-m-Y, H:i'),
+          'id_pesanan'=> $this->Cart->id,
+          'data' => 'Pesanan Baru: AREA #' .$this->Cart->id,
+          'isi_notifikasi' => 'Pesanan baru: ID' .$this->Cart->id,
+          'waktu' => $this->Cart->updated_at->format('d-m-Y, H:i'),
         ];
-      }
-      else{
-        return [
-          'id_tiket'=> $this->Tiket->ID,
-          'data' => 'Tiket nomor #' .$this->Tiket->ID,
-          'isi_notifikasi' => 'Keluhan Anda sudah diselesaikan',
-          'waktu' => $this->Tiket->UpdatedAt->format('d-m-Y, H:i'),
-        ];
-      }
-
   }
 }

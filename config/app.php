@@ -163,6 +163,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Reliese\Coders\CodersServiceProvider::class,
 
         /*
          * Application Service Providers...

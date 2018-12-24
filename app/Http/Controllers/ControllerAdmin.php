@@ -5,7 +5,6 @@ use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use\App\Models\Cart;
-use\App\Models\Users;
 use App\Kategori;
 use Notification;
 use App\Notifications\PesananBaru;
@@ -41,12 +40,28 @@ class ControllerAdmin extends Controller
   }
     public function terima($id)
     {
-      Cart::find($id)->update(['status' => 3]);
+      $Pengguna = Auth::user();
+      $cart = Cart::find($id);
+
+      $cart->update(['status' => 3]);
+      $cart->save();
+      if ($Pengguna->hasRole('admin')) {
+        $IDPembeli = $cart->users;
+        $Pembeli = User::where('id', '=', $IDPembeli)->first();
+        Notification::send($Pembeli, new StatusPesanan($cart));
+      }
       return redirect()->back();
     }
     public function tolak($id)
     {
+      $Pengguna = Auth::user();
+      $cart = Cart::find($id);
       Cart::find($id)->update(['status' => 1]);
+      if ($Pengguna->hasRole('admin')) {
+        $IDPembeli = $cart->users;
+        $Pembeli = User::where('id', '=', $IDPembeli)->first();
+        Notification::send($Pembeli, new StatusPesanan($cart));
+      }
       return redirect()->back();
     }
     public function updateStatus($id, Request $request)
@@ -58,7 +73,7 @@ class ControllerAdmin extends Controller
       //Mengirim Notifikasi Perubahan Status Pesanan
       if ($Pengguna->hasRole('admin')) {
         $IDPembeli = $Cart->users;
-        $Pembeli = Users::where('id', '=', $IDPembeli)->first();
+        $Pembeli = User::where('id', '=', $IDPembeli)->first();
         Notification::send($Pembeli, new StatusPesanan($Cart));
       }
       return redirect()->back()->with('Success', 'Status pesanan berhasil disimpan.');

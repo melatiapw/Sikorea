@@ -40,16 +40,16 @@
                               <tbody>
                                 <?php foreach ($keranjang as $cart): ?>
                                   <?php if ($cart->status > 2): ?>
-                                    <tr>
+                                    <tr id="cart">
                                         <td>{{ $cart->id }}</td>
                                         <td>{{ $cart->status }}</td>
-                                        <td>{{ $cart->users }}</td>
+                                        <td>{{ $cart->name }}</td>
                                         <td>{{ $cart->no_cp }}</td>
                                         <td>{{ $cart->alamat_cp }}</td>
                                         <td>
                                           <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#desain{{$cart->id}}">Lihat</button>
                                         </td>
-                                        <td>{{ $cart->total_harga }}</td>
+                                        <td name="harga" id="harga">{{ $cart->total_harga }}</td>
                                         <td>
                                           <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#detailPesananModal{{$cart->id}}">Detail Pesanan</button>
                                         </td>
@@ -94,4 +94,5 @@
         @include('admin.modal-buktibayar')
         <!-- End Modal Bukti Pembayaran -->
 <!-- End Container fluid  -->
+
 @endsection

@@ -35,25 +35,25 @@ class formSeeder extends Seeder
         [
           'id' =>"1",
           'nama_warna_bahan' => "Satu Warna",
-          'harga' => "1",
+          'harga' => "0",
         ],
 
         [
           'id' =>"2",
           'nama_warna_bahan' => "Dua Warna",
-          'harga' => "1.005",
+          'harga' => "5",
         ],
 
         [
           'id' =>"3",
           'nama_warna_bahan' => "Tiga Warna",
-          'harga' => "1.01",
+          'harga' => "10",
         ],
 
         [
           'id' =>"4",
           'nama_warna_bahan' => "Lebih Tiga Warna",
-          'harga' => "1.02",
+          'harga' => "20",
         ],
       ]);
 
@@ -100,19 +100,19 @@ class formSeeder extends Seeder
         [
           'id' =>"2",
           'nama_warna_sablon' => "3-4 Warna",
-          'harga' => "1.03",
+          'harga' => "30",
         ],
 
         [
           'id' =>"3",
           'nama_warna_sablon' => "5 Warna",
-          'harga' => "1.05",
+          'harga' => "50",
         ],
 
         [
           'id' =>"4",
           'nama_warna_sablon' => ">5 Warna",
-          'harga' => "1.07",
+          'harga' => "70",
         ],
         ]);
 
@@ -414,5 +414,6 @@ class formSeeder extends Seeder
             'harga' => "0",
           ],
           ]);
+
     }
 }

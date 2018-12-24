@@ -975,23 +975,23 @@ a {
 .mailbox .profile-center a div {
   white-space: normal;
 }
-.mailbox .message-center a .mail-contnet {
+.mailbox .message-center a .mail-content {
   display: inline-block;
   width: 100%;
   vertical-align: middle;
 }
-.mailbox .profile-center a .mail-contnet {
+.mailbox .profile-center a .mail-content {
   display: inline-block;
   width: 100%;
   vertical-align: middle;
 }
-.mailbox .message-center a .mail-contnet h5 {
+.mailbox .message-center a .mail-content h5 {
   margin: 5px 0 0;
 }
-.mailbox .profile-center a .mail-contnet h5 {
+.mailbox .profile-center a .mail-content h5 {
   margin: 5px 0 0;
 }
-.mailbox .message-center a .mail-contnet .mail-desc {
+.mailbox .message-center a .mail-content .mail-desc {
   font-size: 12px;
   display: block;
   margin: 1px 0;
@@ -1001,7 +1001,7 @@ a {
   color: #67757c;
   white-space: nowrap;
 }
-.mailbox .profile-center a .mail-contnet .mail-desc {
+.mailbox .profile-center a .mail-content .mail-desc {
   font-size: 12px;
   display: block;
   margin: 1px 0;
@@ -1011,7 +1011,7 @@ a {
   color: #67757c;
   white-space: nowrap;
 }
-.mailbox .message-center a .mail-contnet .time {
+.mailbox .message-center a .mail-content .time {
   font-size: 12px;
   display: block;
   margin: 1px 0;
@@ -1020,4 +1020,18 @@ a {
   overflow: hidden;
   color: #67757c;
   white-space: nowrap;
+}
+
+/*Money*/
+.enMoney::before {
+    content:"Rp ";
+}
+.negMoney {
+    color:red;
+}
+span.negMoney::before {
+    content:'(Rp ';
+}
+span.negMoney::after {
+    content:')';
 }

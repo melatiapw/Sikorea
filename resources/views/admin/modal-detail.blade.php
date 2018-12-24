@@ -2,12 +2,11 @@
   <div class="modal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="detailPesananModal{{$cart->id}}">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-              <form action="javascript:;" novalidate="novalidate">
                   <div class="modal-header">
-                  <h5 class="modal-title">Detail Pesanan</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
+                    <h5 class="modal-title">Detail Pesanan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                   </div>
                   <div class="modal-body">
 
@@ -60,30 +59,33 @@
                                         </div>
                                     </div>
                                   <?php endif; ?>
-
                                 <?php endif; ?>
-
                               <?php endforeach; ?>
-
-
                             </div>
+                            <a class="carousel-control-prev" href="#detailBarang" role="button" data-slide="prev" >
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only"> Previous </span>
+                            </a>
+                            <a class="carousel-control-next" href="#detailBarang" role="button" data-slide="next" >
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only"> Next </span>
+                            </a>
 
                       </div>
-                      <a class="carousel-control-prev" href="#detailBarang" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only"> Previous </span>
-                      </a>
-                      <a class="carousel-control-next" href="#detailBarang" role="button" data-slide="next" >
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <p>Next</p>
-                        <span class="sr-only"> Next </span>
-                      </a>
-
 
                   </div>
           </div>
         </div>
-              </form>
   </div>
 
 <?php endforeach; ?>
+
+<script type="text/javascript">
+  $('a[data-slide="prev"]').click(function() {
+    $('#detailBarang').carousel('prev');
+  });
+
+  $('a[data-slide="next"]').click(function() {
+    $('#detailBarang').carousel('next');
+  });
+</script>

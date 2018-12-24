@@ -75,4 +75,5 @@
       @include('admin.modal-detail')
 
 <!-- End Modal -->
+
 @endsection
