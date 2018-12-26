@@ -7,19 +7,23 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Cara Install Aplikasi dari Github ke Localhost
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+1.	Download Source Code dari repo Github Sikorea dalam bentuk Zip.
+2.	Extract file zip (source code) ke dalam direktori htdocs pada XAMPP, misal htdocs/sikorea.
+3.	Melalui terminal, cd ke direktori sikorea.
+4.	Pada terminal, berikan perintah composer install. Ini yang perlu koneksi internet.
+5.	Composer akan menginstall dependency paket dari source code tersebut hingga selesai.
+6.	Jalankan perintah php artisan, untuk menguji apakah perintah artisan Laravel bekerja.
+7.	Buat database baru (kosong) pada mysql (via phpmyadmin).
+8.	Duplikat file .env.example, lalu rename menjadi .env.
+9.	Kembali ke terminal, php artisan key:generate.
+10.	Setting koneksi database di file .env (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+11.	Jalan kan perintah php artisan migrate Jika di cek di phpmyadmin, seharusnya tabel sudah muncul.
+12.	Setelah selesai, buka aplikasi melalui browser, misal : http://localhost/sikorea/public
+13.	Klik link Register untuk mendaftarkan user baru.
+14.	Login dan aplikasi siap digunakan.
 
 ## Learning Laravel
 
