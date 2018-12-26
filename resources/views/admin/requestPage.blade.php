@@ -73,6 +73,7 @@
       @include('admin.modal-desain')
       <!-- Modal Detail-->
       @include('admin.modal-detail')
-
+</div>
 <!-- End Modal -->
+
 @endsection

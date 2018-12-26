@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use App\Notifications\NotifikasiTanggapan;
 use Illuminate\Notifications\DatabaseNotification;
 
 use\App\Models\Cart;
+
 class ControllerNotifikasi extends Controller
 {
   /**

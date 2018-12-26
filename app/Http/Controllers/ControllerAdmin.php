@@ -57,6 +57,7 @@ class ControllerAdmin extends Controller
       $Pengguna = Auth::user();
       $cart = Cart::find($id);
       Cart::find($id)->update(['status' => 1]);
+      $cart->save();
       if ($Pengguna->hasRole('admin')) {
         $IDPembeli = $cart->users;
         $Pembeli = User::where('id', '=', $IDPembeli)->first();

@@ -158,14 +158,7 @@
           <div class="col-md-4">
             <h2 class="text-black">Estimasi Harga</h2>
             <img src="{{ asset('assets/shoppers/images/cloth_1.jpg') }}" alt="Image placeholder" class="img-fluid">
-            <h5>Model</h5>
-            <p>Nama Modelnya</p>
-            <h5>Bahan</h5>
-            <p>Nama Bahannya</p>
-            <h5>Warna</h5>
-            <p>Jumlah Warna: Detail Warna</p>
-            <h5>Lengan dan Manset</h5>
-            <p>Lengan, Manset</p>
+            
             <h5>Estimasi Harga</h5>
 
             <p id='estimasi'>Lengkapi form terlebih dahulu!</p>

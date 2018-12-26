@@ -30,7 +30,11 @@
                 @foreach ($detail as $d)
                   <tr>
                     <td class="product-thumbnail">
-                      <img src="{{ Storage::url($d->desain) }}" alt="Image placeholder" class="img-fluid">
+                      @if($d->desain==NULL)
+                        <p>Tidak mengunggah desain</p>
+                      @else
+                        <img src="{{ Storage::url($d->desain) }}" alt="Image placeholder" class="img-fluid">
+                      @endif
                     </td>
 
                     <td class="product-name">

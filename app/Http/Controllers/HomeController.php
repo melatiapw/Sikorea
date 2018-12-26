@@ -58,7 +58,6 @@ class HomeController extends Controller
                                                                       'bahan.nama_bahan', 'warna_bahan.nama_warna_bahan', 'manset.nama_manset', 'lengan.nama_lengan',
                                                                       'sablon.nama_sablon', 'warna_sablon.nama_warna_sablon',
                                                                       'lokasi_sablon.nama_lokasi_sablon', 'lokasi_bordir.nama_lokasi_bordir','jenis_ukuran.nama_jenis_ukuran')
-
                                                             ->get();
          return view('admin.requestPage')->withKeranjang($cart)
                                         ->withPesanan($order)
@@ -68,6 +67,7 @@ class HomeController extends Controller
           return view('home');
        }
        else {
+         Auth::user()->assignRole('user');
          return view('home');
        }
 

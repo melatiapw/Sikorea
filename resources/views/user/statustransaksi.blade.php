@@ -31,11 +31,15 @@
                               <h5 class="text-black">Nomor Transaksi</h5>
                               <span><strong>AREA {{ $cart->id }}</strong></span>
                               <br>
-                              <span class="text-black">20 Desember 2018 11.30 WIB </span>
+                              <span class="text-black">{{ $cart->created_at }}</span>
                           </div>
                           <div class="col-md-4 text-center">
                               <h5 class="text-black">Total Tagihan</h5>
-                              <span id="harga">{{ $cart->total_harga }}</span>
+                              <span id="harga">{{ $cart->total_harga }}</span><br>
+                              <td>
+                                <button type="button" class="btn btn-info m-b-10 m-l-5" data-toggle="modal" data-target="#detailPesananModal{{$cart->id}}">Detail Pesanan</button>
+                              </td>
+
                           </div>
                           <div class="col-md-4 text-right">
                                 <h5 class="text-black">Status Transaksi</h5>
@@ -58,6 +62,7 @@
                         <?php if ($cart->status == 3): ?>
                         <div class="row">
                         <div class="col-md-12 text-center">
+                          <br>
                           <h5 class="text-black text-center">Upload Bukti Pembayaran</h5>
                           <div class="alert alert-warning">
                               Mohon untuk tidak menggunggah berkas sensitif atau krusial ke dalam contoh aplikasi.
@@ -90,10 +95,17 @@
                   </div>
                 </div>
                 <?php endforeach; ?>
+
           </div>
+
+
         </div>
       </div>
     </div>
+
+    <!-- Modal Detail-->
+    @include('admin.modal-detail')
+
 <script type="text/javascript">
 $('* span').each(function () {
   var item = $(this).text();
