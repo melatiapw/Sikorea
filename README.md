@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## Cara Install Aplikasi dari Github ke Localhost
+## Cara Install Aplikasi Sikorea dari Github ke Localhost
 
 
 1.	Download Source Code dari repo Github Sikorea dalam bentuk Zip.
