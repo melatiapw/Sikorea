@@ -10,13 +10,17 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                  <div id="buktiBayar" class="carousel slide" data-ride="carousel">
+                  <div id="desainPesanan" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
 
                                 <div class="carousel-item active">
                                     <div class="card-body">
                                       <h4 class="card-title">Bukti Pembayaran Transaksi {{$cart->name}}</h4>
-                                      <img src="{{ Storage::url($cart->nota) }}" alt="Image placeholder" class="img-fluid">
+                                        @if($cart->nota==NULL)
+                                          <p>Pelanggan belum mengunggah bukti pembayaran</p>
+                                        @else
+                                          <img src="{{ Storage::url($cart->nota) }}" alt="Image placeholder" class="img-fluid">
+                                        @endif
                                     </div>
                                 </div>
 

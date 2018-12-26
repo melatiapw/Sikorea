@@ -48,8 +48,12 @@ class ControllerOrder extends Controller
     public function store(Request $request)
     {
       $this->validate($request, [
-          'desain' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-      ]);
+          'desain' => 'mimes:jpeg,png,jpg,svg,psd,ai,pdf|max:20488'
+      ],
+      $messages = [
+          'mimes' => 'Hanya format jpeg,png,jpg,svg,psd,ai,pdf yang diperbolehkan'
+      ]
+      );
       $order = new Order;
     	$jenis_pakaian = explode(',', $request->jenis_pakaian);
     	$model = explode(',', $request->model);
@@ -82,9 +86,12 @@ class ControllerOrder extends Controller
         $order->pilihan_warna_sablon = $pilihan_warna_sablon;
         $order->pilihan_warna_bahan = $pilihan_warna_bahan;
 
-        $uploadedFile = $request->file('desain');
-        $path = $uploadedFile->store('public/desain');
-        $order->desain = $path;
+        if (!$request->file('desain')==NULL) {
+          $uploadedFile = $request->file('desain');
+          $path = $uploadedFile->store('public/desain');
+          $order->desain = $path;
+        }
+
 
     	$cartExist = Cart::orderBy('created_at', 'desc')->where('status', NULL)->first();
       $user_id = Auth::user()->id;
